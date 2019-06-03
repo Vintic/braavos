@@ -1,0 +1,53 @@
+# IDE settings
+.project
+.idea
+.iws
+settings.json
+.vscode
+
+# Tomcat context
+WEB-INF
+
+# temporary & test files
+temp
+s3-bucket
+miscellaneous/local
+
+# compiled files
+index.html
+robots.txt
+
+# test builds
+build
+*.war
+buildnumber.txt
+
+# test reports/logs
+tests/db
+tests/functional/geckodriver.log
+build-report
+__pycache__/
+*.py[cod]
+
+# migrator generated SQL
+migrator/sql
+migrator/sql/*
+
+fusionreactor/
+
+# Mac
+.DS_Store
+
+# other crap
+.settings
+stylesheets/style.css
+
+# app
+node_modules
+
+# docs
+/docs
+
+# storybook compiler
+/stories
+/storybook-static
