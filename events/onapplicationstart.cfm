@@ -7,6 +7,7 @@ createApplicationSettings();
 
 // services
 application.services = {};
+/*
 application.services["s3"] = new services.aws.s3(
 	account = env("AWS_ACCESS_KEY_ID"),
 	secret = env("AWS_SECRET_ACCESS_KEY"),
@@ -14,5 +15,5 @@ application.services["s3"] = new services.aws.s3(
 	bucket = get("bucketName")
 );
 application.services["errorhandler"] = new services.errorhandler.rollbar();
-
+*/
 </cfscript>
