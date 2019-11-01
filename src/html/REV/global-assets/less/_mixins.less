@@ -1,0 +1,363 @@
+
+.global-border(@size : 1px, @style : solid, @color : @border-color) {
+	border: @size @style @color;
+}
+
+.global-border-bottom(@size : 1px, @style : solid, @color : @border-color) {
+	border-bottom: @size @style @color;
+}
+
+.global-border-radius(@radius: 2px){
+	border-radius: @radius;
+}
+
+.global-transition(@duration : .5s, @ease : ease, @delay : 0s,){
+	transition: @duration @ease @delay;
+}
+
+/* ------------------------- */
+/*  RESPONSIVE VIDEO EMBEDS  */
+/* ------------------------- */
+._embed_container{
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+
+	iframe, object, embed{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/* ------------------------- */
+/* --------- LINKS --------- */
+/* ------------------------- */
+
+.rolloverDarkLinks(@link-color){
+	color: @link-color;
+	&:focus, &:hover, &:active{
+		color: darken(@link-color, 30%);
+		text-decoration: underline;
+	}
+}
+
+.rolloverLightLinks(@link-color){
+	color: @link-color;
+	&:focus, &:hover, &:active{
+		color: lighten(@link-color, 30%);
+		text-decoration: underline;
+	}
+}
+
+.rolloverColorLinks(@link-color, @hover-color){
+	color: @link-color;
+	&:focus, &:hover, &:active{
+		color: @hover-color;
+	}
+}
+
+.rolloverButton(@link-color : @white, @link-bg : @brand, @padding-vert : @spacing-sml, @padding-hoz : @spacing-lrg){
+	color: @link-color;
+	background-color: @link-bg;
+	border: 0;
+	outline: 0;
+	padding: @padding-vert @padding-hoz;
+	box-shadow: 0 0 0 rgba(0,0,0,.25);
+	.global-border-radius();
+	.global-transition();
+	&:focus, &:hover, &:active{
+		box-shadow: 0 5px 15px rgba(0,0,0,.25);
+	}
+}
+
+.rolloverButtonSecondary(@link-color : @brand, @link-bg : @white, @link-border-color : @brand, @padding-vert : @spacing-sml, @padding-hoz : @spacing-lrg){
+	color: @link-color;
+	background-color: @link-bg;
+	border: 1px solid @link-border-color;
+	outline: 0;
+	padding: @padding-vert @padding-hoz;
+	box-shadow: 0 0 0 rgba(0,0,0,.25);
+	.global-transition();
+	&:focus, &:hover, &:active{
+		color: @link-bg;
+		background-color: @link-color;
+		border-color: @link-color;
+	}
+}
+
+.rolloverButtonTerchiery(@link-color : @brand, @link-bg : @white, @link-border-color : @brand, @padding-vert : @spacing-sml, @padding-hoz : @spacing-lrg){
+	color: @link-color;
+	background-color: @link-bg;
+	border: 1px solid @link-border-color;
+	outline: 0;
+	padding: @padding-vert @padding-hoz;
+	box-shadow: 0 0 0 rgba(0,0,0,.25);
+	.global-transition();
+	&:focus, &:hover, &:active{
+		color: @link-color;
+		background-color: darken(@link-bg, 10%);
+		border-color: darken(@link-border-color, 10%);
+	}
+}
+
+.toggle-btn(@color : @body-color, @hover-color : @brand, @border-color : @brand, @padding-vert : @spacing-sml, @padding-hoz : @spacing-lrg){
+	position:relative;
+	display: block;
+	cursor: pointer;
+	color: @color;
+	padding: @padding-vert @padding-hoz;
+
+	&:before{
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 0;
+
+		background-color: @border-color;
+	}
+	&:hover,
+	&:active,
+	&.active{
+		color: @hover-color;
+			&:before{
+				height: 4px;
+				.global-transition();
+		}
+	}
+}
+
+/* ------------------------- */
+/* --------- FLEX ---------- */
+/* ------------------------- */
+
+.flex {
+	display: flex;
+
+	&._align-center {
+		align-items:center;
+	}
+
+	&._align-start {
+		align-items:flex-start;
+	}
+
+	&._align-end {
+		align-items:flex-start;
+	}
+
+	&._align-stretch {
+		align-items:stretch;
+	}
+
+	&._align-baseline {
+		align-items:baseline;
+	}
+
+	&._justify-start {
+		justify-content:flex-start;
+	}
+
+	&._justify-center {
+		justify-content:center;
+	}
+
+	&._justify-end {
+		justify-content:flex-end;
+	}
+
+	&._justify-space-between {
+		justify-content:space-between;
+	}
+
+	&._row {
+		flex-direction:row;
+	}
+
+	&._col {
+		flex-direction:column;
+	}
+
+
+	&._wrap {
+		flex-wrap: wrap;
+	}
+
+	&._wrap-reverse {
+		flex-wrap: wrap-reverse;
+	}
+	
+	&-grow {
+		flex-grow: 1;
+	}
+
+	&-align-self {
+		&-stretch {
+			align-self: stretch;
+		}
+		&-center {
+			align-self: center;
+		}
+		&-start {
+			align-self: flex-start;
+		}
+		&-end {
+			align-self: flex-end;
+		}
+	}
+}
+
+.flex(@align : stretch, @justify : flex-start, @wrap : wrap, @direction : row){
+	display: flex;
+	align-items:@align;
+	justify-content: @justify;
+	flex-wrap: @wrap;
+	flex-direction: @direction;
+}
+
+
+/* ------------------------- */
+/* -------- PADDING -------- */
+/* ------------------------- */
+ 
+.padding-mixins(@thisPadding){
+	padding:@thisPadding;
+	@media only screen and (min-width : @_tablet-break-point) { 
+		&-tablet{
+			padding:@thisPadding;
+		}	
+	}
+	@media only screen and (min-width : @_desktop-break-point) {
+		&-desktop{
+			padding:@thisPadding;
+		}	
+	}
+
+	&-top{
+		padding-top: @thisPadding;
+		@media only screen and (min-width : @_tablet-break-point) {
+			&-tablet{
+				padding-top:@thisPadding;
+			}	
+		}
+		@media only screen and (min-width : @_desktop-break-point) {
+			&-desktop{
+				padding-top:@thisPadding;
+			}	
+		}		
+	}
+	&-bottom{
+		padding-bottom: @thisPadding;
+		@media only screen and (min-width : @_tablet-break-point) {
+			&-tablet{
+				padding-bottom:@thisPadding;
+			}	
+		}
+		@media only screen and (min-width : @_desktop-break-point) {
+			&-desktop{
+				padding-bottom:@thisPadding;
+			}	
+		}
+	}
+	&-left{
+		padding-left: @thisPadding;
+		@media only screen and (min-width : @_tablet-break-point) {
+			&-tablet{
+				padding-left:@thisPadding;
+			}	
+		}
+		@media only screen and (min-width : @_desktop-break-point) {
+			&-desktop{
+				padding-left:@thisPadding;
+			}	
+		}
+	}
+	&-right{
+		padding-right: @thisPadding;
+		@media only screen and (min-width : @_tablet-break-point) {
+			&-tablet{
+				padding-right:@thisPadding;
+			}	
+		}
+		@media only screen and (min-width : @_desktop-break-point) {
+			&-desktop{
+				padding-right:@thisPadding;
+			}	
+		}
+	}
+	&-vert{
+		padding-top: @thisPadding;
+		padding-bottom: @thisPadding;
+		@media only screen and (min-width : @_tablet-break-point) {
+			&-tablet{
+				padding-top: @thisPadding;
+				padding-bottom: @thisPadding;
+			}	
+		}
+		@media only screen and (min-width : @_desktop-break-point) {
+			&-desktop{
+				padding-top: @thisPadding;
+				padding-bottom: @thisPadding;
+			}	
+		}
+	}
+	&-hoz{
+		padding-left: @thisPadding;
+		padding-right: @thisPadding;
+		@media only screen and (min-width : @_tablet-break-point) {
+			&-tablet{
+				padding-left: @thisPadding;
+				padding-right: @thisPadding;
+			}	
+		}
+		@media only screen and (min-width : @_desktop-break-point) {
+			&-desktop{
+				padding-left: @thisPadding;
+				padding-right: @thisPadding;
+			}	
+		}
+	}
+}
+
+.padding {
+	&-sml{
+		.padding-mixins(@spacing-sml);
+	}
+	&-med{
+		.padding-mixins(@spacing-med);
+	}
+	&-lrg{
+		.padding-mixins(@spacing-lrg);
+	}
+	&-xl{
+		.padding-mixins(@spacing-xl);
+	}
+}
+
+.image-object-fit-wrap(@padding : 100%){
+	position:relative;
+	&:before{
+		content: '';
+		position:relative;
+		display: block;
+		width: 100%;
+		padding-bottom: @padding;
+	}
+}
+
+.image-object-fit(@size : cover, @position : center  ){
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: @size;
+	object-position: @position;
+}
