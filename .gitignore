@@ -51,3 +51,10 @@ node_modules
 # storybook compiler
 /stories
 /storybook-static
+
+# jar files
+/lib/aws-*.jar
+
+# aws cli
+awscli-*
+get-pip.py
