@@ -1,0 +1,464 @@
+/*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+/*csslint regex-selectors:false, known-properties:false, duplicate-properties:false*/
+
+.row {
+	letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+	*letter-spacing: normal; /* reset IE < 8 */
+	*word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+	text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+
+	/*
+	Sets the font stack to fonts known to work properly with the above letter
+	and word spacings. See: https://github.com/yahoo/pure/issues/41/
+
+	The following font stack makes Pure Grids work on all known environments.
+
+	* FreeSans: Ships with many Linux distros, including Ubuntu
+
+	* Arimo: Ships with Chrome OS. Arimo has to be defined before Helvetica and
+	  Arial to get picked up by the browser, even though neither is available
+	  in Chrome OS.
+
+	* Droid Sans: Ships with all versions of Android.
+
+	* Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.
+	*/
+	font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+
+	/* Use flexbox when possible to avoid `letter-spacing` side-effects. */
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+
+	/* Prevents distributing space between rows */
+	-webkit-align-content: flex-start;
+	-ms-flex-line-pack: start;
+  align-content: flex-start;
+
+	justify-content: space-between;
+
+	&._wrap{
+    justify-content: flex-start;        
+  }
+}
+
+/* IE10 display: -ms-flexbox (and display: flex in IE 11) does not work inside a table; fall back to block and rely on font hack */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	table .row {
+		display: block;
+	}
+}
+
+/* Opera as of 12 on Windows needs word-spacing.
+   The ".opera-only" selector is used to prevent actual prefocus styling
+   and is not required in markup.
+*/
+.opera-only :-o-prefocus,
+.row {
+    word-spacing: -0.43em;
+}
+
+.col {
+    display: inline-block;
+   /* IE < 8: fake inline-block */
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+}
+
+/*
+Resets the font family back to the OS/browser's default sans-serif font,
+this the same font stack that Normalize.css sets for the `body`.
+*/
+.row [class *= "col"] {
+	font-family: @font-primary;
+	display: inline-block;
+	zoom: 1;
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top;
+	text-rendering: auto;
+
+	box-sizing: border-box;
+}
+
+	/*@width: @i / 12 * 100;
+	@piecesperrow: (12 / @i);
+
+	@space: (@piecesperrow - 1) * 20px / @piecesperrow;
+	.col-@{size}-@{i} { width: ~"calc(@{width}% - @{space})"; margin-bottom: 20px; }
+
+	
+	._col-@{size}-@{i} { width: ~"calc(@{width}% - @{space}) !important"; }
+	
+*/
+
+
+
+._col-loop-pad (@i, @len, @size, @padding) when (@i > 0) {
+
+	@piecesperrow: (@len / @i);
+
+	@space: (@piecesperrow - 1) * @padding / @piecesperrow;
+	@width: (((100 / @len) * @i) * 1%);
+
+	.col@{size}@{i}-@{len}{
+		width: ~"calc(@{width} - @{space})";
+	}	
+	._col-loop-pad(@i - 1, @len, @size, @padding);
+
+	&._wrap .col@{size}@{i}-@{len}{
+    width: ~"calc(@{width} - @{space})";
+    margin-right: @padding;
+
+    &:nth-child(@{len}n){
+        margin-right: 0;
+    }
+  }
+}
+
+._col-loop-no-pad (@i, @len, @size) when (@i > 0) {
+	@width: (((100 / @len) * @i) * 1%);
+	.col@{size}@{i}-@{len}{
+		width: @width;
+	}	
+	._col-loop-no-pad(@i - 1, @len, @size);
+}
+
+.row{
+	._col-loop-pad(1, 1, -, 20px);
+	._col-loop-pad(2, 2, -, 20px);
+	._col-loop-pad(3, 3, -, 20px);
+	._col-loop-pad(4, 4, -, 20px);
+	._col-loop-pad(5, 5, -, 20px);
+	._col-loop-pad(6, 6, -, 20px);
+	._col-loop-pad(7, 7, -, 20px);
+	._col-loop-pad(8, 8, -, 20px);
+	._col-loop-pad(9, 9, -, 20px);
+	._col-loop-pad(10, 10, -, 20px);
+	._col-loop-pad(11, 11, -, 20px);
+	._col-loop-pad(12, 12, -, 20px);
+	._col-loop-pad(13, 13, -, 20px);
+	._col-loop-pad(14, 14, -, 20px);
+	._col-loop-pad(15, 15, -, 20px);
+	._col-loop-pad(16, 16, -, 20px);
+	._col-loop-pad(17, 17, -, 20px);
+	._col-loop-pad(18, 18, -, 20px);
+	._col-loop-pad(19, 19, -, 20px);
+	._col-loop-pad(20, 20, -, 20px);
+	._col-loop-pad(21, 21, -, 20px);
+	._col-loop-pad(22, 22, -, 20px);
+	._col-loop-pad(23, 23, -, 20px);
+	._col-loop-pad(24, 24, -, 20px);
+	
+	&._pad-nil{
+		._col-loop-no-pad(1, 1, -);
+		._col-loop-no-pad(2, 2, -);
+		._col-loop-no-pad(3, 3, -);
+		._col-loop-no-pad(4, 4, -);
+		._col-loop-no-pad(5, 5, -);
+		._col-loop-no-pad(6, 6, -);
+		._col-loop-no-pad(7, 7, -);
+		._col-loop-no-pad(8, 8, -);
+		._col-loop-no-pad(9, 9, -);
+		._col-loop-no-pad(10, 10, -);
+		._col-loop-no-pad(11, 11, -);
+		._col-loop-no-pad(12, 12, -);
+		._col-loop-no-pad(13, 13, -);
+		._col-loop-no-pad(14, 14, -);
+		._col-loop-no-pad(15, 15, -);
+		._col-loop-no-pad(16, 16, -);
+		._col-loop-no-pad(17, 17, -);
+		._col-loop-no-pad(18, 18, -);
+		._col-loop-no-pad(19, 19, -);
+		._col-loop-no-pad(20, 20, -);
+		._col-loop-no-pad(21, 21, -);
+		._col-loop-no-pad(22, 22, -);
+		._col-loop-no-pad(23, 23, -);
+		._col-loop-no-pad(24, 24, -);
+	}
+
+	&._pad-lg{
+		._col-loop-pad(1, 1, -, 40px);
+		._col-loop-pad(2, 2, -, 40px);
+		._col-loop-pad(3, 3, -, 40px);
+		._col-loop-pad(4, 4, -, 40px);
+		._col-loop-pad(5, 5, -, 40px);
+		._col-loop-pad(6, 6, -, 40px);
+		._col-loop-pad(7, 7, -, 40px);
+		._col-loop-pad(8, 8, -, 40px);
+		._col-loop-pad(9, 9, -, 40px);
+		._col-loop-pad(10, 10, -, 40px);
+		._col-loop-pad(11, 11, -, 40px);
+		._col-loop-pad(12, 12, -, 40px);
+		._col-loop-pad(13, 13, -, 40px);
+		._col-loop-pad(14, 14, -, 40px);
+		._col-loop-pad(15, 15, -, 40px);
+		._col-loop-pad(16, 16, -, 40px);
+		._col-loop-pad(17, 17, -, 40px);
+		._col-loop-pad(18, 18, -, 40px);
+		._col-loop-pad(19, 19, -, 40px);
+		._col-loop-pad(20, 20, -, 40px);
+		._col-loop-pad(21, 21, -, 40px);
+		._col-loop-pad(22, 22, -, 40px);
+		._col-loop-pad(23, 23, -, 40px);
+		._col-loop-pad(24, 24, -, 40px);
+	}
+
+	&._v-center{
+		align-items: center;
+	}
+
+}
+
+
+@media screen and (min-width: @_tablet-break-point) {
+	.row{
+		._col-loop-pad(1, 1, -tablet-, 20px);
+		._col-loop-pad(2, 2, -tablet-, 20px);
+		._col-loop-pad(3, 3, -tablet-, 20px);
+		._col-loop-pad(4, 4, -tablet-, 20px);
+		._col-loop-pad(5, 5, -tablet-, 20px);
+		._col-loop-pad(6, 6, -tablet-, 20px);
+		._col-loop-pad(7, 7, -tablet-, 20px);
+		._col-loop-pad(8, 8, -tablet-, 20px);
+		._col-loop-pad(9, 9, -tablet-, 20px);
+		._col-loop-pad(10, 10, -tablet-, 20px);
+		._col-loop-pad(11, 11, -tablet-, 20px);
+		._col-loop-pad(12, 12, -tablet-, 20px);
+		._col-loop-pad(13, 13, -tablet-, 20px);
+		._col-loop-pad(14, 14, -tablet-, 20px);
+		._col-loop-pad(15, 15, -tablet-, 20px);
+		._col-loop-pad(16, 16, -tablet-, 20px);
+		._col-loop-pad(17, 17, -tablet-, 20px);
+		._col-loop-pad(18, 18, -tablet-, 20px);
+		._col-loop-pad(19, 19, -tablet-, 20px);
+		._col-loop-pad(20, 20, -tablet-, 20px);
+		._col-loop-pad(22, 22, -tablet-, 20px);
+		._col-loop-pad(22, 22, -tablet-, 20px);
+		._col-loop-pad(23, 23, -tablet-, 20px);
+		._col-loop-pad(24, 24, -tablet-, 20px);		
+
+		&._pad-nil{
+			._col-loop-no-pad(1, 1, -tablet-);
+			._col-loop-no-pad(2, 2, -tablet-);
+			._col-loop-no-pad(3, 3, -tablet-);
+			._col-loop-no-pad(4, 4, -tablet-);
+			._col-loop-no-pad(5, 5, -tablet-);
+			._col-loop-no-pad(6, 6, -tablet-);
+			._col-loop-no-pad(7, 7, -tablet-);
+			._col-loop-no-pad(8, 8, -tablet-);
+			._col-loop-no-pad(9, 9, -tablet-);
+			._col-loop-no-pad(10, 10, -tablet-);
+			._col-loop-no-pad(11, 11, -tablet-);
+			._col-loop-no-pad(12, 12, -tablet-);
+			._col-loop-no-pad(13, 13, -tablet-);
+			._col-loop-no-pad(14, 14, -tablet-);
+			._col-loop-no-pad(15, 15, -tablet-);
+			._col-loop-no-pad(16, 16, -tablet-);
+			._col-loop-no-pad(17, 17, -tablet-);
+			._col-loop-no-pad(18, 18, -tablet-);
+			._col-loop-no-pad(19, 19, -tablet-);
+			._col-loop-no-pad(20, 20, -tablet-);
+			._col-loop-no-pad(21, 21, -tablet-);
+			._col-loop-no-pad(22, 22, -tablet-);
+			._col-loop-no-pad(23, 23, -tablet-);
+			._col-loop-no-pad(24, 24, -tablet-);
+		}
+
+		&._pad-lg{
+			._col-loop-pad(1, 1, -tablet-, 40px);
+			._col-loop-pad(2, 2, -tablet-, 40px);
+			._col-loop-pad(3, 3, -tablet-, 40px);
+			._col-loop-pad(4, 4, -tablet-, 40px);
+			._col-loop-pad(5, 5, -tablet-, 40px);
+			._col-loop-pad(6, 6, -tablet-, 40px);
+			._col-loop-pad(7, 7, -tablet-, 40px);
+			._col-loop-pad(8, 8, -tablet-, 40px);
+			._col-loop-pad(9, 9, -tablet-, 40px);
+			._col-loop-pad(10, 10, -tablet-, 40px);
+			._col-loop-pad(11, 11, -tablet-, 40px);
+			._col-loop-pad(12, 12, -tablet-, 40px);
+			._col-loop-pad(13, 13, -tablet-, 40px);
+			._col-loop-pad(14, 14, -tablet-, 40px);
+			._col-loop-pad(15, 15, -tablet-, 40px);
+			._col-loop-pad(16, 16, -tablet-, 40px);
+			._col-loop-pad(17, 17, -tablet-, 40px);
+			._col-loop-pad(18, 18, -tablet-, 40px);
+			._col-loop-pad(19, 19, -tablet-, 40px);
+			._col-loop-pad(20, 20, -tablet-, 40px);
+			._col-loop-pad(21, 21, -tablet-, 40px);
+			._col-loop-pad(22, 22, -tablet-, 40px);
+			._col-loop-pad(23, 23, -tablet-, 40px);
+			._col-loop-pad(24, 24, -tablet-, 40px);
+		}
+
+	}
+}
+
+@media screen and (min-width: @_desktop-break-point) {
+	.row{
+		._col-loop-pad(1, 1, -desktop-, 20px);
+		._col-loop-pad(2, 2, -desktop-, 20px);
+		._col-loop-pad(3, 3, -desktop-, 20px);
+		._col-loop-pad(4, 4, -desktop-, 20px);
+		._col-loop-pad(5, 5, -desktop-, 20px);
+		._col-loop-pad(6, 6, -desktop-, 20px);
+		._col-loop-pad(7, 7, -desktop-, 20px);
+		._col-loop-pad(8, 8, -desktop-, 20px);
+		._col-loop-pad(9, 9, -desktop-, 20px);
+		._col-loop-pad(10, 10, -desktop-, 20px);
+		._col-loop-pad(11, 11, -desktop-, 20px);
+		._col-loop-pad(12, 12, -desktop-, 20px);
+		._col-loop-pad(13, 13, -desktop-, 20px);
+		._col-loop-pad(14, 14, -desktop-, 20px);
+		._col-loop-pad(15, 15, -desktop-, 20px);
+		._col-loop-pad(16, 16, -desktop-, 20px);
+		._col-loop-pad(17, 17, -desktop-, 20px);
+		._col-loop-pad(18, 18, -desktop-, 20px);
+		._col-loop-pad(19, 19, -desktop-, 20px);
+		._col-loop-pad(20, 20, -desktop-, 20px);
+		._col-loop-pad(21, 21, -desktop-, 20px);
+		._col-loop-pad(22, 22, -desktop-, 20px);
+		._col-loop-pad(23, 23, -desktop-, 20px);
+		._col-loop-pad(24, 24, -desktop-, 20px);
+
+		&._pad-nil{
+			._col-loop-no-pad(1, 1, -desktop-);
+			._col-loop-no-pad(2, 2, -desktop-);
+			._col-loop-no-pad(3, 3, -desktop-);
+			._col-loop-no-pad(4, 4, -desktop-);
+			._col-loop-no-pad(5, 5, -desktop-);
+			._col-loop-no-pad(6, 6, -desktop-);
+			._col-loop-no-pad(7, 7, -desktop-);
+			._col-loop-no-pad(8, 8, -desktop-);
+			._col-loop-no-pad(9, 9, -desktop-);
+			._col-loop-no-pad(10, 10, -desktop-);
+			._col-loop-no-pad(11, 11, -desktop-);
+			._col-loop-no-pad(12, 12, -desktop-);
+			._col-loop-no-pad(13, 13, -desktop-);
+			._col-loop-no-pad(14, 14, -desktop-);
+			._col-loop-no-pad(15, 15, -desktop-);
+			._col-loop-no-pad(16, 16, -desktop-);
+			._col-loop-no-pad(17, 17, -desktop-);
+			._col-loop-no-pad(18, 18, -desktop-);
+			._col-loop-no-pad(19, 19, -desktop-);
+			._col-loop-no-pad(20, 20, -desktop-);
+			._col-loop-no-pad(21, 21, -desktop-);
+			._col-loop-no-pad(22, 22, -desktop-);
+			._col-loop-no-pad(23, 23, -desktop-);
+			._col-loop-no-pad(24, 24, -desktop-);
+		}
+
+		&._pad-lg{
+			._col-loop-pad(1, 1, -desktop-, 40px);
+			._col-loop-pad(2, 2, -desktop-, 40px);
+			._col-loop-pad(3, 3, -desktop-, 40px);
+			._col-loop-pad(4, 4, -desktop-, 40px);
+			._col-loop-pad(5, 5, -desktop-, 40px);
+			._col-loop-pad(6, 6, -desktop-, 40px);
+			._col-loop-pad(7, 7, -desktop-, 40px);
+			._col-loop-pad(8, 8, -desktop-, 40px);
+			._col-loop-pad(9, 9, -desktop-, 40px);
+			._col-loop-pad(10, 10, -desktop-, 40px);
+			._col-loop-pad(11, 11, -desktop-, 40px);
+			._col-loop-pad(12, 12, -desktop-, 40px);
+			._col-loop-pad(13, 13, -desktop-, 40px);
+			._col-loop-pad(14, 14, -desktop-, 40px);
+			._col-loop-pad(15, 15, -desktop-, 40px);
+			._col-loop-pad(16, 16, -desktop-, 40px);
+			._col-loop-pad(17, 17, -desktop-, 40px);
+			._col-loop-pad(18, 18, -desktop-, 40px);
+			._col-loop-pad(19, 19, -desktop-, 40px);
+			._col-loop-pad(20, 20, -desktop-, 40px);
+			._col-loop-pad(21, 21, -desktop-, 40px);
+			._col-loop-pad(22, 22, -desktop-, 40px);
+			._col-loop-pad(23, 23, -desktop-, 40px);
+			._col-loop-pad(24, 24, -desktop-, 40px);
+		}
+
+	}
+}
+
+.hidden-mobile{
+	@media (max-width: @_tablet-break-point) {
+		display: none;
+	}
+}
+.visible-mobile{
+	display: none;
+	@media (max-width: @_tablet-break-point) {
+		display: block;
+	}
+}
+.visible-mobile-flex{
+	display: none;
+	@media (max-width: @_tablet-break-point) {
+		display: flex;
+	}
+}
+.visible-mobile-inline{
+	display: none;
+	@media (max-width: @_tablet-break-point) {
+		display: inline;
+	}
+}
+
+
+.hidden-tablet{	
+	@media (min-width: @_tablet-break-point) and (max-width: @_desktop-break-point) {
+		display: none;
+	}
+}
+.visible-tablet{	
+	display: none;
+	@media (min-width: @_tablet-break-point) and (max-width: @_desktop-break-point) {
+		display: block;
+	}
+}
+.visible-tablet-flex{	
+	display: none;
+	@media (min-width: @_tablet-break-point) and (max-width: @_desktop-break-point) {
+		display: flex;
+	}
+}
+.visible-tablet-inline{	
+	display: none;
+	@media (min-width: @_tablet-break-point) and (max-width: @_desktop-break-point) {
+		display: inline;
+	}
+}
+
+
+.visible-desktop{
+	display: none;
+	@media (min-width: @_desktop-break-point) {
+		display: block;
+	}
+}
+.hidden-desktop{
+	@media (min-width: @_desktop-break-point) {
+		display: none;
+	}
+}
+.hidden-desktop-flex{
+	@media (min-width: @_desktop-break-point) {
+		display: flex;
+	}
+}
+.hidden-desktop-inline{
+	@media (min-width: @_desktop-break-point) {
+		display: inline;
+	}
+}

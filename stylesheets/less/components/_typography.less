@@ -1,0 +1,87 @@
+@font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@font-awesome: "Font Awesome 5 Pro";
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i|Roboto:400,400i,500,500i,700,700i&display=swap');
+
+
+/* variables specific to this sheet */
+@font-default: @font-family;
+@font-primary: "Roboto", @font-default;
+@font-secondary: "Open Sans", @font-default;
+@font-title: @font-primary;
+@font-line-height: 1.5em;
+
+/* primary font elements */
+
+body {
+	color:@body-color;
+	font:400 14px/@font-line-height @font-primary;
+	letter-spacing: .04em;
+}
+
+b,strong {
+	font-weight: 600;
+	line-height: @font-line-height;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color:@heading-color;
+	font-family: @font-title;
+	font-weight: 700;
+	line-height: 1em;
+	margin-bottom: @spacing-sml;
+}
+
+h1,h2,h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1 {
+	font-size: 3.875em;
+}
+h2 {
+	font-size: 22px;
+	margin-bottom: 30px;
+	font-weight: 500;
+	line-height: 32px;
+}
+h3 {
+	font-size: 1.5em;
+}
+h4 {
+	font-size: 1.25em;
+}
+h5 {
+	font-size: 1.125em;
+	font-weight: 300;
+}
+h6 {
+	font-size: .875em;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+p {
+	display: block;
+	color:@body-color;
+	margin: @font-line-height/2 0 @font-line-height;
+}
+
+a {
+	.rolloverColorLinks(@link-color, @link-rollover);
+	text-decoration: none;
+}
+
+.text {
+	&-left {
+		text-align: left;
+	}
+	&-right {
+		text-align: right;
+	}
+	&-center {
+		text-align: center;
+	}
+}

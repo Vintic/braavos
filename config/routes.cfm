@@ -13,8 +13,6 @@
 		// The root route below is the one that will be called on your application's home page (e.g. http://127.0.0.1/).
 		// You can, for example, change "wheels##wheels" to "home##index" to call the "index" action on the "home" controller instead.
 		.root(to="home##index", method="get")
-
-
 	.end();
 
 </cfscript>

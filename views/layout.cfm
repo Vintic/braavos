@@ -42,16 +42,10 @@
 		#csrfMetaTags()#
 		<!------------ End SmartBanner configuration ------------>
 
-		<link href="stylesheets/reset.css" rel="stylesheet">
-		<link href="stylesheets/style.css" rel="stylesheet">
-		<link href="stylesheets/select2.css" rel="stylesheet">
-		<link href="stylesheets/slick.css" rel="stylesheet">
-		<!------------ FONT AWESOME ------------>
-		
+		<link href="stylesheets/css/#getParam('brand','res')#.css" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/d2e91da188.js" crossorigin="anonymous"></script>
 		
 		<script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
-		<script type="text/javascript" src="assets/js/select2.min.js"></script>
 		<script type="text/javascript" src="assets/js/slick.min.js"></script>
 		<script type="text/javascript" src="assets/js/_global.js"></script>
 
