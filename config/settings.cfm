@@ -11,7 +11,7 @@ set(braavosHost = cgi.server_name);
 set(crunchHost = cgi.server_name);
 set(reloadPassword = "braavos");
 // migrator settings
-set(autoMigrateDatabase = true);
+set(autoMigrateDatabase = false);
 set(allowexplicittimestamps = true);
 // email settings
 set(fromEmailAddress = "#get("appName")# <no-reply@#get("domain")#>");
