@@ -58,3 +58,8 @@ node_modules
 # aws cli
 awscli-*
 get-pip.py
+
+
+#npm
+package.json
+package-lock.json
