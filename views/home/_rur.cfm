@@ -1,4 +1,4 @@
-<div id="homepage-container">
+<div id="homepage-container" class="main">
 	<section class="property-360-banner">
     <a href="/property-360/" target="" rel="">
       <span>How much is my home worth?</span><i class="fas fa-chevron-right"></i>
@@ -335,7 +335,7 @@
 	</section>
 
 	<div id="homepage-content" class="container row">
-		<div class="item-left col-1-1 col-tablet-6-8">
+		<div class="item-left col-1-1 col-desktop-6-8">
 
 			<section class="home-content-section homepage-company-description">
         		<h2>Search Real Estate for Sale</h2>
@@ -423,7 +423,7 @@
 			</section>
 		</div>
 
-		<div class="item-right col-1-1 col-tablet-2-8 padding-lrg-vert">
+		<div class="item-right col-1-1 col-desktop-2-8">
 			<div class="side-add-container">
 				<div class="add-item">
 					Even More Adds go here

@@ -1,4 +1,6 @@
-
+.page-wrapper{
+	
+}
 body {
 	position:relative;
 	display: block;
@@ -24,7 +26,11 @@ section{
 	display: block;
 	position: relative;
 	&.hp-section{
-		margin-bottom: @section-space;
+		margin-bottom: @spacing-lg;
+	
+		@media(min-width:@_desktop-break-point){
+			margin-bottom: @section-space;
+		}
 	}
 }
 

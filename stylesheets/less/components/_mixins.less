@@ -11,7 +11,7 @@
 	border-radius: @radius;
 }
 
-.global-transition(@duration : .5s, @ease : ease-in-out, @delay : 0s,){
+.global-transition(@duration : .25s, @ease : ease-in-out, @delay : 0s,){
 	transition: @duration @ease @delay;
 }
 
@@ -354,7 +354,7 @@
 	}
 }
 
-.image-object-fit(@size : cover, @position : center  ){
+.image-object-fit(@size : cover, @position : center){
 	position:absolute;
 	top: 0;
 	left: 0;
@@ -370,5 +370,9 @@
 	left: 50%;
 	width: auto;
 	height: 100%;
-	transform: translate(@translate, @translate);
+	transform: scale(1) translate(@translate, @translate);
+	.global-transition(.5s);
+	&:hover{
+		transform: scale(1.05) translate(@translate, @translate);
+	}
 }

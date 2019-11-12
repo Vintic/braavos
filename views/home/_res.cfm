@@ -1,6 +1,6 @@
 <!------------ SITE CONTENT START ------------>
 
-<div id="homepage-container">
+<div id="homepage-container" class="main">
 	<section class="property-360-banner">
     <a href="/property-360/" target="" rel="">
       <span>How much is my home worth?</span><i class="fas fa-chevron-right"></i>
@@ -268,7 +268,7 @@
 							</div>
 							<div class="property-info-box">
 								<div class="price">Contact Agent</div>
-								<div class="address" title="11 Wadham Parade, Mount Waverley VIC 3149">11 Wadham Parade, Mount Waverley</div>
+								<a href="/real-estate/11-wadham-parade-mount-waverley-vic/" class="address" title="11 Wadham Parade, Mount Waverley VIC 3149">11 Wadham Parade, Mount Waverley</a>
 							</div>
 							<div class="bed-bath-car">
 								<span><span class="number">3</span>Beds</span>
@@ -287,7 +287,7 @@
 							</div>
 							<div class="property-info-box">
 								<div class="price">UNDER CONTRACT</div>
-								<div class="address" title="53 Bosun Parade, Ashmore QLD 4214">53 Bosun Parade, Ashmore</div>
+								<a href="/real-estate/53-bosun-parade-ashmore-qld/property-details-buy-residential-12744179/" class="address" title="53 Bosun Parade, Ashmore QLD 4214">53 Bosun Parade, Ashmore</a>
 							</div>
 							<div class="bed-bath-car">
 								<span><span class="number">5</span>Beds</span>
@@ -306,7 +306,7 @@
 							</div>
 							<div class="property-info-box">
 								<div class="price">$700,000 - $770,000</div>
-								<div class="address" title="17 Rayleigh Avenue, Queenscliff VIC 3225">17 Rayleigh Avenue, Queenscliff</div>
+								<a href="/real-estate/17-rayleigh-avenue-queenscliff-vic/property-details-buy-residential-12755865/" class="address" title="17 Rayleigh Avenue, Queenscliff VIC 3225">17 Rayleigh Avenue, Queenscliff</a>
 							</div>
 							<div class="bed-bath-car">
 								<span><span class="number">4</span>Beds</span>
@@ -425,7 +425,7 @@
 	</section>
 
 	<div id="homepage-content" class="container row">
-		<div class="item-left col-1-1 col-tablet-6-8">
+		<div class="item-left col-1-1 col-desktop-6-8">
 			<section class="home-content-section homepage-more">
 				<h2>More Ways to Research Properties for Sale</h2>
 				<article class="item">
@@ -542,32 +542,32 @@
 			<section class="home-content-section homepage-partner-links">
 				<h2>View Network</h2>
 				<div class="row">
-			    <article class="partner-business col-tablet-1-3">
-			    	<a class="logo" href="/?brand=bus">
-		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
-		      	</a>
-		        <h3><a href="/?brand=bus">Businesses For Sale</a></h3>
-		        <p>Retail, industrial, construction &amp; more businesses.</p>
-			    </article>
-			    <article class="partner-holiday col-tablet-1-3">
-			    	<a class="logo" href="/?brand=hol">
-		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
-		      	</a>
-		        <h3><a href="/?brand=hol">Holiday Rentals</a></h3>
-		        <p>Holiday rental accommodation to suit your needs.</p>
-			    </article>
-			    <article class="partner-rural col-tablet-1-3">
-			    	<a class="logo" href="/?brand=rur">
-		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
-		      	</a>
-		        <h3><a href="/?brand=rur">Rural Properties for Sale</a></h3>
-		        <p>Farmland, rural land and lifestyle properties.</p>
-			    </article>
+				    <article class="partner-business col-tablet-1-3">
+				    	<a class="logo" href="/?brand=bus">
+				        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
+				      	</a>
+				        <h3><a href="/?brand=bus">Businesses For Sale</a></h3>
+				        <p>Retail, industrial, construction &amp; more businesses.</p>
+				    </article>
+				    <article class="partner-holiday col-tablet-1-3">
+				    	<a class="logo" href="/?brand=hol">
+				        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
+				      	</a>
+				        <h3><a href="/?brand=hol">Holiday Rentals</a></h3>
+				        <p>Holiday rental accommodation to suit your needs.</p>
+				    </article>
+				    <article class="partner-rural col-tablet-1-3">
+				    	<a class="logo" href="/?brand=rur">
+				        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
+				      	</a>
+				        <h3><a href="/?brand=rur">Rural Properties for Sale</a></h3>
+				        <p>Farmland, rural land and lifestyle properties.</p>
+				    </article>
 				</div>
 			</section>
 		</div>
 
-		<div class="item-right col-1-1 col-tablet-2-8 padding-lrg-vert">
+		<div class="item-right col-1-1 col-desktop-2-8 ">
 			<div class="side-add-container">
 				<div class="add-item">
 					Even More Adds go here
