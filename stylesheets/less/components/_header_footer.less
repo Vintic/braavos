@@ -97,6 +97,7 @@ header{
 	.account-links{
 		display: none;
 		margin-left: auto;
+		font-weight: 700;
 	}
 
 	@media(min-width: @_tablet-break-point){
@@ -259,7 +260,7 @@ footer{
 	}
 
 	.top-links {		
-		padding: @spacing-lrg;
+		padding: @inner-section-space @spacing-lrg;
 
 		.left-links{
 			font-weight: 700;
@@ -279,7 +280,7 @@ footer{
 				text-align: right;
 			}	
 			a{
-				margin-left: @spacing-lrg;
+				margin-left: @spacing-lg;
 				font-size: 20px;
 			}
 		}
@@ -288,34 +289,46 @@ footer{
 	.center-links{
 		display: none;
 		@media(min-width: @_tablet-break-point){
-	    display: block;
+	    	display: block;
 		}
 		&:after {
 			content: '';
 			display: block;
 			width: 100%;
-			margin-top: @spacing-lrg;
+			padding-bottom: @spacing-lg;
+			margin-bottom: @spacing-lg;
 			.global-border-bottom();
+		}
+		ul{
+			li{
+				margin-bottom: .8em;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				a{
+					color: @content-color;
+				}
+			}
 		}
 	}
 
 	.rev-links{
-		padding: @spacing-sml;
+		padding-bottom: 30px;
 		li{
 			list-style: none;
 			text-align: left;
-			padding: @spacing-sml;
 			@media(min-width: @_tablet-break-point){
-		    width: auto;
+		   		width: auto;
 			}
 		}
-    .image{
-    	width: auto;
-    }
+	    .image{
+	    	width: auto;
+	    }
 	}
 
 	.bottom-links{
 		font-size: 12px;
+		color: @light-content-color;
 		border-top:1px solid @border-color;
 
 		.container{

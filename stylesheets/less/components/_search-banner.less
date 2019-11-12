@@ -1,5 +1,6 @@
 #search-banner{
-
+	font-family: @font-primary;
+	
 	.search-options{
 		a {
 			display: block;
@@ -43,6 +44,7 @@
 		.search-type-heading{
 			width: 100%;
 			text-align: center;
+			color: @search-type-heading;
 			@media(min-width:@_tablet-break-point){
 				width: auto;
 			}
@@ -50,14 +52,16 @@
 
 		a {
 			position: relative;
+			color: @search-type-color;
 			padding: @spacing-lrg 0;
 			.global-border-bottom();
 			@media(min-width:@_tablet-break-point){
 				.global-border-bottom(0);
 			}
 			&:active,
-			&:hover,
+			&:hover, 
 			&.active{
+				color: @brand;
 				&:before{
 					height: 4px;
 				}
@@ -70,7 +74,6 @@
 				display: block;
 				width: 100%;
 				height: 0;
-
 				background-color: @brand;
 				.global-transition();
 			}
@@ -96,6 +99,7 @@
 				opacity: .5;
 			}
 			.btn-submit{
+				font-size: 1.6rem;
 				text-transform: uppercase;
 				font-weight: 700;
 				.rolloverButton(@white, @brand, @spacing-lrg, @spacing-xl);

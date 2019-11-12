@@ -11,7 +11,7 @@
 	border-radius: @radius;
 }
 
-.global-transition(@duration : .5s, @ease : ease, @delay : 0s,){
+.global-transition(@duration : .5s, @ease : ease-in-out, @delay : 0s,){
 	transition: @duration @ease @delay;
 }
 
@@ -111,7 +111,8 @@
 	cursor: pointer;
 	color: @color;
 	padding: @padding-vert @padding-hoz;
-
+	text-transform: uppercase;
+	min-width: 110px;
 	&:before{
 		content: '';
 		position: absolute;
@@ -127,6 +128,7 @@
 	&:active,
 	&.active{
 		color: @hover-color;
+		font-weight: 700;
 			&:before{
 				height: 4px;
 				.global-transition();
@@ -360,4 +362,13 @@
 	height: 100%;
 	object-fit: @size;
 	object-position: @position;
+}
+
+.image-fit(@translate : -50%){
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	height: 100%;
+	transform: translate(@translate, @translate);
 }

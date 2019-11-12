@@ -245,7 +245,7 @@
 		</div>
 	</section>
 
-	<section class="top-add-container">
+	<section class="hp-section top-add-container">
 			<div class="container">
 				<div class="add-item">
 					Adds go here
@@ -253,65 +253,66 @@
 			</div>
 	</section>
 
-	<section id="featured-propertys">
+	<section id="featured-propertys" class="hp-section">
 		<div class="container">
 			<h2>Featured Houses and Apartments For Sale</h2>
 			<div class="featured-listings-wrap">
 				<div class="row home-featured-listings">
 
-				<div class="property-item col-1-3 col-tablet-1-3">
-					<div class="content flex _wrap">
-						<div class="photo-box">
-							<a class="image-wrap" href="/real-estate/11-wadham-parade-mount-waverley-vic/property-details-buy-residential-12770665/">
-								<img class="image" src="https://images.realestateview.com.au/pics/665/11-wadham-parade-mount-waverley-vic-3149-real-estate-photo-1-medium-12770665.jpg" alt="17 rayleigh avenue queenscliff vic 3225">
-							</a>
-						</div>
-						<div class="property-info-box">
-							<div class="price">Contact Agent</div>
-							<div class="address" title="11 Wadham Parade, Mount Waverley VIC 3149">11 Wadham Parade, Mount Waverley</div>
-						</div>
-						<div class="bed-bath-car">
-							<span><span class="number">3</span>Beds</span>
-							<span><span class="number">2</span>Bath</span>
-							<span><span class="number">2</span>Car</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="property-item col-1-3 col-tablet-1-3">
-					<div class="content flex _wrap">
-						<div class="photo-box">
-							<a class="image-wrap" href="/real-estate/53-bosun-parade-ashmore-qld/property-details-buy-residential-12744179/">
-								<img class="image" src="https://images.realestateview.com.au/pics/179/53-bosun-parade-ashmore-qld-4214-real-estate-photo-1-medium-12744179.jpg" alt="17 rayleigh avenue queenscliff vic 3225">
-							</a>
-						</div>
-						<div class="property-info-box">
-							<div class="price">UNDER CONTRACT</div>
-							<div class="address" title="53 Bosun Parade, Ashmore QLD 4214">53 Bosun Parade, Ashmore</div>
-						</div>
-						<div class="bed-bath-car">
-							<span><span class="number">5</span>Beds</span>
-							<span><span class="number">2</span>Bath</span>
-							<span><span class="number">2</span>Car</span>
+					<div class="property-item col-1-3 col-tablet-1-3">
+						<div class="content flex _wrap">
+							<div class="photo-box">
+								<a class="image-wrap" href="/real-estate/11-wadham-parade-mount-waverley-vic/property-details-buy-residential-12770665/">
+									<img class="image" src="https://images.realestateview.com.au/pics/665/11-wadham-parade-mount-waverley-vic-3149-real-estate-photo-1-medium-12770665.jpg" alt="17 rayleigh avenue queenscliff vic 3225">
+								</a>
+							</div>
+							<div class="property-info-box">
+								<div class="price">Contact Agent</div>
+								<div class="address" title="11 Wadham Parade, Mount Waverley VIC 3149">11 Wadham Parade, Mount Waverley</div>
+							</div>
+							<div class="bed-bath-car">
+								<span><span class="number">3</span>Beds</span>
+								<span><span class="number">2</span>Bath</span>
+								<span><span class="number">2</span>Car</span>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="property-item col-1-3 col-tablet-1-3">
-					<div class="content flex _wrap">
-						<div class="photo-box">
-							<a class="image-wrap" href="/real-estate/17-rayleigh-avenue-queenscliff-vic/property-details-buy-residential-12755865/">
-								<img class="image" src="https://images.realestateview.com.au/pics/865/17-rayleigh-avenue-queenscliff-vic-3225-real-estate-photo-1-medium-12755865.jpg" alt="17 rayleigh avenue queenscliff vic 3225">
-							</a>
+					<div class="property-item col-1-3 col-tablet-1-3">
+						<div class="content flex _wrap">
+							<div class="photo-box">
+								<a class="image-wrap" href="/real-estate/53-bosun-parade-ashmore-qld/property-details-buy-residential-12744179/">
+									<img class="image" src="https://images.realestateview.com.au/pics/179/53-bosun-parade-ashmore-qld-4214-real-estate-photo-1-medium-12744179.jpg" alt="17 rayleigh avenue queenscliff vic 3225">
+								</a>
+							</div>
+							<div class="property-info-box">
+								<div class="price">UNDER CONTRACT</div>
+								<div class="address" title="53 Bosun Parade, Ashmore QLD 4214">53 Bosun Parade, Ashmore</div>
+							</div>
+							<div class="bed-bath-car">
+								<span><span class="number">5</span>Beds</span>
+								<span><span class="number">2</span>Bath</span>
+								<span><span class="number">2</span>Car</span>
+							</div>
 						</div>
-						<div class="property-info-box">
-							<div class="price">$700,000 - $770,000</div>
-							<div class="address" title="17 Rayleigh Avenue, Queenscliff VIC 3225">17 Rayleigh Avenue, Queenscliff</div>
-						</div>
-						<div class="bed-bath-car">
-							<span><span class="number">4</span>Beds</span>
-							<span><span class="number">2</span>Bath</span>
-							<span><span class="number">1</span>Car</span>
+					</div>
+
+					<div class="property-item col-1-3 col-tablet-1-3">
+						<div class="content flex _wrap">
+							<div class="photo-box">
+								<a class="image-wrap" href="/real-estate/17-rayleigh-avenue-queenscliff-vic/property-details-buy-residential-12755865/">
+									<img class="image" src="https://images.realestateview.com.au/pics/865/17-rayleigh-avenue-queenscliff-vic-3225-real-estate-photo-1-medium-12755865.jpg" alt="17 rayleigh avenue queenscliff vic 3225">
+								</a>
+							</div>
+							<div class="property-info-box">
+								<div class="price">$700,000 - $770,000</div>
+								<div class="address" title="17 Rayleigh Avenue, Queenscliff VIC 3225">17 Rayleigh Avenue, Queenscliff</div>
+							</div>
+							<div class="bed-bath-car">
+								<span><span class="number">4</span>Beds</span>
+								<span><span class="number">2</span>Bath</span>
+								<span><span class="number">1</span>Car</span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -319,7 +320,7 @@
 		</div>
 	</section>
 
-	<section class="top-add-container">
+	<section class="hp-section top-add-container">
 			<div class="container">
 				<div class="add-item">
 					More Adds go here
@@ -327,7 +328,7 @@
 			</div>
 	</section>
 
-	<section id="blogs">
+	<section id="blogs" class="hp-section">
 		<div class="container">
 			<div class="blog-heading">
 				<h2>Australian Home Buyer News</h2>
@@ -425,7 +426,7 @@
 
 	<div id="homepage-content" class="container row">
 		<div class="item-left col-1-1 col-tablet-6-8">
-			<section class="homepage-more padding-lrg-vert">
+			<section class="home-content-section homepage-more">
 				<h2>More Ways to Research Properties for Sale</h2>
 				<article class="item">
 			    <a class="row flex _align-center" href="/property-360/">
@@ -456,31 +457,31 @@
 				</article>
 			</section>
 
-			<section class="homepage-company-description padding-lrg-vert">
-        <h2>Search Real Estate for Sale</h2>
+			<section class="home-content-section homepage-company-description">
+        		<h2>Search Real Estate for Sale</h2>
 				<div class="description">
-	        <p>Founded in 2001, realestateVIEW.com.au is now one of Australia's leading national real estate portals.</p>
-	        <p>Our number one priority is to make house-hunting, selling, and renting easy and fast. We do this by listing thousands of rental properties and homes for sale from Australia's most prestigious real estate agents.</p>
-	        <p>To help you conduct property research and plan your house-hunting days, realestateVIEW.com.au offers a suite of essential tools including free property alerts for homes both for sale and rent. You can also access all the latest sales and Auction results, get historical property data like sale and rental history plus access property value estimates for every address in Australia.</p>
-	        <p>
-	            View properties from <a href="/find-agent/">real estate agents</a> such as:
-	            <a href="/real-estate-agencies/ray-white/">Ray White</a>,
-	            <a href="/real-estate-agencies/lj-hooker/">LJ Hooker</a>,
-	            <a href="/real-estate-agencies/century-21/">Century 21</a>,
-	            <a href="/real-estate-agencies/barry-plant/">Barry Plant</a>,
-	            <a href="/real-estate-agencies/raine-and-horne/">Raine &amp; Horne</a>,
-	            <a href="/real-estate-agencies/harcourts/">Harcourts</a>,
-	            <a href="/real-estate-agencies/professionals/">Professionals</a>,
-	            <a href="/real-estate-agencies/marshall-white/">Marshall White</a>,
-	            <a href="/real-estate-agencies/jellis-craig/">Jellis Craig</a>,
-	            <a href="/real-estate-agencies/woodards/">Woodards</a>,
-	            <a href="/real-estate-agencies/fletchers/">Fletchers</a>,
-	            and <a href="/real-estate-agencies/belle-property/">Belle property</a>
-	        </p>
+			        <h4>Founded in 2001, realestateVIEW.com.au is now one of Australia's leading national real estate portals.</h4>
+			        <p>Our number one priority is to make house-hunting, selling, and renting easy and fast. We do this by listing thousands of rental properties and homes for sale from Australia's most prestigious real estate agents.</p>
+			        <p>To help you conduct property research and plan your house-hunting days, realestateVIEW.com.au offers a suite of essential tools including free property alerts for homes both for sale and rent. You can also access all the latest sales and Auction results, get historical property data like sale and rental history plus access property value estimates for every address in Australia.</p>
+			        <p>
+			            View properties from <a href="/find-agent/">real estate agents</a> such as:
+			            <a href="/real-estate-agencies/ray-white/">Ray White</a>,
+			            <a href="/real-estate-agencies/lj-hooker/">LJ Hooker</a>,
+			            <a href="/real-estate-agencies/century-21/">Century 21</a>,
+			            <a href="/real-estate-agencies/barry-plant/">Barry Plant</a>,
+			            <a href="/real-estate-agencies/raine-and-horne/">Raine &amp; Horne</a>,
+			            <a href="/real-estate-agencies/harcourts/">Harcourts</a>,
+			            <a href="/real-estate-agencies/professionals/">Professionals</a>,
+			            <a href="/real-estate-agencies/marshall-white/">Marshall White</a>,
+			            <a href="/real-estate-agencies/jellis-craig/">Jellis Craig</a>,
+			            <a href="/real-estate-agencies/woodards/">Woodards</a>,
+			            <a href="/real-estate-agencies/fletchers/">Fletchers</a>,
+			            and <a href="/real-estate-agencies/belle-property/">Belle property</a>
+			        </p>
 				</div>
 			</section>
 
-			<section class="homepage-seo-links padding-lrg-vert">
+			<section class="home-content-section homepage-seo-links">
 			  <h2 class="seo-links-toggle-btn">Search Real Estate for Sale by City or State in Australia</h2>
 				<div id="collapsehomepageseo" class="row" style="display: none;">
 			    <article class="item col-1-1 col-tablet-1-2">
@@ -538,24 +539,24 @@
 		  	</div>
 			</section>
 
-			<section class="homepage-partner-links padding-lrg-vert">
+			<section class="home-content-section homepage-partner-links">
 				<h2>View Network</h2>
 				<div class="row">
-			    <article class="partner-business col-tablet-1-4">
+			    <article class="partner-business col-tablet-1-3">
 			    	<a class="logo" href="/?brand=bus">
 		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
 		      	</a>
 		        <h3><a href="/?brand=bus">Businesses For Sale</a></h3>
 		        <p>Retail, industrial, construction &amp; more businesses.</p>
 			    </article>
-			    <article class="partner-holiday col-tablet-1-4">
+			    <article class="partner-holiday col-tablet-1-3">
 			    	<a class="logo" href="/?brand=hol">
 		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
 		      	</a>
 		        <h3><a href="/?brand=hol">Holiday Rentals</a></h3>
 		        <p>Holiday rental accommodation to suit your needs.</p>
 			    </article>
-			    <article class="partner-rural col-tablet-1-4">
+			    <article class="partner-rural col-tablet-1-3">
 			    	<a class="logo" href="/?brand=rur">
 		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
 		      	</a>

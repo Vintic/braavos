@@ -220,7 +220,7 @@
 		</div>
 	</section>
 
-	<section class="top-add-container">
+	<section class="hp-section top-add-container">
 			<div class="container">
 				<div class="add-item">
 					Adds go here
@@ -228,7 +228,7 @@
 			</div>
 	</section>
 
-	<section id="featured-propertys">
+	<section id="featured-propertys" class="hp-section">
 		<div class="container">
 			<h2>Featured Houses and Apartments For Sale</h2>
 			<div class="featured-listings-wrap">
@@ -295,7 +295,7 @@
 		</div>
 	</section>
 
-	<section class="top-add-container">
+	<section class="hp-section top-add-container">
 			<div class="container">
 				<div class="add-item">
 					More Adds go here
@@ -306,7 +306,7 @@
 	<div id="homepage-content" class="container row">
 		<div class="item-left col-1-1 col-tablet-6-8">
 
-			<section class="homepage-company-description padding-lrg-vert">
+			<section class="home-content-section homepage-company-description">
 				<h2>Search Holiday Properties For Rent</h2>
 				<div class="description">
 					<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
@@ -314,7 +314,7 @@
 				</div>
 			</section>
 
-			<section class="homepage-seo-links padding-lrg-vert">
+			<section class="home-content-section homepage-seo-links">
 			  <h2 class="seo-links-toggle-btn">Holiday Rental Properties Quick Links</h2>
 				<div id="collapsehomepageseo" class="row" style="display: none;">
 					<article class="item col-1-1 col-tablet-1-2">
@@ -345,27 +345,27 @@
 						</ul>
 					</article>
 
-		  	</div>
+		  		</div>
 			</section>
 
-			<section class="homepage-partner-links padding-lrg-vert">
+			<section class="home-content-section homepage-partner-links ">
 				<h2>View Network</h2>
 				<div class="row">
-			    <article class="partner-holiday col-tablet-1-4">
+			    <article class="partner-holiday col-tablet-1-3">
 			    	<a class="logo" href="/">
 		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
 		      	</a>
 		        <h3><a href="/">Residential Properties</a></h3>
 		        <p>Houses, townhouses and land for sale and rent.</p>
 			    </article>
-			    <article class="partner-business col-tablet-1-4">
+			    <article class="partner-business col-tablet-1-3">
 			    	<a class="logo" href="/?brand=bus">
 		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
 		      	</a>
 		        <h3><a href="/?brand=bus">Businesses For Sale</a></h3>
 		        <p>Retail, industrial, construction &amp; more businesses.</p>
 			    </article>
-			    <article class="partner-rural col-tablet-1-4">
+			    <article class="partner-rural col-tablet-1-3">
 			    	<a class="logo" href="/?brand=rur">
 		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
 		      	</a>

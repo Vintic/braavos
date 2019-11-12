@@ -263,7 +263,7 @@
 		</div>
 	</section>
 
-	<section class="top-add-container">
+	<section class="hp-section top-add-container">
 			<div class="container">
 				<div class="add-item">
 					Adds go here
@@ -271,7 +271,7 @@
 			</div>
 	</section>
 
-	<section id="featured-propertys">
+	<section id="featured-propertys" class="hp-section">
 		<div class="container">
 			<h2>Featured Houses and Apartments For Sale</h2>
 			<div class="featured-listings-wrap">
@@ -326,7 +326,7 @@
 		</div>
 	</section>
 
-	<section class="top-add-container">
+	<section class="hp-section top-add-container">
 			<div class="container">
 				<div class="add-item">
 					More Adds go here
@@ -337,32 +337,32 @@
 	<div id="homepage-content" class="container row">
 		<div class="item-left col-1-1 col-tablet-6-8">
 
-			<section class="homepage-company-description padding-lrg-vert">
-        <h2>Search Real Estate for Sale</h2>
+			<section class="home-content-section homepage-company-description">
+        		<h2>Search Real Estate for Sale</h2>
 				<div class="description">
-	        <p>Founded in 2001, realestateVIEW.com.au is now one of Australia's leading national real estate portals.</p>
-	        <p>Our number one priority is to make house-hunting, selling, and renting easy and fast. We do this by listing thousands of rental properties and homes for sale from Australia's most prestigious real estate agents.</p>
-	        <p>To help you conduct property research and plan your house-hunting days, realestateVIEW.com.au offers a suite of essential tools including free property alerts for homes both for sale and rent. You can also access all the latest sales and Auction results, get historical property data like sale and rental history plus access property value estimates for every address in Australia.</p>
-	        <p>
-	            View properties from <a href="/find-agent/">real estate agents</a> such as:
-	            <a href="/real-estate-agencies/ray-white/">Ray White</a>,
-	            <a href="/real-estate-agencies/lj-hooker/">LJ Hooker</a>,
-	            <a href="/real-estate-agencies/century-21/">Century 21</a>,
-	            <a href="/real-estate-agencies/barry-plant/">Barry Plant</a>,
-	            <a href="/real-estate-agencies/raine-and-horne/">Raine &amp; Horne</a>,
-	            <a href="/real-estate-agencies/harcourts/">Harcourts</a>,
-	            <a href="/real-estate-agencies/professionals/">Professionals</a>,
-	            <a href="/real-estate-agencies/marshall-white/">Marshall White</a>,
-	            <a href="/real-estate-agencies/jellis-craig/">Jellis Craig</a>,
-	            <a href="/real-estate-agencies/woodards/">Woodards</a>,
-	            <a href="/real-estate-agencies/fletchers/">Fletchers</a>,
-	            and <a href="/real-estate-agencies/belle-property/">Belle property</a>
-	        </p>
+			        <p>Founded in 2001, realestateVIEW.com.au is now one of Australia's leading national real estate portals.</p>
+			        <p>Our number one priority is to make house-hunting, selling, and renting easy and fast. We do this by listing thousands of rental properties and homes for sale from Australia's most prestigious real estate agents.</p>
+			        <p>To help you conduct property research and plan your house-hunting days, realestateVIEW.com.au offers a suite of essential tools including free property alerts for homes both for sale and rent. You can also access all the latest sales and Auction results, get historical property data like sale and rental history plus access property value estimates for every address in Australia.</p>
+			        <p>
+			            View properties from <a href="/find-agent/">real estate agents</a> such as:
+			            <a href="/real-estate-agencies/ray-white/">Ray White</a>,
+			            <a href="/real-estate-agencies/lj-hooker/">LJ Hooker</a>,
+			            <a href="/real-estate-agencies/century-21/">Century 21</a>,
+			            <a href="/real-estate-agencies/barry-plant/">Barry Plant</a>,
+			            <a href="/real-estate-agencies/raine-and-horne/">Raine &amp; Horne</a>,
+			            <a href="/real-estate-agencies/harcourts/">Harcourts</a>,
+			            <a href="/real-estate-agencies/professionals/">Professionals</a>,
+			            <a href="/real-estate-agencies/marshall-white/">Marshall White</a>,
+			            <a href="/real-estate-agencies/jellis-craig/">Jellis Craig</a>,
+			            <a href="/real-estate-agencies/woodards/">Woodards</a>,
+			            <a href="/real-estate-agencies/fletchers/">Fletchers</a>,
+			            and <a href="/real-estate-agencies/belle-property/">Belle property</a>
+			        </p>
 				</div>
 			</section>
 
-			<section class="homepage-seo-links padding-lrg-vert">
-			  <h2 class="seo-links-toggle-btn">Rural Properties Links</h2>
+			<section class="home-content-section homepage-seo-links">
+			  	<h2 class="seo-links-toggle-btn">Rural Properties Links</h2>
 				<div id="collapsehomepageseo" class="row" style="display: none;">
 					<article class="item col-1-1 col-tablet-1-2">
 					<h3>RURAL PROPERTIES FOR SALE BY STATE</h3>
@@ -392,33 +392,33 @@
 						</ul>
 					</article>
 			    
-		  	</div>
+		  		</div>
 			</section>
 
-			<section class="homepage-partner-links padding-lrg-vert">
+			<section class="home-content-section homepage-partner-links">
 				<h2>View Network</h2>
 				<div class="row">
-			    <article class="partner-holiday col-tablet-1-4">
-			    	<a class="logo" href="/">
-		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
-		      	</a>
-		        <h3><a href="/">Residential Properties</a></h3>
-		        <p>Houses, townhouses and land for sale and rent.</p>
-			    </article>
-			    <article class="partner-business col-tablet-1-4">
-			    	<a class="logo" href="/?brand=bus">
-		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
-		      	</a>
-		        <h3><a href="/?brand=bus">Businesses For Sale</a></h3>
-		        <p>Retail, industrial, construction &amp; more businesses.</p>
-			    </article>
-			    <article class="partner-holiday col-tablet-1-4">
-			    	<a class="logo" href="/?brand=hol">
-		        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
-		      	</a>
-		        <h3><a href="/?brand=hol">Holiday Rentals</a></h3>
-		        <p>Holiday rental accommodation to suit your needs.</p>
-			    </article>
+				    <article class="partner-holiday col-tablet-1-3">
+				    	<a class="logo" href="/">
+				        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
+				      	</a>
+			        	<h3><a href="/">Residential Properties</a></h3>
+			        	<p>Houses, townhouses and land for sale and rent.</p>
+				    </article>
+				    <article class="partner-business col-tablet-1-3">
+				    	<a class="logo" href="/?brand=bus">
+				        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
+				      	</a>
+			        	<h3><a href="/?brand=bus">Businesses For Sale</a></h3>
+			        	<p>Retail, industrial, construction &amp; more businesses.</p>
+				    </article>
+				    <article class="partner-holiday col-tablet-1-3">
+				    	<a class="logo" href="/?brand=hol">
+				        	<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg">
+				      	</a>
+			        	<h3><a href="/?brand=hol">Holiday Rentals</a></h3>
+			        	<p>Holiday rental accommodation to suit your needs.</p>
+				    </article>
 				</div>
 			</section>
 		</div>

@@ -2,6 +2,11 @@
 	display: block;
 	background-color: @body-bg;
 
+	h2{
+		margin-top: 0;
+		margin-bottom: 1.5em;
+	}
+
 	.property-360-banner{
 		display: block;
 		text-align: center;
@@ -19,10 +24,13 @@
 		}
 	}
 
+
+
 	#search-banner{
 		background-image: url(/assets/images/hero-home.jpg);
 		background-position: center;
 		background-size: cover;
+		margin-bottom: @spacing-xl;
 		
 		.container{
 			padding: 0;
@@ -156,7 +164,7 @@
 			}
 		}
 		.property-item{
-			margin-bottom: @spacing-lrg;
+
 			border: 1px solid #f1f1f1;
 			background-color: @body-bg;
 			.content{
@@ -190,13 +198,13 @@
 		}
 
 		.bed-bath-car {
+			color: @content-color;
 			padding: 0 @spacing-med @spacing-sml;
 			margin-top: auto;
 		}
 
 		.price,
 		.address{
-			color: @heading-color;
 			font-weight: 700;
 		}
 		.number{
@@ -206,7 +214,6 @@
 	}
 
 	.top-add-container{
-		margin: @spacing-xl auto @spacing-lrg;
 		.add-item{
 			width: 100%;
 			min-height: 200px;
@@ -216,14 +223,30 @@
 	}
 
 	#homepage-content{
+		.home-content-section{
+			padding: @inner-section-space 0;
+			.global-border-bottom();
+			&:first-child{
+				padding-top: 0;
+			}
+			&:last-child{
+				border-bottom: 0;
+			}
+			p{
+				color: @content-color;
+			}
+		}
+		.homepage-seo-links{
+			border-bottom: 0;
+			padding-bottom: 0;
+		}
 		.item{
-
 			h3{
-				color: #666;
-				font-size: 14px;
+				color: @content-color;
+				font-size: 1.4rem;
 				text-transform: uppercase;
-				font-weight: 400;
 				margin:0 0 @spacing-med;
+				font-weight: 500;
 			}
 
 			p{
@@ -236,6 +259,7 @@
 			i{
 				color: @brand;
 				.global-transition();
+				margin-left: 10px
 			}
 
 			a:hover i{
@@ -250,7 +274,7 @@
 		}
 
 		.item-right {
-	    margin-top: 20px;
+	    	margin-top: 20px;
 		}
 
 		.side-add-container{
@@ -269,17 +293,18 @@
 	}
 
 	#blogs {
+		h2{
+			margin-top: @spacing-lrg;
+		}
 		.blog-heading{
 			.flex(flex-start, space-between);
 		}
 
 		.article-container{
-			margin-bottom: @spacing-lrg;
+			margin-bottom: @spacing-lrg
 		}
 
 		article {
-			.flex(center, space-between);
-			margin-bottom: @spacing-med;
 			padding-bottom: @spacing-med;
 			.global-border-bottom();
 
@@ -291,15 +316,21 @@
 
 		.image-wrap{
 			width: 70px;
-			.image-object-fit-wrap();
+			position: relative;
+			overflow: hidden;
 			@media(min-width:@_tablet-break-point){
 				width: 100%;
+				margin-bottom: @spacing-lrg;
 				.image-object-fit-wrap(60%);
 			}
+			@media(min-width:@container-width){
+				height: 165px;
+			}
 			.image{
-				.image-object-fit();
+				.image-fit();
 			}
 		}
+
 		.blog-title{
 			width: ~"calc(100% - 70px)";
 			padding-left: @spacing-sml;
@@ -321,6 +352,8 @@
 
 		.blog-content{
 			display: none;
+			color: @light-content-color;
+			margin-bottom: 0;
 			@media(min-width:@_tablet-break-point){
 				display: inherit;
 			}
@@ -355,17 +388,18 @@
 		}
 
 		.view-button {
-			font-size: 16px;
-	    text-transform: uppercase;
-	    font-weight: 500;
-	    margin-bottom: 20px;
-	    display: inline-block;
-
-	    color: @brand;
-
-	    &:hover{
+			font-size: 1.6rem;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		    padding: 1em 0;
+		    display: inline-block;
+		    color: @brand;
+		    &:hover{
 				color: @brand-secondary;	    	
-	    }
+		    }
+		    @media(min-width: @_desktop-break-point){
+		    	padding: 3em 0;
+		    }
 		}
 	}
 
@@ -376,6 +410,9 @@
 		article {
 		  .global-border-bottom();
 		  padding: @spacing-lrg 0;
+		  &:last-child{
+		  	border-bottom: 0;
+		  }
 		}
 	}
 
@@ -385,6 +422,9 @@
 	}
 
 	.homepage-seo-links{
+		article{
+			padding: 0 20px 20px 0;
+		}
 		.seo-links-toggle-btn {
 			position:relative;
 			display: block;
@@ -443,7 +483,6 @@
 	  }
 
 	  .item {
-	  	padding: @spacing-lrg  @spacing-lrg 0 0;
 	  	ul{
 	  		padding-bottom: @spacing-lrg;
 		  	.global-border-bottom();

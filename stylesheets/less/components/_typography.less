@@ -13,10 +13,13 @@
 @font-line-height: 1.5em;
 
 /* primary font elements */
+html{
+	font-size: 10px;
+}
 
 body {
 	color:@body-color;
-	font:400 14px/@font-line-height @font-primary;
+	font:400 1.4rem/@font-line-height @font-primary;
 	letter-spacing: .04em;
 }
 
@@ -26,7 +29,7 @@ b,strong {
 }
 
 h1,h2,h3,h4,h5,h6 {
-	color:@heading-color;
+	color: @body-color;
 	font-family: @font-title;
 	font-weight: 700;
 	line-height: 1em;
@@ -42,16 +45,18 @@ h1 {
 	font-size: 3.875em;
 }
 h2 {
-	font-size: 22px;
-	margin-bottom: 30px;
+	font-size: 2.2rem;
+	margin-bottom: 1em;
 	font-weight: 500;
-	line-height: 32px;
+	line-height: 1.2;
 }
 h3 {
 	font-size: 1.5em;
 }
 h4 {
-	font-size: 1.25em;
+	font-size: 1.4rem;
+	margin-bottom: 1em;
+	flex-wrap: 700;
 }
 h5 {
 	font-size: 1.125em;
@@ -63,10 +68,18 @@ h6 {
 	text-transform: uppercase;
 }
 
+input, button{
+	font-family: @font-primary;
+}
+
 p {
 	display: block;
 	color:@body-color;
 	margin: @font-line-height/2 0 @font-line-height;
+	a{
+		font-weight: 500;
+		color: inherit;
+	}
 }
 
 a {
