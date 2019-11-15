@@ -359,14 +359,12 @@
 
 			<div class="property-listing row _align-start">
 				<div class="search-results  col-1-1 col-desktop-2-3">
-					<article class="featured listing-item" data-hook="listing-item" data-id="12812056">							
-						<div class="shortlist-btn" data-hook="listing-shortlist" data-id="12812056">
-							<button class="toggle-shortlist" data-hook="toggle-shortlist" data-id="12812056">
-								<div class="favorite"><i class="fas fa-heart"></i></div>
-							</button>
+					<article class="featured listing-item" data-hook="listing-item" data-id="12812056">							<div class="featured-top-bar" style="background-color: #011B36">
+							<img src="https://www.realestateview.com.au/logos/results/Woodards.gif" alt="Woodards" width="160" height="30">
 						</div>
-
+				
 						<div class="gallery featured flex">
+			
 							<div class="image-large">
 								<a class="item image-wrap" href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
 									<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
@@ -378,7 +376,6 @@
 									<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
 								</a>
 							</div>
-
 						</div>
 
 						<div class="agent-details" style="background-color: #011B36; color: #ffffff;">
@@ -399,7 +396,7 @@
 						</div>
 
 						<div class="content">
-							<div class="list-price">Contact Agent</div>
+							<div class="listing-price">Contact Agent</div>
 							<div class="listing-address">
 								<h3 class="listing-street">
 									<a href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/" class="street-address">1C Braemar Street</a>
@@ -423,6 +420,7 @@
 									</a>
 									<!-- this can be Updated or UNDER OFFER -->
 									<span class="flag-status flag-updated">Updated</span>
+									<span class="flag-status flag-new">New</span>
 								</div>
 							</div>
 						</div>

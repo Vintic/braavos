@@ -296,15 +296,18 @@
 		    i{
 		    	color: #cccccc;
 		    	margin-right: 3px;
-		    	&:hover{
-		    		color: @brand;
-		    	}
 		    }
 		}
 
 		a {
 			display: block;
 			padding: @spacing-med 0;
+			&:hover{
+				color: @brand;
+				i{
+					color: inherit;
+				}
+			}
 		}
 
 		.dropdown-option{
@@ -408,27 +411,20 @@
 		background-color:@body-bg;
 		margin-bottom: @spacing-lrg;
 		z-index: 0;
-		
+		.featured-top-bar{
+			width: 100%;
+			padding: @spacing-sml/2 @spacing-med;
+			text-align: center;
+		}
 		.gallery{
 			position:relative;
 			width: 100%;
 			.image-large{
 				position: relative;
 				width: 100%;
-
-		    &:hover .slick-arrow{
-		    	opacity: 1;
-		    }
-			}
-
-			.image-small{
-				display: none;
-				width: 33.34%;
-				border-left: 2px solid transparent;
-
-				@media(min-width:@_tablet-break-point){
-					.flex(flex-start,space-between,wrap,column);
-				}
+			    &:hover .slick-arrow{
+			    	opacity: 1;
+			    }
 			}
 
 			.slick-arrow{
@@ -436,12 +432,9 @@
 				top: 50%;				
 				z-index: 1;
 				padding: @spacing-sml;
-		    transform: translate(0, -50%);
-
-		    opacity: 0;
-
+			    transform: translate(0, -50%);
+			    opacity: 0;
 				.global-transition();
-
 				&:before{
 					color: @white;
 					font-size: 30px;
@@ -463,7 +456,7 @@
 
 			.image-wrap{
 				overflow: hidden;
-				.image-object-fit-wrap(60%);
+				.image-object-fit-wrap(66%);
 			}
 
 			.image{
@@ -475,63 +468,50 @@
 
 		.shortlist-btn {
 			position:absolute;
-			top: 0;
-			right: @spacing-lrg;
+			top: @spacing-med;
+			right: @spacing-med;
 			z-index: 1;
 		}
 
 		.toggle-shortlist {
-			font-size: 22px;
-			color: @sub-heading-color;
-			background-color: @body-bg;
-			padding: @spacing-sml;
-			border-radius: 0 0 3px 3px;
+			font-size: 19px;
+			color: #cccccc;
 		}
 
-		.next-inspection{
-			position:absolute;
-			bottom: 0;
-			left: 0;
-			z-index: 1;
-
-			padding: @spacing-sml/2 @spacing-med;
-
-			color: @white;
-			background-color: @link-color;
-		}
-
-		.agent-details,
 		.content{
 			position:relative;
 			width: 100%;
-		}
-
-		.content{
-			//.flex(flex-start,space-between,wrap,column);
 			padding: @spacing-lrg @spacing-lrg;
+			.listing-price{
+				font-size: 1.8rem;
+				margin-bottom: @spacing-med;
+				color: @sub-heading-color
+			}
+			.listing-street{
+				font-family:@font-secondary;
+				margin-top: 0;
+				margin-bottom: @spacing-med;
+				font-size: 2.4rem;
+				font-weight: 400;
+			}
+			.listing-suburb{
+				color: @sub-heading-color;
+				margin-bottom: @spacing-sml;
+			}
 		}
 
 		.property-details{
-			//.flex(center, space-between);
-			line-height: 1.1em;
 			width: 100%;
+			display: flex;
 			.bbc,
 			.additional-info{
 				.flex();
 			}
 		}
 
-		.street-address{
-			font-family:@font-secondary;
-			font-size:24px;
-			font-weight:300;
-		}
-
 		.bbc {
-			font-size: 1.1em;
 			i,
 			span {
-				padding:@spacing-sml 0;
 				margin-right: .5em;
 			}
 			i{
@@ -541,21 +521,34 @@
 
 		.additional-info{
 			margin-left: auto;
-			a, .flag-status{
-				padding: @spacing-sml;
+			a.virtual-tour{
+				font-size: 13px;
+				margin-left: @spacing-sml;
+				padding: 2px @spacing-sml;
+				color: @sub-heading-color;
 			}
-
-			.flag-updated {
-				background-color: @brand-terchiery;
-			}
-			.flag-new{
-				background-color: @brand;
-				color: @white;
+			.flag{
+				&-status{
+					font-size: 13px;
+					text-transform: uppercase;
+					padding: 2px @spacing-sml;
+					margin-left: @spacing-sml;
+					.global-border-radius();
+				}
+				&-updated{
+					background-color: @body-bg-secondary;
+					color: @content-color;
+				}
+				&-new{
+					background-color: @brand;
+					color: @white;
+				}
 			}
 		}
 
 		.agent-details{
-			//.flex(center,space-between);
+			position:relative;
+			width: 100%;
 			@media(min-width:@_tablet-break-point){
 				order: 1;
 			}
@@ -573,7 +566,6 @@
 		.agent-photo-name-wrap{
 			position:relative;
 			.flex(center,flex-start);
-
 			.agent-name{
 				font-family:@font-secondary;
 			  white-space: nowrap;
@@ -635,14 +627,6 @@
 			i {
 				margin-right: @spacing-sml;
 			}
-
-			&:hover, &:active{
-				i{
-					transform-origin: 50% 50%;
-					transform: scale(1.2);
-				}
-			}
-
 			@media(min-width:@_tablet-break-point){
 				display: block;
 			}
@@ -653,7 +637,7 @@
 		&.featured{
 			.agent-photo{
 				@media(min-width:@_tablet-break-point){
-					width: 100px;
+					width: 74px;
 					position: absolute;
 					top: 0;
 					left: 0;
@@ -662,12 +646,21 @@
 				z-index: 1;
 			}
 			.agency-address{
-				display: none;
+				opacity: .55;
+				margin-bottom: @spacing-med;
 			}
 			.agency-logo img{
 				display: block;
 				max-width: 100%;
 				height: auto;
+			}
+			.agent-name{
+				font-size: 1.6rem;
+				font-weight: 500;
+				margin: 0 0 @spacing-med 0;
+			}
+			.contact-agency-email{
+				padding: 0;
 			}
 
 			@media(min-width:@_tablet-break-point){
@@ -677,45 +670,19 @@
 				.agent-details {
 					width: 33.34%;
 					display: block;
-					padding: @spacing-lrg @spacing-lrg 35px;
+					padding: @spacing-lg @spacing-lrg;
 					color: @heading-color;
 				}
 				.agency-logo {
 					padding: 0;
 					img{
-						margin-left: auto;
+						margin: 0 auto @spacing-sml;
 					}
 				}
-				.agent-name{
-					font-size: 18px;
-					font-weight: 400;
-					margin: @spacing-sml 0;
-				}
-
-				.agency-address{
-					opacity: .55;
-					display: block;
-				}
-
 				.agent-photo-name-wrap{
 					position:static;
 					padding: 0;
 				}
-			}
-
-			.contact-agency-email{
-				position: absolute;
-		    bottom: 0;
-		    left: 0;
-
-				width: 100%;
-
-				text-align: center;
-				line-height: 35px;
-				padding: 0 @spacing-sml;
-
-				color: @white;
-				background-color: @brand;
 			}
 		}
 
