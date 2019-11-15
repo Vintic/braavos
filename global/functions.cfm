@@ -24,4 +24,5 @@ include template="../helpers/string.cfm";
 include template="../helpers/json.cfm";
 include template="../helpers/dev.cfm";
 include template="../helpers/path.cfm";
+include template="../helpers/user.cfm";
 </cfscript>

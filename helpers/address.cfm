@@ -60,34 +60,22 @@ public string function addressFormat(required struct struct) {
 */
 public string function lineAddressFormat(required struct struct) {
 	local.struct = arguments.struct;
-	if (structKeyExists(local.struct, "address_line_1")) {
-		local.returnValue = trim(local.struct.address_line_1);
-	} else if (structKeyExists(local.struct, "address_line1") && local.struct.address_line1 != "") {
-		local.returnValue = trim(local.struct.address_line1);
+	if (structKeyExists(local.struct, "addressLine1")) {
+		local.returnValue = trim(local.struct.addressLine1);
 	} else {
 		local.returnValue = "";
 	}
-	if (structKeyExists(local.struct, "address_line_2") && local.struct.address_line_2 != "") {
-		local.returnValue = local.returnValue & ", " & local.struct.address_line_2;
-	} else if (structKeyExists(local.struct, "address_line2") && local.struct.address_line2 != "") {
-		local.returnValue = local.returnValue & ", " & local.struct.address_line2;
+	if (structKeyExists(local.struct, "addressLine2") && local.struct.addressLine2 != "") {
+		local.returnValue = local.returnValue & ", " & local.struct.addressLine2;
 	}
-	if (structKeyExists(local.struct, "suburb_name")) {
-		local.returnValue = local.returnValue & ", " & titleise(local.struct.suburb_name);
-	} else if (structKeyExists(local.struct, "suburb")) {
-		if (local.returnValue == "") {
-			local.returnValue = titleise(local.struct.suburb);
-		} else {
-			local.returnValue = local.returnValue & ", " & titleise(local.struct.suburb);
-		}
+	if (structKeyExists(local.struct, "suburbName")) {
+		local.returnValue = local.returnValue & ", " & titleise(local.struct.suburbName);
 	}
 	if (structKeyExists(local.struct, "state")) {
 		local.returnValue = local.returnValue & ", " & local.struct.state;
 	}
 	if (structKeyExists(local.struct, "postcode")) {
 		local.returnValue = local.returnValue & " " & local.struct.postcode;
-	} else if (structKeyExists(local.struct, "pcode")) {
-		local.returnValue = local.returnValue & " " & local.struct.pcode;
 	}
 	return local.returnValue;
 }
@@ -103,22 +91,22 @@ public string function projectAddressFormat(required struct struct, string retur
 	local.struct = arguments.struct;
 	if (arguments.returnType == "display") {
 		local.returnValue = local.struct.display_street_number & " " & local.struct.display_street_name;
-		if (structKeyExists(local.struct, "displaySuburb") && structKeyExists(local.struct.displaySuburb, "suburb_name")) {
-			local.returnValue = local.returnValue & ", " & titleise(local.struct.displaySuburb.suburb_name);
+		if (structKeyExists(local.struct, "displaySuburb") && structKeyExists(local.struct.displaySuburb, "suburbName")) {
+			local.returnValue = local.returnValue & ", " & titleise(local.struct.displaySuburb.suburbName);
 		}
 	} else if (arguments.returnType == "twoLines") {
 		local.returnValue = local.struct.street_number & " " & local.struct.street_name;
-		if (structKeyExists(local.struct, "suburb_name")) {
-			local.returnValue = local.returnValue & "<br>" & titleise(local.struct.suburb_name);
-		} else if (structKeyExists(local.struct, "suburb") && structKeyExists(local.struct.suburb, "suburb_name")) {
-			local.returnValue = local.returnValue & "<br>" & titleise(local.struct.suburb.suburb_name);
+		if (structKeyExists(local.struct, "suburbName")) {
+			local.returnValue = local.returnValue & "<br>" & titleise(local.struct.suburbName);
+		} else if (structKeyExists(local.struct, "suburb") && structKeyExists(local.struct.suburb, "suburbName")) {
+			local.returnValue = local.returnValue & "<br>" & titleise(local.struct.suburb.suburbName);
 		}
 	} else {
 		local.returnValue = local.struct.street_number & " " & local.struct.street_name;
-		if (structKeyExists(local.struct, "suburb_name")) {
-			local.returnValue = local.returnValue & ", " & titleise(local.struct.suburb_name);
-		} else if (structKeyExists(local.struct, "suburb") && structKeyExists(local.struct.suburb, "suburb_name")) {
-			local.returnValue = local.returnValue & ", " & titleise(local.struct.suburb.suburb_name);
+		if (structKeyExists(local.struct, "suburbName")) {
+			local.returnValue = local.returnValue & ", " & titleise(local.struct.suburbName);
+		} else if (structKeyExists(local.struct, "suburb") && structKeyExists(local.struct.suburb, "suburbName")) {
+			local.returnValue = local.returnValue & ", " & titleise(local.struct.suburb.suburbName);
 		}
 	}
 	return local.returnValue;
@@ -145,22 +133,22 @@ public string function splitAddress2Lines(required string address) {
 	local.struct = arguments.struct;
 	if (arguments.returnType == "display") {
 		local.returnValue = local.struct.display_street_number & " " & local.struct.display_street_name;
-		if (structKeyExists(local.struct, "displaySuburb") && structKeyExists(local.struct.displaySuburb, "suburb_name")) {
-			local.returnValue = local.returnValue & ", " & titleise(local.struct.displaySuburb.suburb_name);
+		if (structKeyExists(local.struct, "displaySuburb") && structKeyExists(local.struct.displaySuburb, "suburbName")) {
+			local.returnValue = local.returnValue & ", " & titleise(local.struct.displaySuburb.suburbName);
 		}
 	} else if (arguments.returnType == "twoLines") {
 		local.returnValue = local.struct.street_number & " " & local.struct.street_name;
-		if (structKeyExists(local.struct, "suburb_name")) {
-			local.returnValue = local.returnValue & "<br>" & titleise(local.struct.suburb_name);
-		} else if (structKeyExists(local.struct, "suburb") && structKeyExists(local.struct.suburb, "suburb_name")) {
-			local.returnValue = local.returnValue & "<br>" & titleise(local.struct.suburb.suburb_name);
+		if (structKeyExists(local.struct, "suburbName")) {
+			local.returnValue = local.returnValue & "<br>" & titleise(local.struct.suburbName);
+		} else if (structKeyExists(local.struct, "suburb") && structKeyExists(local.struct.suburb, "suburbName")) {
+			local.returnValue = local.returnValue & "<br>" & titleise(local.struct.suburb.suburbName);
 		}
 	} else {
 		local.returnValue = local.struct.street_number & " " & local.struct.street_name;
-		if (structKeyExists(local.struct, "suburb_name")) {
-			local.returnValue = local.returnValue & ", " & titleise(local.struct.suburb_name);
-		} else if (structKeyExists(local.struct, "suburb") && structKeyExists(local.struct.suburb, "suburb_name")) {
-			local.returnValue = local.returnValue & ", " & titleise(local.struct.suburb.suburb_name);
+		if (structKeyExists(local.struct, "suburbName")) {
+			local.returnValue = local.returnValue & ", " & titleise(local.struct.suburbName);
+		} else if (structKeyExists(local.struct, "suburb") && structKeyExists(local.struct.suburb, "suburbName")) {
+			local.returnValue = local.returnValue & ", " & titleise(local.struct.suburb.suburbName);
 		}
 	}
 	return local.returnValue;
