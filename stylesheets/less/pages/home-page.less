@@ -40,6 +40,9 @@
 			@media(min-width:@_tablet-break-point){
 				padding: @spacing-xl*2 @spacing-lrg;
 			}
+			@media(min-width:@_desktop-break-point){
+				padding: 90px @spacing-lrg 300px;
+			}
 		}
 
 		.form-container{
@@ -67,16 +70,16 @@
 				}
 				.value {
 					text-overflow: ellipsis;
-			    overflow: hidden;
-			    white-space: nowrap;
-			    max-width: 150px;
-			    text-transform: none;
+				    overflow: hidden;
+				    white-space: nowrap;
+				    max-width: 150px;
+				    text-transform: none;
 			  }
 			}
 		}
 
 		.toggle-search-options{
-	    cursor: pointer;
+	    	cursor: pointer;
 			margin: @spacing-sml 0;
 			.global-border-bottom();
 			span{
@@ -125,16 +128,27 @@
 
 	#top-categories-container{
 		.category-item{
-			padding: @spacing-sml;
+			padding: @spacing-med;
 			margin-bottom: @spacing-lrg;
 			.global-border;
-
+			&:hover{
+				.icon{
+					background-color: @brand;
+					i{
+						color: #ffffff;
+					}
+				}
+			}
 		}
 		.icon{
 			position: relative;
 			width: 50px;
+			@media(min-width:@_tablet-break-point){
+				width: 80px;
+			}
 			display: block;
 			.global-border;
+			.global-transition();
 			&:before {
 				content: '';
 				display: block;
@@ -143,14 +157,14 @@
 				padding-bottom: 100%;
 			}
 			i{
-				font-size: 20px;
+				font-size: 24px;
 				color: @brand;
 				position: absolute;
 				top: 0;
 				left: 0;
 				width: 100%;
 				height: 100%;
-
+				.global-transition();
 				.flex(center,center);
 			}
 		}
@@ -250,8 +264,13 @@
 			&:last-child{
 				border-bottom: 0;
 			}
-			p{
+			h4{
+				font-size: 1.6rem;
 				color: @content-color;
+				line-height: 1.8;
+			}
+			p{
+				color: @mid-content-color;
 			}
 		}
 
@@ -358,6 +377,9 @@
 		  	li{
 			    line-height: 30px;
 			    font-weight: 600;
+			    a{
+			    	font-size: 1.5rem;
+			    }
 		  	}
 
 		  .item{
@@ -370,8 +392,8 @@
 
 		.item{
 			h3{
-				color: @light-content-color;
-				font-size: 1.4rem;
+				color: @mid-content-color;
+				font-size: 1.2rem;
 				text-transform: uppercase;
 				margin:0 0 @spacing-med;
 				font-weight: 500;

@@ -135,7 +135,8 @@ $(document).ready(function() {
   $("#search-results-page .listing-item .image-large").slick({
     infinite: true,
     speed: 300,
-    slidesToShow: 1
+    slidesToShow: 1,
+    autoplay: false
   });
 
   $("#search-results-page .side-otions .side-listings").slick({
@@ -144,8 +145,8 @@ $(document).ready(function() {
     slidesToShow: 1,
     dots: true,
     arrows: false,
-    autoplay: true,
-    autoplaySpeed: 3000
+    autoplay: false,
+    //autoplaySpeed: 3000
   });
 
 // JOESL REV DROPDOWN SOLUTION

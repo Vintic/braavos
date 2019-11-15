@@ -60,7 +60,11 @@
 						<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg" alt="realestateview.com.au logo">
 					</a>
 
-					<span><a class="toggle-mobile-nav"></a></span>
+					<a class="toggle-mobile-nav" id="burger-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
 				</div>
 				<div class="login-signup flex _align-center _justify-space-between">
 					<div class="login"><button>Login</button></div>
@@ -122,7 +126,11 @@
 			<header>
 				<nav class="flex _align-center">
 
-					<a class="toggle-mobile-nav"></a>
+					<a class="toggle-mobile-nav" id="burger-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
 
 					<!------------ LOGO ------------>
 					<a class="logo" href="/">

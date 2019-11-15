@@ -7,12 +7,19 @@
 	border-bottom: @size @style @color;
 }
 
-.global-border-radius(@radius: 2px){
+.global-border-radius(@radius: 3px){
 	border-radius: @radius;
 }
 
-.global-transition(@duration : .25s, @ease : ease-in-out, @delay : 0s,){
+.global-transition(@duration : .25s, @ease : ease-in-out, @delay : 0s){
 	transition: @duration @ease @delay;
+}
+
+.global-transform-rotate(@deg: 0deg){
+	-webkit-transform: rotate(@deg);
+    -moz-transform: rotate(@deg);
+    -o-transform: rotate(@deg);
+    transform: rotate(@deg);
 }
 
 /* ------------------------- */

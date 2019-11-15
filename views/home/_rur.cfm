@@ -340,7 +340,7 @@
 			<section class="home-content-section homepage-company-description">
         		<h2>Search Real Estate for Sale</h2>
 				<div class="description">
-			        <p>Founded in 2001, realestateVIEW.com.au is now one of Australia's leading national real estate portals.</p>
+			        <h4>Founded in 2001, realestateVIEW.com.au is now one of Australia's leading national real estate portals.</h4>
 			        <p>Our number one priority is to make house-hunting, selling, and renting easy and fast. We do this by listing thousands of rental properties and homes for sale from Australia's most prestigious real estate agents.</p>
 			        <p>To help you conduct property research and plan your house-hunting days, realestateVIEW.com.au offers a suite of essential tools including free property alerts for homes both for sale and rent. You can also access all the latest sales and Auction results, get historical property data like sale and rental history plus access property value estimates for every address in Australia.</p>
 			        <p>
