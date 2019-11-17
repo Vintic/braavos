@@ -446,15 +446,14 @@
 									<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
 								</a>
 							</div>
-							<div class="next-inspection"><span class="bold-title">Inspection </span>Thu 26 Sep</div>
 						</div>
 
-						<div class="agent-details">
+						<div class="agent-details" style="background-color: #011B36; color: #ffffff">
 							<div class="agency-logo">
 								<img src="https://www.realestateview.com.au/logos/results/Woodards.gif" alt="Woodards" width="160" height="30">
 							</div>
 							<div class="agent-photo-name-wrap">
-								<div class="agent-name">Bill Chung</div>
+								<div class="agent-name">Bill Chung Swalovski</div>
 								<div class="agent-photo image-wrap">
 									<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="assets/images/agent01.jpg">
 								</div>
@@ -516,7 +515,6 @@
 									<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
 								</a>
 							</div>
-							<div class="next-inspection"><span class="bold-title">Inspection </span>Thu 26 Sep</div>
 						</div>
 
 						<div class="content">
@@ -581,7 +579,6 @@
 											<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
 										</a>
 									</div>
-									<div class="next-inspection"><span class="bold-title">Inspection </span>Thu 26 Sep</div>
 								</div>
 
 								<div class="agent-details">
@@ -629,7 +626,6 @@
 											<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
 										</a>
 									</div>
-									<div class="next-inspection"><span class="bold-title">Inspection </span>Thu 26 Sep</div>
 								</div>
 
 								<div class="agent-details">
@@ -677,7 +673,6 @@
 											<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
 										</a>
 									</div>
-									<div class="next-inspection"><span class="bold-title">Inspection </span>Thu 26 Sep</div>
 								</div>
 
 								<div class="agent-details">
@@ -725,7 +720,6 @@
 											<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
 										</a>
 									</div>
-									<div class="next-inspection"><span class="bold-title">Inspection </span>Thu 26 Sep</div>
 								</div>
 
 								<div class="agent-details">
