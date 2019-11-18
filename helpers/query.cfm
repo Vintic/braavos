@@ -339,4 +339,37 @@ public query function JSONToQuery(required string json) {
 	;
 	return loc.rv;
 }
+
+/**
+ * Query List Capped Size
+ *
+ * [section: Application]
+ * [category: List Functions]
+ *
+ * @column Column Name to match against (required)
+ * @list List (required)
+ */
+public function splitQueryParamList(
+	required string column = "",
+	required string list = "",
+	boolean asString = true,
+	boolean sanitise = false,
+	number cap = "50"
+) {
+
+	local.whereArr = [];
+
+	if (listLen(arguments.list) > arguments.cap) {
+		local.splitArray = arraysOfLength(listToArray(arguments.list), arguments.cap);
+		for (local.i in local.splitArray) {
+			local.whereArr.Append("#arguments.column# IN (#listEnsure(ArrayToList(local.i))#)")
+		}
+	}
+	else {
+		local.whereArr = ["#arguments.column# IN (#listEnsure(list=arguments.list,sanitise=arguments.sanitise)#)"];
+	}
+
+	return arguments.asString ? whereify(array=local.whereArr, operator="OR") : local.whereArr;
+}
+
 </cfscript>

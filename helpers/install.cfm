@@ -17,7 +17,7 @@ public function createApplicationSettings() {
 	// application.settings[setting.name]=deserializeJSON(setting.value);
 	// }
 	application.settings = {
-		"general_sitename" = "Westeros",
+		"general_sitename" = "Braavos",
 		"authentication_gateway" = "Local",
 		"permissions_cascade" = true,
 		"authentication_allowRegistration" = false,
@@ -37,7 +37,7 @@ public function createApplicationSettings() {
 	// local.allpermissions=model("permission").findAll( order="name", include="rolepermissions(role)");
 	// local.allroles= model("role").findAll(select="name", order="name");
 	// local.rolepermissions={};
-	
+
 	// for( var role in local.allroles){
 	// local.rolepermissions[role.name]={};
 	// cfloop(query=local.allpermissions, group="id"){

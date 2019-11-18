@@ -172,7 +172,7 @@ string function pageHeader(string title="", string btn=""){
 				writeOutput('<div class="col-1-1 rev__text _txt-default _txt-dark _txt-heading">' & e(arguments.title) & '</div>');
 			}
 		writeOutput('</div>');
-	writeOutput('</div>');	
+	writeOutput('</div>');
 }
 
 /**
@@ -262,7 +262,7 @@ public string function flashMessageTag(
 		<cfsavecontent variable="loc.ret">
 			<cfoutput>
 				<cfif structKeyExists(arguments, "objectNames")>
-					
+
 					<cfloop list="#arguments.objectNames#" index="loc.i">
 						<cfset loc.errors = loc.errors & errorMessagesFor(objectName = loc.i)>
 					</cfloop>
@@ -275,7 +275,7 @@ public string function flashMessageTag(
 					<cfset loc.errors = replaceNoCase(loc.errors, "</ul>", "", "all")> --->
 
 					<div class="alert-header-danger rev__marg-v-top">#flash("message")#</div>
-					#loc.errors#						
+					#loc.errors#
 
         <cfelse>
 					<div class="alert alert-danger rev__marg-v-top">#flash("message")#</div>
@@ -556,10 +556,12 @@ function postButton(
 	required struct keys,
 	required string text,
 	string class,
-	string confirm
+	string confirm,
+	string params
 ) {
 	local.returnValue = startFormTag(
 		route=arguments.route,
+		params=arguments.params,
 		method=arguments.method,
 		argumentCollection=arguments.keys,
 		encode=false,
@@ -633,7 +635,7 @@ function postButton(
 						<a href="javascript:void(0);" id="selectfiles" class="rev__btn col-1-2 col-tablet-1-4 col-desktop-1-6">Select files</a>
 						<a href="javascript:void(0);" id="uploadfiles" class="rev__btn col-1-2 col-tablet-1-4 col-desktop-1-6 disabled">Upload files</a>
 					</div>
-					
+
 				</div>
 			</div>
 		</cfsavecontent>
