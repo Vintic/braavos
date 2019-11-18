@@ -8,7 +8,7 @@ public void function onRequestStart(required targetPage) {
 
 	// Fix for shared application name issue 359.
 	if (!StructKeyExists(application, "wheels") || !StructKeyExists(application.wheels, "eventPath")) {
-		$simpleLock(name=local.lockName, execute="onApplicationStart", type="exclusive", timeout=180);
+		this.onApplicationStart();
 	}
 
 	// Need to setup the wheels struct up here since it's used to store debugging info below if this is a reload request.
@@ -17,7 +17,11 @@ public void function onRequestStart(required targetPage) {
 	// Reload application by calling onApplicationStart if requested.
 	if (StructKeyExists(url, "reload") && (!StructKeyExists(application, "wheels") || !StructKeyExists(application.wheels, "reloadPassword") || !Len(application.wheels.reloadPassword) || (StructKeyExists(url, "password") && url.password == application.wheels.reloadPassword))) {
 		$debugPoint("total,reload");
-		$simpleLock(name=local.lockName, execute="onApplicationStart", type="exclusive", timeout=180);
+		if (StructKeyExists(url, "lock") && !url.lock) {
+			this.onApplicationStart();
+		} else {
+			$simpleLock(name=local.lockName, execute="onApplicationStart", type="exclusive", timeout=180);
+		}
 	}
 
 	// Run the rest of the request start code.
@@ -98,23 +102,28 @@ public void function $runOnRequestStart(required targetPage) {
 	if (!application.wheels.cacheDatabaseSchema) {
 		$clearCache("sql");
 	}
+	if (application.wheels.allowCorsRequests) {
+		$setCORSHeaders(
+			allowOrigin = application.wheels.accessControlAllowOrigin,
+			allowCredentials = application.wheels.accessControlAllowCredentials,
+			allowHeaders = application.wheels.accessControlAllowHeaders,
+			allowMethods = application.wheels.accessControlAllowMethods,
+			allowMethodsByRoute = application.wheels.accessControlAllowMethodsByRoute
+		);
+	}
 	$include(template="#application.wheels.eventPath#/onrequeststart.cfm");
 	if (application.wheels.showDebugInformation) {
 		$debugPoint("requestStart");
 	}
 
-	// For CORS compliance, we must set these 3 headers in every request 
-	if($get("allowCorsRequests")){
-
-		$header(name="Access-Control-Allow-Origin", value="*");
-		$header(name="Access-Control-Allow-Methods", value="GET, POST, PATCH, PUT, DELETE, OPTIONS");
-		$header(name="Access-Control-Allow-Headers", value="Origin, Content-Type, X-Auth-Token, X-Requested-By, X-Requested-With");
-
-		// Also for CORS compliance, an OPTIONS request must return 200 and the above headers. No data is required.
-		// This will be remove when OPTIONS is implemented in the mapper (issue #623)
-		if(structKeyExists(request,"CGI") && structKeyExists(request.CGI,"request_method") && request.CGI.request_method eq "OPTIONS" ){
-			abort;
-		}
+	// Also for CORS compliance, an OPTIONS request must return 200 and the above headers. No data is required.
+	// This will be remove when OPTIONS is implemented in the mapper (issue #623)
+	if(application.wheels.allowCorsRequests
+		&& structKeyExists(request,"CGI")
+		&& structKeyExists(request.CGI,"request_method")
+		&& request.CGI.request_method eq "OPTIONS"
+	){
+		abort;
 	}
 }
 

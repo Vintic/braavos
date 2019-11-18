@@ -70,13 +70,15 @@ public void function validateOnUpdate(string methods="", string condition="", st
  * @when Pass in `onCreate` or `onUpdate` to limit when this validation occurs (by default validation will occur on both create and update, i.e. `onSave`).
  * @condition String expression to be evaluated that decides if validation will be run (if the expression returns `true` validation will run).
  * @unless String expression to be evaluated that decides if validation will be run (if the expression returns `false` validation will run).
+ * @caseSensitive Ensure the confirmed property comparison is case sensitive
  */
 public void function validatesConfirmationOf(
 	string properties="",
 	string message,
 	string when="onSave",
 	string condition="",
-	string unless=""
+	string unless="",
+	boolean caseSensitive = false
 ) {
 	$args(name="validatesConfirmationOf", args=arguments);
 	$registerValidation(methods="$validatesConfirmationOf", argumentCollection=arguments);
@@ -496,6 +498,9 @@ public void function $validatesConfirmationOf() {
 	if (StructKeyExists(this, local.virtualConfirmProperty) && this[arguments.property] != this[local.virtualConfirmProperty]) {
 		addError(property=local.virtualConfirmProperty, message=$validationErrorMessage(argumentCollection=arguments));
 	}
+	if (arguments.caseSensitive && ( compare(this[arguments.property], this[local.virtualConfirmProperty] ) != 0 ) ){
+		addError(property=local.virtualConfirmProperty, message=$validationErrorMessage(argumentCollection=arguments));
+	}
 }
 
 /**
@@ -610,12 +615,24 @@ public void function $validatesUniquenessOf(
 			ArrayAppend(local.where, local.part);
 		}
 
-		// try to fetch existing object from the database
-		local.existingObject = findOne(select=primaryKey(), where=ArrayToList(local.where, " AND "), reload=true, includeSoftDeletes=arguments.includeSoftDeletes, callbacks=false);
-
-		// we add an error if an object was found in the database and the current object is either not saved yet or not the same as the one in the database
-		if (IsObject(local.existingObject) && (isNew() || local.existingObject.key() != key($persisted=true))) {
-			addError(property=arguments.property, message=$validationErrorMessage(argumentCollection=arguments));
+		// try to fetch duplicate objects from the database
+		// we add an error if duplicate objects were found and the current object is either not saved yet or not the same as any of the found duplicates
+		local.existingObjects = findAll(select=primaryKey(), where=ArrayToList(local.where, " AND "), returnAs="objects", reload=true, includeSoftDeletes=arguments.includeSoftDeletes, callbacks=false);
+		if (ArrayLen(local.existingObjects)) {
+			local.duplicate = false;
+			if (isNew()) {
+				local.duplicate = true;
+			} else {
+				local.iEnd = ArrayLen(local.existingObjects);
+				for (local.i = 1; local.i <= local.iEnd; local.i++) {
+					if (local.existingObjects[local.i].key() != key($persisted=true)) {
+						local.duplicate = true;
+					}
+				}
+			}
+			if (local.duplicate) {
+				addError(property=arguments.property, message=$validationErrorMessage(argumentCollection=arguments));
+			}
 		}
 	}
 }

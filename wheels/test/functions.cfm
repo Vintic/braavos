@@ -199,6 +199,7 @@ public any function debug(required string expression, boolean display=true) {
 	}
 
 	attributeArgs["var"] = evaluate(arguments.expression);
+	attributeArgs["label"] = arguments.expression;
 
 	structDelete(arguments, "expression");
 	structDelete(arguments, "display");
@@ -277,8 +278,10 @@ public boolean function $runTest(string resultKey="test", string testname="") {
 
 	for (key in listToArray(keyList)) {
 
+		/* Include test name and make distinct so debugging doesn't duplicate output */
+		var distinctKey= replace(replace(replace(testCase, ".", "_", "all"), "tests_", "", "one"), "wheels_", "", "one") & '_' & key;
 		/* keep track of the test name so we can display debug information */
-		TESTING_FRAMEWORK_VARS.RUNNING_TEST = key;
+		TESTING_FRAMEWORK_VARS.RUNNING_TEST = distinctkey;
 
 		if ((left(key, 4) eq "test" and isCustomFunction(this[key])) and (!len(arguments.testname) or (len(arguments.testname) and arguments.testname eq key))) {
 
@@ -456,6 +459,9 @@ public any function $wheelsRunner(struct options={}) {
 	local.paths = $resolvePaths(arguments.options);
 	local.packages = $listTestPackages(arguments.options, local.paths.test_filter);
 
+	if (StructKeyExists(arguments.options, "seed") && arguments.options.seed) {
+		this.$seedDatabase(local.paths);
+	}
 	// run tests
 	local.i = 0;
 	for (local.row in local.packages) {
@@ -495,7 +501,7 @@ public boolean function $isValidTest(
 ) {
 	local.name = ListLast(arguments.component, ".");
 
-	if (Len(arguments.shouldExtend)) {
+	if (application.wheels.validateTestPackageMetaData && Len(arguments.shouldExtend)) {
 		local.metadata = GetComponentMetaData(arguments.component);
 		if (!StructKeyExists(local.metadata, "extends") or ListLast(local.metadata.extends.fullname, ".") neq arguments.shouldExtend) {
 			return false;
@@ -649,11 +655,19 @@ public void function $initialiseTestEnvironment(required struct paths, required 
 }
 
 /*
+ * Seeds the test database.
+ */
+public void function $seedDatabase(required struct paths) {
+	if (FileExists(arguments.paths.full_root_test_path & "/seed.cfm")) {
+		include "#arguments.paths.relative_root_test_path#/seed.cfm";
+	}
+}
+
+/*
  * Returns true if a file path is a wheels core file.
  */
 public any function $isCoreFile(required string path) {
 	local.path = Replace(arguments.path, ExpandPath("/"), "", "one");
 	return (Left(local.path, 7) == "wheels/" || ListFindNoCase("index.cfm,rewrite.cfm,root.cfm", local.path));
 }
-
 </cfscript>

@@ -14,13 +14,45 @@ public array function $addDeleteClause(required array sql, required boolean soft
 	return arguments.sql;
 }
 
+public string function $indexHint(
+	required struct useIndex,
+	required string modelName,
+	required string adapterName
+ ) {
+	local.rv = "";
+	if (StructKeyExists(arguments.useIndex, arguments.modelName)) {
+		local.indexName = arguments.useIndex[arguments.modelName];
+		if (arguments.adapterName == "MySQL") {
+			local.rv = "USE INDEX(#local.indexName#)";
+		} else if (arguments.adapterName == "SQLServer") {
+			local.rv = "WITH (INDEX(#local.indexName#))";
+		}
+	}
+	return local.rv;
+}
+
 /**
  * Internal function.
  */
-public string function $fromClause(required string include, boolean includeSoftDeletes="false") {
+public string function $fromClause(
+	required string include,
+	boolean includeSoftDeletes = "false",
+	struct useIndex = {},
+	string adapterName = get("adapterName")
+) {
 
 	// start the from statement with the SQL keyword and the table name for the current model
 	local.rv = "FROM " & tableName();
+
+	// add the index hint
+	local.indexHint = this.$indexHint(
+		useIndex=arguments.useIndex,
+		modelName=variables.wheels.class.modelName,
+		adapterName=arguments.adapterName
+	);
+	if (Len(local.indexHint)) {
+		local.rv = ListAppend(local.rv, local.indexHint, " ");
+	}
 
 	// add join statements if associations have been specified through the include argument
 	if (Len(arguments.include)) {
@@ -30,7 +62,18 @@ public string function $fromClause(required string include, boolean includeSoftD
 		// add join statement for each include separated by space
 		local.iEnd = ArrayLen(local.associations);
 		for (local.i = 1; local.i <= local.iEnd; local.i++) {
-			local.rv = ListAppend(local.rv, local.associations[local.i].join, " ");
+			local.indexHint = this.$indexHint(
+				useIndex=arguments.useIndex,
+				modelName=local.associations[local.i].modelName,
+				adapterName=arguments.adapterName
+			);
+			local.join = local.associations[local.i].join;
+			if (Len(local.indexHint)) {
+				// replace the table name with the table name & index hint
+				// TODO: factor in table aliases.. the index hint is placed after the table alias
+				local.join = Replace(local.join, " #local.associations[local.i].tableName# ", " #local.associations[local.i].tableName# #local.indexHint# ", "one");
+			}
+			local.rv = ListAppend(local.rv, local.join, " ");
 		}
 	}
 	return local.rv;
@@ -373,10 +416,10 @@ public array function $whereClause(
 		ArrayAppend(local.rv, "WHERE");
 		local.wherePos = ArrayLen(local.rv) + 1;
 		local.params = [];
-		local.where = ReplaceList(REReplace(arguments.where, variables.wheels.class.RESQLWhere, "\1?\8" , "all"), "AND,OR", "#Chr(7)#AND,#Chr(7)#OR");
+		local.where = REReplace(REReplace(arguments.where, variables.wheels.class.RESQLWhere, "\1?\8" , "all"), "([^a-zA-Z0-9])(AND|OR)([^a-zA-Z0-9])", "\1#Chr(7)#\2\3", "all");
 		for (local.i = 1; local.i <= ListLen(local.where, Chr(7)); local.i++) {
 			local.param = {};
-			local.element = Replace(ListGetAt(local.where, local.i, Chr(7)), Chr(7), "", "one");
+			local.element = ListGetAt(local.where, local.i, Chr(7));
 			if (Find("(", local.element) && Find(")", local.element)) {
 				local.elementDataPart = SpanExcluding(Reverse(SpanExcluding(Reverse(local.element), "(")), ")");
 			} else if (Find("(", local.element)) {
@@ -386,7 +429,7 @@ public array function $whereClause(
 			} else {
 				local.elementDataPart = local.element;
 			}
-			local.elementDataPart = Trim(ReplaceList(local.elementDataPart, "AND,OR", ""));
+			local.elementDataPart = Trim(REReplace(local.elementDataPart, "^(AND|OR)", ""));
 			local.temp = REFind("^([a-zA-Z0-9-_\.]*) ?#variables.wheels.class.RESQLOperators#", local.elementDataPart, 1, true);
 			if (ArrayLen(local.temp.len) > 1) {
 				local.where = Replace(local.where, local.element, Replace(local.element, local.elementDataPart, "?", "one"));
@@ -486,6 +529,13 @@ public array function $addWhereClauseParameters(required array sql, required str
 				local.start = local.temp.pos[4] + local.temp.len[4];
 				ArrayAppend(local.originalValues, ReplaceList(Chr(7) & Mid(arguments.where, local.temp.pos[4], local.temp.len[4]) & Chr(7), "#Chr(7)#(,)#Chr(7)#,#Chr(7)#','#Chr(7)#,#Chr(7)#"",""#Chr(7)#,#Chr(7)#", ",,,,,,"));
 			}
+		}
+		if (StructKeyExists(arguments, "parameterize") && IsNumeric(arguments.parameterize) && arguments.parameterize != ArrayLen(local.originalValues)) {
+			Throw(
+				type="Wheels.ParameterMismatch",
+				message="Wheels found #ArrayLen(local.originalValues)# parameters in the query string but was instructed to parameterize #arguments.parameterize#.",
+				extendedInfo="Verify that the number of parameters specified in the `where` argument mathes the number in the parameterize argument."
+			);
 		}
 		local.pos = ArrayLen(local.originalValues);
 		local.iEnd = ArrayLen(arguments.sql);

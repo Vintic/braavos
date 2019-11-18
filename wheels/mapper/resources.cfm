@@ -18,6 +18,7 @@
  * @shallowPath Shallow path prefix.
  * @shallowName Shallow name prefix.
  * @constraints Variable patterns to use for matching.
+ * @mapFormat Whether or not to add an optional `.[format]` pattern to the end of the generated routes. This is useful for providing formats via URL like `json`, `xml`, `pdf`, etc.
  */
 public struct function resource(
 	required string name,
@@ -33,7 +34,8 @@ public struct function resource(
 	string shallowName,
 	struct constraints,
 	string $call="resource",
-	boolean $plural=false
+	boolean $plural=false,
+	boolean mapFormat=variables.mapFormat
 ) {
 	local.args = {};
 
@@ -157,6 +159,11 @@ public struct function resource(
 		local.args.constraints = arguments.constraints;
 	}
 
+	// Pass along mapFormat preference
+	if (StructKeyExists(arguments, "mapFormat")) {
+		local.args.mapFormat = arguments.mapFormat;
+	}
+
 	// Scope the resource.
 	scope($call=arguments.$call, argumentCollection=local.args);
 
@@ -187,6 +194,7 @@ public struct function resource(
  * @shallowPath Shallow path prefix.
  * @shallowName Shallow name prefix.
  * @constraints Variable patterns to use for matching.
+ * @mapFormat Whether or not to add an optional `.[format]` pattern to the end of the generated routes. This is useful for providing formats via URL like `json`, `xml`, `pdf`, etc.
  */
 public struct function resources(
 	required string name,
@@ -200,12 +208,17 @@ public struct function resources(
 	boolean shallow,
 	string shallowPath,
 	string shallowName,
-	struct constraints
+	struct constraints,
+	boolean mapFormat=variables.mapFormat
 ) {
 	return resource(argumentCollection=arguments, $plural=true, $call="resources");
 }
 
 /**
+ * Scope routes within a nested resource which require use of the primary key as part of the URL pattern;
+ * A member route will require an ID, because it acts on a member.
+ * photos/1/preview is an example of a member route, because it acts on (and displays) a single object.
+ *
  * [section: Configuration]
  * [category: Routing]
  */
@@ -214,6 +227,9 @@ public struct function member() {
 }
 
 /**
+ * A collection route doesn't require an id because it acts on a collection of objects.
+ * photos/search is an example of a collection route, because it acts on (and displays) a collection of objects.
+ *
  * [section: Configuration]
  * [category: Routing]
  */
