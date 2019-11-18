@@ -42,7 +42,7 @@
 		#csrfMetaTags()#
 		<!------------ End SmartBanner configuration ------------>
 
-		<link href="stylesheets/css/#getParam('brand','res')#.css" rel="stylesheet">
+		<link href="stylesheets/css/#getBrand()#.css" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/d2e91da188.js" crossorigin="anonymous"></script>
 		
 		<script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
@@ -52,7 +52,7 @@
 
 	</head>
 
-	<body class="#getParam('brand','res')#">
+	<body class="#getBrand()#">
 		<div class="page-wrapper">
 			<div id="mobile-menu">
 				<div class="nav-top flex _align-center _justify-space-between">
