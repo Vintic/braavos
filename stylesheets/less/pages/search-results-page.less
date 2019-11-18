@@ -407,10 +407,16 @@
 
 	.listing-item{
 		.flex();
+		.global-box-shodow();
+		.global-transition();
 		position: relative;
 		background-color:@body-bg;
-		margin-bottom: @spacing-lrg;
+		margin-bottom: @spacing-lg;
 		z-index: 0;
+
+		&:hover{
+			.global-box-shodow(0, 5px, 20px, 5px);
+		}
 		.featured-top-bar{
 			width: 100%;
 			padding: @spacing-sml/2 @spacing-med;
@@ -742,6 +748,7 @@
 
 		&.simple{
 			display: block;
+			box-shadow: unset;
 			&.slick-slide{
 				height: unset;
 			}
@@ -754,13 +761,13 @@
 				width: 100%;
 				padding: 0 @spacing-sml;
 				margin-bottom: @spacing-sml;
-				//.flex(center,space-between);
+				.flex(center,space-between);
 			}
 
 			.agency-moto,
 			.agency-logo {
 				width: auto;
-				padding: @spacing-sml/2 @spacing-sml;
+				padding: @spacing-sml 0;
 			}
 
 			.agent-details{
@@ -825,11 +832,11 @@
 
 /* --------------- END LISTING MARKUP --------------- */
 
-
 .property-listing{
 	width: 100%;
 }
 
-.slide-show-wrap{
+.side-wrapper{
 	position: sticky;
+	top: 100px;
 }
