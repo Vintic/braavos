@@ -365,7 +365,6 @@
 						</div>
 				
 						<div class="gallery featured flex">
-			
 							<div class="image-large">
 								<a class="item image-wrap" href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
 									<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
@@ -378,24 +377,6 @@
 								</a>
 							</div>
 						</div>
-
-						<div class="agent-details" style="background-color: #011B36; color: #ffffff;">
-							<div class="agency-logo">
-								<img src="https://www.realestateview.com.au/logos/results/Woodards.gif" alt="Woodards" width="160" height="30">
-							</div>
-							<div class="agent-photo-name-wrap">
-								<div class="agent-name">Bill Chung</div>
-								<div class="agent-photo image-wrap">
-									<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="assets/images/agent01.jpg">
-								</div>
-							</div>
-							<div class="agency-address">277 Camberwell Rd, Camberwell</div>
-							<div class="contact-agency-email" data-hook="contact-agency-email">
-								<i class="fas fa-envelope"></i>
-								<span>Contact Agent</span>
-							</div>
-						</div>
-
 						<div class="content">
 							<div class="listing-price">Contact Agent</div>
 							<div class="listing-address">
@@ -425,6 +406,23 @@
 								</div>
 							</div>
 						</div>
+
+						<div class="agent-details" style="background-color: #011B36; color: #ffffff;">
+							<div class="agency-logo">
+								<img src="https://www.realestateview.com.au/logos/results/Woodards.gif" alt="Woodards" width="160" height="30">
+							</div>
+							<div class="agent-photo-name-wrap">
+								<div class="agent-name">Bill Chung</div>
+								<div class="agent-photo image-wrap">
+									<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="assets/images/agent01.jpg">
+								</div>
+							</div>
+							<div class="agency-address">277 Camberwell Rd, Camberwell</div>
+							<div class="contact-agency-email" data-hook="contact-agency-email">
+								<i class="fas fa-envelope"></i>
+								<span>Contact Agent</span>
+							</div>
+						</div>
 					</article>
 
 					<article class="standard listing-item" data-hook="listing-item" data-id="12812056">
@@ -446,22 +444,6 @@
 								<a class="item image-wrap" href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
 									<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
 								</a>
-							</div>
-						</div>
-
-						<div class="agent-details" style="background-color: #011B36; color: #ffffff">
-							<div class="agency-logo">
-								<img src="https://www.realestateview.com.au/logos/results/Woodards.gif" alt="Woodards" width="160" height="30">
-							</div>
-							<div class="agent-photo-name-wrap">
-								<div class="agent-name">Bill Chung Swalovski</div>
-								<div class="agent-photo image-wrap">
-									<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="assets/images/agent01.jpg">
-								</div>
-							</div>
-							<div class="contact-agency-email" data-hook="contact-agency-email">
-								<i class="fas fa-envelope"></i>
-								<span>Contact Agent</span>
 							</div>
 						</div>
 
@@ -493,7 +475,21 @@
 								</div>
 							</div>
 						</div>
-
+						<div class="agent-details" style="background-color: #011B36; color: #ffffff">
+							<div class="agency-logo">
+								<img src="https://www.realestateview.com.au/logos/results/Woodards.gif" alt="Woodards" width="160" height="30">
+							</div>
+							<div class="agent-photo-name-wrap">
+								<div class="agent-name">Bill Chung Swalovski</div>
+								<div class="agent-photo image-wrap">
+									<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="assets/images/agent01.jpg">
+								</div>
+							</div>
+							<div class="contact-agency-email" data-hook="contact-agency-email">
+								<i class="fas fa-envelope"></i>
+								<span>Contact Agent</span>
+							</div>
+						</div>
 					</article>
 
 					<article class="standard listing-item" data-hook="listing-item" data-id="12812056">
@@ -518,21 +514,7 @@
 							</div>
 						</div>
 
-						<div class="agent-details" style="background-color: #011B36; color: #ffffff">
-							<div class="agency-logo">
-								<img src="https://www.realestateview.com.au/logos/results/Woodards.gif" alt="Woodards" width="160" height="30">
-							</div>
-							<div class="agent-photo-name-wrap">
-								<div class="agent-name">Bill Chung Swalovski</div>
-								<div class="agent-photo image-wrap">
-									<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="assets/images/agent01.jpg">
-								</div>
-							</div>
-							<div class="contact-agency-email" data-hook="contact-agency-email">
-								<i class="fas fa-envelope"></i>
-								<span>Contact Agent</span>
-							</div>
-						</div>
+
 
 						<div class="content">
 							<div class="listing-price">Contact Agent</div>
@@ -563,7 +545,21 @@
 							</div>
 					
 						</div>
-
+						<div class="agent-details" style="background-color: #011B36; color: #ffffff">
+							<div class="agency-logo">
+								<img src="https://www.realestateview.com.au/logos/results/Woodards.gif" alt="Woodards" width="160" height="30">
+							</div>
+							<div class="agent-photo-name-wrap">
+								<div class="agent-name">Bill Chung Swalovski</div>
+								<div class="agent-photo image-wrap">
+									<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="assets/images/agent01.jpg">
+								</div>
+							</div>
+							<div class="contact-agency-email" data-hook="contact-agency-email">
+								<i class="fas fa-envelope"></i>
+								<span>Contact Agent</span>
+							</div>
+						</div>
 					</article>
 				</div>
 
@@ -603,12 +599,13 @@
 										</div>
 									</div>
 									<div class="content">
+										<div class="listing-price">$600,000 - $660,000</div>
 										<div class="listing-address">
-											<div class="listing-street">
-												<a href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
-													<div class="listing-suburb">Mont Albert North | House</div>
-												</a>
-											</div >
+											<div class="listing-suburb">
+												
+													Mont Albert North | House
+												
+											</div>
 										</div>
 										<div class="property-details">
 											<div class="bbc">
@@ -652,9 +649,9 @@
 									<div class="content">
 										<div class="listing-address">
 											<div class="listing-street">
-												<a href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
+											
 													<div class="listing-suburb">Mont Albert North | House</div>
-												</a>
+											
 											</div >
 										</div>
 										<div class="property-details">
@@ -668,7 +665,7 @@
 								</li>
 								<li class="simple listing-item">
 
-									<div class="agency-details agency-top">
+									<div class="agency-details agency-top"  style="background-color: #011B36; color: #ffffff;">
 										<div class="agency-moto">
 											<span>Local Expert</span>
 										</div>
@@ -699,9 +696,9 @@
 									<div class="content">
 										<div class="listing-address">
 											<div class="listing-street">
-												<a href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
+										
 													<div class="listing-suburb">Mont Albert North | House</div>
-												</a>
+											
 											</div >
 										</div>
 										<div class="property-details">
@@ -715,7 +712,7 @@
 								</li>
 								<li class="simple listing-item">
 
-									<div class="agency-details agency-top">
+									<div class="agency-details agency-top"  style="background-color: #011B36; color: #ffffff;">
 										<div class="agency-moto">
 											<span>Local Expert</span>
 										</div>
@@ -746,9 +743,9 @@
 									<div class="content">
 										<div class="listing-address">
 											<div class="listing-street">
-												<a href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
-													<div class="listing-suburb">Mont Albert North | House</div>
-												</a>
+									
+												<div class="listing-suburb">Mont Albert North | House</div>
+											
 											</div >
 										</div>
 										<div class="property-details">

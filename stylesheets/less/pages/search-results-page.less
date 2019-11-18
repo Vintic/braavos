@@ -509,9 +509,19 @@
 		.property-details{
 			width: 100%;
 			display: flex;
-			.bbc,
+			flex-direction: column;
+			.bbc{
+				.flex();
+			}
 			.additional-info{
 				.flex();
+				margin-left: auto;
+			}
+			@media(min-width:@_tablet-break-point){
+				flex-direction: row;
+				.additional-info{
+					margin-left: auto
+				}
 			}
 		}
 
@@ -625,9 +635,7 @@
 			color: inherit;
 			background-color: inherit;
 			line-height: @spacing-med*2;
-
 			padding: @spacing-sml/2 @spacing-lrg;
-
 			cursor: pointer;
 
 			i {
@@ -713,9 +721,9 @@
 			}
 
 			.agency-logo{
-				text-align: center;
 				@media(min-width:@_tablet-break-point){
 					width: 42%;
+					text-align: center;
 				}
 			}
 
@@ -789,22 +797,23 @@
 	.side-otions{
 		display: block;
 		margin-bottom: @spacing-lrg;
-
+		.side-wrapper{
+			position: sticky;
+			top: 75px;
+		}
 		.slick-dots {
 			width: 100%;
-	    display: flex;
-	    align-items: center;
-	    justify-content: center;
-
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
 			li{
 				display: block;
-		    padding: @spacing-sml/2;
-		    opacity: .5;
-
-		    cursor: pointer;
-		    border-radius: 100%;
-		    .global-transition();
-
+			    padding: @spacing-sml/2;
+			    margin: 0 8px;
+			    opacity: .5;
+			    cursor: pointer;
+			    border-radius: 100%;
+			    .global-transition();
 				&:hover{
 			    opacity: .75;
 				}
@@ -813,30 +822,19 @@
 			    opacity: 1;
 				}
 			}
-
 			button {
 				font-size: 0;
 				display: block;
 				padding-bottom: 100%;
-
-		    background-color: #000;
-
-		    width: @spacing-sml;
-		    height: @spacing-sml;
-		    border-radius: 100%;
+			    background-color: #000;
+			    width: 7px;
+			    height: 7px;
+			    .global-border-radius(50%);
 			}
 		}
 	}
-
 }
 
 /* --------------- END LISTING MARKUP --------------- */
 
-.property-listing{
-	width: 100%;
-}
 
-.side-wrapper{
-	position: sticky;
-	top: 100px;
-}
