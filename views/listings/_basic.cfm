@@ -6,7 +6,7 @@
 	<cfset local.addressStruct.streetNumber = listings.streetNumber />
 	<cfset local.addressStruct.streetName = listings.streetName />
 
-	<article class="standard listing-item" data-hook="listing-item" data-id="12812056">
+	<article class="basic listing-item" data-hook="listing-item" data-id="12812056">
 
 		<div class="shortlist-btn" data-hook="listing-shortlist" data-id="12812056">
 			<button class="toggle-shortlist" data-hook="toggle-shortlist" data-id="12812056">
