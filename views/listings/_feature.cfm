@@ -11,7 +11,7 @@
 
 	<article class="featured listing-item" data-hook="listing-item" data-id="12812056">
 		<div class="featured-top-bar" style="background-color: ###brandColour#">
-			<img src="#getImageURL(listings.OfficeImagefileName)#" alt="#listings.officeName#" width="160" height="30">
+			<img src="#getImageURL(listings.OfficeImagefileName)#" alt="#listings.officeName#">
 		</div>
 
 		<div class="gallery featured flex">
@@ -64,7 +64,7 @@
 
 		<div class="agent-details" style="background-color: ###brandColour#; color: ###brandContrastColour#;">
 			<div class="agency-logo">
-				<img src="#getImageURL(listings.OfficeImagefileName)#" alt="#listings.officeName#" width="160" height="30">
+				<img src="#getImageURL(listings.OfficeImagefileName)#" alt="#listings.officeName#" >
 			</div>
 			<div class="agent-photo-name-wrap">
 				<div class="agent-name">Bill Chung</div>
