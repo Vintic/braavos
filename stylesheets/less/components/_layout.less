@@ -1,5 +1,8 @@
 .page-wrapper{
-	
+	overflow-x: hidden;
+	@media(min-width: @_tablet-break-point){
+		overflow-x: unset;
+	}
 }
 body {
 	position:relative;
@@ -37,8 +40,11 @@ section{
 .container{
 	width: 100%;
 	max-width: @container-width + @spacing-lrg*2;
-	padding: 0 @spacing-lrg;
+	padding: 0 @spacing-med;
 	margin: 0 auto;
+	@media(min-width: @_tablet-break-point){
+		padding: 0 @spacing-lrg;
+	}
 }
 
 .logo,

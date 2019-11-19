@@ -42,22 +42,22 @@
 		#csrfMetaTags()#
 		<!------------ End SmartBanner configuration ------------>
 
-		<link href="stylesheets/css/#getParam('brand','res')#.css" rel="stylesheet">
+		<link href="/stylesheets/css/#getBrand()#.css" rel="stylesheet">
 		<script src="https://kit.fontawesome.com/d2e91da188.js" crossorigin="anonymous"></script>
 		
-		<script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
-		<script type="text/javascript" src="assets/js/slick.min.js"></script>
-		<script type="text/javascript" src="assets/js/_global.js"></script>
+		<script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="/assets/js/slick.min.js"></script>
+		<script type="text/javascript" src="/assets/js/_global.js"></script>
 
 
 	</head>
 
-	<body class="#getParam('brand','res')#">
+	<body class="#getBrand()#">
 		<div class="page-wrapper">
 			<div id="mobile-menu">
 				<div class="nav-top flex _align-center _justify-space-between">
 					<a class="logo" href="/">
-						<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg" alt="realestateview.com.au logo">
+						<img class="image" src="/assets/images/realestateview_logo_hero_rgb.svg" alt="realestateview.com.au logo">
 					</a>
 
 					<a class="toggle-mobile-nav" id="burger-icon">
@@ -134,7 +134,7 @@
 
 					<!------------ LOGO ------------>
 					<a class="logo" href="/">
-						<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg" alt="realestateview.com.au logo">
+						<img class="image" src="/assets/images/realestateview_logo_hero_rgb.svg" alt="realestateview.com.au logo">
 					</a>
 
 					<!------------ NAV LINKS ------------>
@@ -231,37 +231,37 @@
 					<ul class="flex _wrap _justify-space-between">
 						<li class="reiv">
 					    	<a class="image-wrap" href="https://www.reiv.com.au" title="REIV - Real Estate Institute of Victoria" onclick="window.open(this.href); return false;" rel="nofollow">
-					    		<img class="image" alt="REIV - Real Estate Institute of Victoria" src="assets/images/logo_REIV.png">
+					    		<img class="image" alt="REIV - Real Estate Institute of Victoria" src="/assets/images/logo_REIV.png">
 					    	</a>
 					    </li>
 					    <li class="reiq">
 					    	<a class="image-wrap" href="https://www.reiq.com" title="REIQ - Real Estate Institute of Queensland" onclick="window.open(this.href); return false;" rel="nofollow">
-					    		<img class="image" alt="REIQ - Real Estate Institute of Queensland" src="assets/images/logo_REIQ.png">
+					    		<img class="image" alt="REIQ - Real Estate Institute of Queensland" src="/assets/images/logo_REIQ.png">
 					    	</a>
 					    </li>
 					    <li class="reit">
 					    	<a class="image-wrap" href="http://reit.com.au" title="REIT - Real Estate Institute of Tasmania" onclick="window.open(this.href); return false;" rel="nofollow">
-					    		<img class="image" alt="REIT - Real Estate Institute of Tasmania" src="assets/images/logo_REIT.png">
+					    		<img class="image" alt="REIT - Real Estate Institute of Tasmania" src="/assets/images/logo_REIT.png">
 					    	</a>
 					    </li>
 					    <li class="reinsw">
 					    	<a class="image-wrap" href="https://www.reinsw.com.au" title="REINSW - Real Estate Institute of New South Wales" onclick="window.open(this.href); return false;" rel="nofollow">
-					    		<img class="image" alt="REINSW - Real Estate Institute of New South Wales" src="assets/images/logo_REINSW.png">
+					    		<img class="image" alt="REINSW - Real Estate Institute of New South Wales" src="/assets/images/logo_REINSW.png">
 					    	</a>
 					    </li>
 					    <li class="reiwa">
 					    	<a class="image-wrap" href="http://reiwa.com.au" title="REIWA - Real Estate Institute of Western Australia" onclick="window.open(this.href); return false;" rel="nofollow">
-					    		<img class="image" alt="REIWA - Real Estate Institute of Western Australia" src="assets/images/logo_REIWA.png">
+					    		<img class="image" alt="REIWA - Real Estate Institute of Western Australia" src="/assets/images/logo_REIWA.png">
 					    	</a>
 					    </li>
 					    <li class="reiact">
 					    	<a class="image-wrap" href="http://www.reiact.com.au" title="REIACT - Real Estate Institute of the Australian Capital Territory" onclick="window.open(this.href); return false;" rel="nofollow">
-					    		<img class="image" alt="REIACT - Real Estate Institute of the Australian Capital Territory" src="assets/images/logo_REIACT.png">
+					    		<img class="image" alt="REIACT - Real Estate Institute of the Australian Capital Territory" src="/assets/images/logo_REIACT.png">
 					    	</a>
 					    </li>
 					    <li class="reint">
 					    	<a class="image-wrap" href="https://www.reint.com.au" title="REINT - Real Estate Institute of Northern Territory" onclick="window.open(this.href); return false;" rel="nofollow">
-					    		<img class="image" alt="REINT - Real Estate Institute of Northern Territory" src="assets/images/logo_REINT.png">
+					    		<img class="image" alt="REINT - Real Estate Institute of Northern Territory" src="/assets/images/logo_REINT.png">
 					    	</a>
 					    </li>
 					</ul>
@@ -270,7 +270,7 @@
 				<div class="bottom-links">
 					<div class="container flex _align-center _justify-space-between _wrap">
 						<a class="logo" href="/">
-							<img class="image" src="assets/images/realestateview_logo_hero_rgb.svg" alt="realestateview.com.au logo">
+							<img class="image" src="/assets/images/realestateview_logo_hero_rgb.svg" alt="realestateview.com.au logo">
 						</a>
 						<span>Copyright <i class="fal fa-copyright"></i> 2001-#DateFormat(Now(),'YYYY')# | realestateVIEW.com.au Ltd</span>
 					</div>

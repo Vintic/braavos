@@ -1,3 +1,6 @@
+#wheels-debug-area{
+	display: none;
+}
 .listing-page{
 	position:relative;
 	display: block;
@@ -489,79 +492,89 @@
 			width: 100%;
 			padding: @spacing-lrg @spacing-lrg;
 			.listing-price{
-				font-size: 1.8rem;
-				margin-bottom: @spacing-med;
-				color: @sub-heading-color
+				margin-bottom: @spacing-sml;
+				font-size: 1.6rem;
+				color: @sub-heading-color;
+				@media(min-width:@_tablet-break-point){
+					font-size: 1.8rem;
+					margin-bottom: @spacing-med;
+				}
 			}
 			.listing-street{
 				font-family:@font-secondary;
 				margin-top: 0;
-				margin-bottom: @spacing-med;
-				font-size: 2.4rem;
+				margin-bottom: @spacing-sml;
+				font-size: 2rem;
 				font-weight: 400;
+				@media(min-width:@_tablet-break-point){
+					margin-bottom: @spacing-med;
+					font-size: 2.4rem;
+				}
 			}
 			.listing-suburb{
 				color: @sub-heading-color;
 				margin-bottom: @spacing-sml;
 			}
 		}
-
 		.property-details{
 			width: 100%;
 			display: flex;
 			flex-direction: column;
 			.bbc{
 				.flex();
+				margin-bottom: @spacing-med;
+				@media(min-width:@_tablet-break-point){
+					margin-bottom: 0;
+				}
+				i, span {
+					margin-right: .5em;
+				}
+				i{
+					opacity: .5;
+				}
 			}
 			.additional-info{
 				.flex();
-				margin-left: auto;
+				margin-left: 0;
+				@media(min-width:@_tablet-break-point){
+					margin-left: auto;
+				}
+				a.virtual-tour{
+					font-size: 13px;
+					padding: 2px 0;
+					color: @sub-heading-color;
+					margin: 0 @spacing-sml 0 0;
+					@media(min-width:@_tablet-break-point){
+						margin: 0;
+						padding: 2px @spacing-sml;
+					}
+				}
+				.flag{
+					&-status{
+						font-size: 13px;
+						text-transform: uppercase;
+						padding: 2px @spacing-sml;
+						margin: 0 0 0 @spacing-sml;
+						.global-border-radius();
+						@media(min-width:@_tablet-break-point){
+							margin: 0 0 0 @spacing-sml;
+							padding: 2px @spacing-sml;
+						}
+					}
+					&-updated{
+						background-color: @body-bg-secondary;
+						color: @content-color;
+					}
+					&-new{
+						background-color: @brand;
+						color: @white;
+					}
+				}
 			}
 			@media(min-width:@_tablet-break-point){
 				flex-direction: row;
-				.additional-info{
-					margin-left: auto
-				}
 			}
 		}
-
-		.bbc {
-			i,
-			span {
-				margin-right: .5em;
-			}
-			i{
-				opacity: .5;
-			}
-		}
-
-		.additional-info{
-			margin-left: auto;
-			a.virtual-tour{
-				font-size: 13px;
-				margin-left: @spacing-sml;
-				padding: 2px @spacing-sml;
-				color: @sub-heading-color;
-			}
-			.flag{
-				&-status{
-					font-size: 13px;
-					text-transform: uppercase;
-					padding: 2px @spacing-sml;
-					margin-left: @spacing-sml;
-					.global-border-radius();
-				}
-				&-updated{
-					background-color: @body-bg-secondary;
-					color: @content-color;
-				}
-				&-new{
-					background-color: @brand;
-					color: @white;
-				}
-			}
-		}
-
 		.agent-details{
 			position:relative;
 			width: 100%;
@@ -576,6 +589,13 @@
 			padding: @spacing-sml/2 @spacing-sml;
 			@media(min-width:@_tablet-break-point){
 				width: 100%;
+			}
+		}
+
+		.agency-logo{
+			img{
+				max-width: 100%;
+				height: auto;
 			}
 		}
 
@@ -620,16 +640,6 @@
 			}
 		}
 
-		.agent-photo{
-			@media(min-width:@_tablet-break-point){
-				position: absolute;
-				top: 50%;
-				left: 0;
-				transform: translate(-50%, -50%);
-			}
-			z-index: 1;
-		}
-
 		.contact-agency-email{
 			display: none;
 			color: inherit;
@@ -649,6 +659,9 @@
 /* -------------------- FEATURED -------------------- */
 
 		&.featured{
+			.agent-photo-name-wrap{
+				margin-left: auto;
+			}
 			.agent-photo{
 				@media(min-width:@_tablet-break-point){
 					width: 74px;
@@ -660,18 +673,29 @@
 				z-index: 1;
 			}
 			.agency-address{
+				display: none;
 				opacity: .55;
-				margin-bottom: @spacing-med;
+				@media(min-width:@_tablet-break-point){
+					padding: 0 0 @spacing-med 0;
+					display: block;
+				}
 			}
-			.agency-logo img{
-				display: block;
-				max-width: 100%;
-				height: auto;
-			}
+			.agency-logo{
+				width: auto;
+				float: left;
+				img{
+					display: block;
+					max-width: 100%;
+					height: auto;
+				}
+			} 
 			.agent-name{
 				font-size: 1.6rem;
-				font-weight: 500;
-				margin: 0 0 @spacing-med 0;
+				@media(min-width:@_tablet-break-point){
+					font-weight: 500;
+					margin: 0 0 @spacing-med 0;
+				}
+			
 			}
 			.contact-agency-email{
 				padding: 0;
@@ -703,7 +727,7 @@
 /* -------------------- STANDARD -------------------- */
 
 		&.standard,
-		&.freemium{
+		&.basic{
 			@media(min-width:@_tablet-break-point){
 				.gallery{
 					width: 42%;
@@ -746,14 +770,14 @@
 				}
 			}
 		}
-		&.freemium{
+		&.basic{
 			.contact-agency-email{
 				margin-left: auto;
 				border-top: 1px solid #ddd;
 				transform: translate(@spacing-lrg, @spacing-lrg);
 			}
 		}
-
+		
 		&.simple{
 			display: block;
 			box-shadow: unset;
