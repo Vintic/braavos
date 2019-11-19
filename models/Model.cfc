@@ -144,19 +144,13 @@ component extends="wheels.Model" {
 			// insert parent event record
 			// don't update if there are no changes..
 			if (!(arguments.type == "update" && StructIsEmpty(local.changed.properties))) {
-				if (isAuthenticated()) {
-					local.agentid = getSession().id;
-				} else if (isAdministratorAuthenticated()) {
-					local.administratorid = getAdministratorSession().id;
-				}
-
 				local.event = model("Change").create(
 					uuid = LCase(CreateUUID()),
 					modelName = local.changed.model,
 					changeType = arguments.type,
 					keyValue = this.id,
-					administratorId = local.administratorid ?: "",
-					agentId = local.agentid ?: "",
+					administratorId = "",
+					agentId = "",
 					description = stripNonKeyboardCharacters(arguments.description),
 					changeSource = arguments.changeSource,
 					userAgent = cgi.user_agent,

@@ -24,7 +24,7 @@ public boolean function isProduction() {
 }
 
 public string function getBrand() {
-	return request.brand;
+	return getParam('brand',request.brand);
 }
 
 /**

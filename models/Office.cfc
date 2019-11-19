@@ -27,7 +27,7 @@ component extends="Model" output="false" {
 		// hasMany("Roles");
 		// hasMany("OfficeListingTypes");
 		// hasMany("OfficeSpecialtyPropertyTypes");
-		// hasMany(name = "Images", modelName = "OfficeImage");
+		hasMany(name = "OfficeImage");
 		// hasMany(name = "OfficeProducts", joinType = "outer");
 		// nestedProperties(associations = "OfficeListingTypes", allowDelete = true);
 		// nestedProperties(associations = "OfficeSpecialtyPropertyTypes", allowDelete = true);

@@ -74,16 +74,14 @@ component extends="Model" output="false" {
 
 	public query function search() {
 
-
-
 		return model("Listing").findAll(
 			// select="Todo",
-			where="category == 'residential'",
-			include="images,suburb,floorplans,Office", //features
+			where="category = 'residential'",
+			include="Images,Suburb,ListingPropertyTypes(PropertyType),ListingAgents,Office(Suburb,OfficeImage)", //features
 			handle="listingsQuery",
 			page=arguments.page ?: 1,
 			perPage=6,
-			order="suburbName",
+			order="rank,suburbName",
 			argumentCollection = arguments
 		);
 

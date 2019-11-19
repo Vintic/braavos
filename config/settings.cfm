@@ -86,7 +86,7 @@ set(useGNAF = true);
 set(gnafElasticsearch = "https://search-gnaf20181102-nf3uum6zzyk4evft42qgi3w7za.ap-southeast-2.es.amazonaws.com:443/");
 set(gnafAddressIndex = "gnaf");
 
-set(assetsCDN = "https://assets.westeros.com.au/");
+set(assetsCDN = "https://assets.braavos.com.au/");
 set(flashAppend = false);
 set(excludeFromErrorEmail = "password,passwordConfirmation,passwordHash,passwordResetToken");
 // TODO: exclude environment variable values
