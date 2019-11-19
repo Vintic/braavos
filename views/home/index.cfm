@@ -1,3 +1,3 @@
 <cfoutput>
-	#includePartial("_#getParam('brand','res')#")#
+	#includePartial("_#getBrand()#")#
 </cfoutput>

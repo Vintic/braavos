@@ -1,6 +1,27 @@
 component extends="wheels.Controller" {
 
 	function config() {
+		filters(through="setBrand")
+	}
+
+	/**
+	 * Sets the branding based on domain
+	 *
+	 * [section: Application]
+	 * [category: Filters]
+	 */
+	private function setBrand() {
+		
+		switch (cgi.server_name){
+			case "business.braavos.dv": case "businessview.com.au":
+					request.brand = 'bus'
+				break;
+				// add more options here
+			default:
+					request.brand = 'res'
+				break;
+		}
+
 	}
 
 	/**

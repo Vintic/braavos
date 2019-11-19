@@ -23,6 +23,10 @@ public boolean function isProduction() {
 	return isProd();
 }
 
+public string function getBrand() {
+	return getParam('brand',request.brand);
+}
+
 /**
 * Checks if this environment is allowed to perform database seeding
 *
