@@ -426,57 +426,9 @@
 											</div>
 										</div>
 									</li>
-									<li class="simple listing-item">
+								<li class="simple listing-item">
 
-										<div class="agency-details agency-top"  style="background-color: ##ffffff; color: ##0F1324;">
-											<div class="agency-moto">
-												<span>Local Expert</span>
-											</div>
-											<div class="agency-logo">
-												<img src="https://www.realestateview.com.au/logos/results/Barry-Plant-160x30.png" alt="Barry Plant" width="160" height="30">
-											</div>
-										</div>
-
-										<div class="gallery featured">
-											<div class="image-large">
-												<a class="item image-wrap" href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
-													<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
-												</a>
-												<a class="item image-wrap" href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
-													<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
-												</a>
-												<a class="item image-wrap" href="/real-estate/1c-braemar-street-mont-albert-north-vic/property-details-buy-residential-12812056/">
-													<img class="image" src="assets/images/placholder-house.jpg" alt="1C Braemar Street, Mont Albert North VIC 3129">
-												</a>
-											</div>
-										</div>
-
-										<div class="agent-details">
-											<div class="agent-photo image-wrap">
-												<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="assets/images/agent01.jpg">
-
-											</div>
-										</div>
-										<div class="content">
-											<div class="listing-address">
-												<div class="listing-street">
-												
-														<div class="listing-suburb">Mont Albert North | House</div>
-												
-												</div >
-											</div>
-											<div class="property-details">
-												<div class="bbc">
-													<div class="bedrooms"><i class="fas fa-bed"></i><span>4</span></div>
-													<div class="bathrooms"><i class="fas fa-bath"></i><span>2</span></div>
-													<div class="carparks"><i class="fas fa-car"></i><span>4</span></div>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="simple listing-item">
-
-										<div class="agency-details agency-top"  style="background-color: ##011B36; color: ##ffffff;">
+										<div class="agency-details agency-top" style="background-color: ##011B36; color: ##ffffff;">
 											<div class="agency-moto">
 												<span>Local Expert</span>
 											</div>
@@ -505,12 +457,13 @@
 											</div>
 										</div>
 										<div class="content">
+											<div class="listing-price">$600,000 - $660,000</div>
 											<div class="listing-address">
-												<div class="listing-street">
-											
-														<div class="listing-suburb">Mont Albert North | House</div>
-												
-												</div >
+												<div class="listing-suburb">
+													
+														Mont Albert North | House
+													
+												</div>
 											</div>
 											<div class="property-details">
 												<div class="bbc">
@@ -523,7 +476,7 @@
 									</li>
 									<li class="simple listing-item">
 
-										<div class="agency-details agency-top"  style="background-color: ##011B36; color: ##ffffff;">
+										<div class="agency-details agency-top" style="background-color: ##011B36; color: ##ffffff;">
 											<div class="agency-moto">
 												<span>Local Expert</span>
 											</div>
@@ -552,12 +505,13 @@
 											</div>
 										</div>
 										<div class="content">
+											<div class="listing-price">$600,000 - $660,000</div>
 											<div class="listing-address">
-												<div class="listing-street">
-										
-													<div class="listing-suburb">Mont Albert North | House</div>
-												
-												</div >
+												<div class="listing-suburb">
+													
+														Mont Albert North | House
+													
+												</div>
 											</div>
 											<div class="property-details">
 												<div class="bbc">
