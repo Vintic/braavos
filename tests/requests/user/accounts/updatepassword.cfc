@@ -83,7 +83,7 @@ component extends="tests.Test" {
 		assert("actual.flash.messageType == 'error'");
 	}
 
-/*
+	/*
 	function test_user_controller_accounts_update_success() {
 		transaction {
 			props = Duplicate(request.currentUser.properties());
