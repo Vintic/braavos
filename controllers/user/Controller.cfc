@@ -26,7 +26,7 @@ component extends="app.controllers.Controller" {
 		filters(through = "setupRequest");
 		// Check for password blocks
 		filters(through = "checkForPasswordBlock");
-		// sets 'currentAgent' variable
+		// sets 'currentUser' variable
 		filters(through = "setCurrentUser");
 		filters(through = "writeToHtmlHead", type = "after");
 		// user specific layout

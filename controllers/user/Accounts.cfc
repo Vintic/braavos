@@ -81,7 +81,6 @@ component extends="app.controllers.user.Controller" {
 	 */
 	function updatePassword() {
 		// Check old password
-
 		if (!user.checkPassword(params.user.oldpassword)) {
 			flashInsert(message = "Your old password was incorrect.", messageType = "error");
 			redirectTo(back = true);

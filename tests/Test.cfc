@@ -1,31 +1,38 @@
-/**
- * This is the parent test component that all your test components should extend.
- * Do not delete this file (the functions can be safely deleted though).
- */
 component extends="wheels.Test" {
 
-	/**
-	 * Executes once before the test suite runs.
-	 */
-	function beforeAll() {
+	public void function packageSetup() {
+		mocker = this.getMocker();
 	}
 
-	/**
-	 * Executes before every test case (unless overridden in a package without calling super.setup()).
-	 */
-	function setup() {
+	public void function setup() {
+		mocker = this.getMocker();
 	}
 
-	/**
-	 * Executes after every test case (unless overridden in a package without calling super.teardown()).
-	 */
-	function teardown() {
+	public void function teardown() {
 	}
 
-	/**
-	 * Executes once after the test suite runs.
-	 */
-	function afterAll() {
+	public void function beforeAll() {
+		mocker = this.getMocker();
+		// warn if database has not been seeded
+		if (isDevelopment() && !model("Suburb").exists()) {
+			Throw(type = "EmptyDatabaseError", message = "The testing database has no seed data. Add 'seed=true' to your url");
+		}
 	}
+
+	public void function afterAll() {
+		if (url.debug ?: false == true) {
+			setting showdebugoutput="true";
+		}
+	}
+
+	public object function getMocker() {
+		if (IsDefined("mocker")) {
+			return mocker;
+		} else {
+			return new tests.mocker.Mocker();
+		}
+	}
+
+	include template="helpers.cfm";
 
 }
