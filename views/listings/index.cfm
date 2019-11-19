@@ -360,7 +360,7 @@
 			<div class="property-listing row _align-start">
 				<div class="search-results  col-1-1 col-desktop-2-3">
 
-					<article class="featured listing-item" data-hook="listing-item" data-id="12812056">							<div class="featured-top-bar" style="background-color: #011B36">
+					<article class="featured listing-item" data-hook="listing-item" data-id="12812056">			<div class="featured-top-bar" style="background-color: #011B36">
 							<img src="https://www.realestateview.com.au/logos/results/Woodards.gif" alt="Woodards" width="160" height="30">
 						</div>
 				
@@ -394,11 +394,11 @@
 								<div class="additional-info">
 									<a href="#" class="virtual-tour" data-hook="open-virtual-tour" target="_blank">
 										<i class="fas fa-vr-cardboard"></i>
-										<span class="mobile-hide-inline">VR Inspect</span>
+										<span>VR Inspect</span>
 									</a>
 									<a href="#" class="virtual-tour" data-hook="open-virtual-tour" target="_blank">
 										<i class="far fa-play-circle"></i>
-										<span class="mobile-hide-inline">Video</span>
+										<span>Video</span>
 									</a>
 									<!-- this can be Updated or UNDER OFFER -->
 									<span class="flag-status flag-updated">Updated</span>
@@ -464,11 +464,11 @@
 								<div class="additional-info">
 									<a href="#" class="virtual-tour" data-hook="open-virtual-tour" target="_blank">
 										<i class="fas fa-vr-cardboard"></i>
-										<span class="mobile-hide-inline">VR Inspect</span>
+										<span>VR Inspect</span>
 									</a>
 									<a href="#" class="virtual-tour" data-hook="open-virtual-tour" target="_blank">
 										<i class="far fa-play-circle"></i>
-										<span class="mobile-hide-inline">Video</span>
+										<span>Video</span>
 									</a>
 									<!-- this can be Updated or UNDER OFFER -->
 									<span class="flag-status flag-updated">Updated</span>
@@ -533,11 +533,11 @@
 								<div class="additional-info">
 									<a href="#" class="virtual-tour" data-hook="open-virtual-tour" target="_blank">
 										<i class="fas fa-vr-cardboard"></i>
-										<span class="mobile-hide-inline">VR Inspect</span>
+										<span>VR Inspect</span>
 									</a>
 									<a href="#" class="virtual-tour" data-hook="open-virtual-tour" target="_blank">
 										<i class="far fa-play-circle"></i>
-										<span class="mobile-hide-inline">Video</span>
+										<span>Video</span>
 									</a>
 									<!-- this can be Updated or UNDER OFFER -->
 									<span class="flag-status flag-new">NEW</span>
@@ -648,11 +648,9 @@
 									</div>
 									<div class="content">
 										<div class="listing-address">
-											<div class="listing-street">
-											
-													<div class="listing-suburb">Mont Albert North | House</div>
-											
-											</div >
+											<div class="listing-street">										
+												<div class="listing-suburb">Mont Albert North | House</div>										
+											</div>
 										</div>
 										<div class="property-details">
 											<div class="bbc">
