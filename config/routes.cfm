@@ -4,6 +4,7 @@
 	include template="routes/restful.cfm";
 	mapper()
 		.get(name="listingResults", pattern="listings", to="listings##index")
+		.get(name="listingShow", pattern="listing-show/[key]", to="listings##show")
 		// .wildcard()
 		.root(to="home##index", method="get")
 	.end();

@@ -17,12 +17,12 @@
 		<div class="gallery featured flex">
 			<div class="image-large">
 				<cfif Len(Trim(listings.fileName))>
-					<a class="item image-wrap" href="##">
+					<a class="item image-wrap" href="#urlFor(route='listingShow', key=listings.id)#">
 						<img class="image" src="#getImageURL(listings.fileName, 800)#" alt="1C Braemar Street, Mont Albert North VIC 3129">
 					</a>
 				<cfelse>
 					<!--- needs placeholder --->
-					<a class="item image-wrap" href="##" style="background: ##eaeaea;"></a>
+					<a class="item image-wrap" href="#urlFor(route='listingShow', key=listings.id)#" style="background: ##eaeaea;"></a>
 				</cfif>
 			</div>
 		</div>
@@ -30,7 +30,7 @@
 			<div class="listing-price">#!isTrue(isPriceHidden) ? listings.priceText : "Contact Agent"#</div>
 			<div class="listing-address">
 				<h3 class="listing-street">
-					<a href="##" class="street-address">#addressFormat(local.addressStruct)#</a>
+					<a href="#urlFor(route='listingShow', key=listings.id)#" class="street-address">#addressFormat(local.addressStruct)#</a>
 				</h3 >
 				<div class="listing-suburb">#titleise(listings.suburbName)# #listings.state# #listings.postcode# | #name#</div>
 			</div>
