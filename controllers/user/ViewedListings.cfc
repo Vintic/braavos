@@ -20,23 +20,24 @@ component extends="app.controllers.user.Controller" {
 			order = "id DESC"
 		);
 
-		local.viewedListingsIds = listEnsure(sanitiseList(ListRemoveDuplicates(Valuelist(viewedListings.listingId))));
+		local.viewedListingsIds = listEnsure(sanitiseList(ListRemoveDuplicates(ValueList(viewedListings.listingId))));
 		local.shortListWhere = Duplicate(local.where);
-		local.shortListWhere.Append(splitQueryParamList(column="listingId", list=local.viewedListingsIds));
+		local.shortListWhere.Append(
+			splitQueryParamList(column = "listingId", list = local.viewedListingsIds)
+		);
 		local.shortLists = model("ContactShortListListing").findAll(
 			select = "id,listingId",
 			where = whereify(local.shortListWhere)
 		);
 
-    shortListArray = [];
-    for (local.thisRow in viewedListings) {
+		shortListArray = [];
+		for (local.thisRow in viewedListings) {
 			local.thisListingShortList = local.shortLists.filter(function(i) {
 				return arguments.i.listingId == thisRow.listingId;
-			 });
+			});
 			shortListArray.append(local.thisListingShortList);
-    }
-    QueryAddColumn(viewedListings, "shortListQuery", shortListArray)
-
+		}
+		QueryAddColumn(viewedListings, "shortListQuery", shortListArray)
 	}
 
 }

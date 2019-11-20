@@ -30,7 +30,7 @@ component extends="Controller" {
 	 *
 	 */
 	function create() {
-		user = model("Agent").findOne(where = "email = '#params.email#'", parameterize = 1);
+		user = model("Contact").findOne(where = "email = '#params.email#'", parameterize = 1);
 		if (!IsObject(user)) {
 			genericError();
 		} else {
@@ -42,7 +42,7 @@ component extends="Controller" {
 				// Send Reset Email
 				sendEmail(
 					to = user.email,
-					subject = "REV Agent Password Reset Request",
+					subject = "REV Subscriber Password Reset Request",
 					template = "/mailers/passwordReset,/mailers/passwordResetPlain",
 					user = user
 				);
@@ -95,7 +95,7 @@ component extends="Controller" {
 	 *
 	 */
 	private function checkTokenAndGetUser() {
-		user = model("Agent").findOne(where = "passwordResetToken = '#params.token#'", parameterize = 1);
+		user = model("Contact").findOne(where = "passwordResetToken = '#params.token#'", parameterize = 1);
 		// Valid User? && Token age is less than two hours?
 		if (!IsObject(user) || DateDiff("h", user.passwordResetTokenAt, Now()) > 2) {
 			badToken();

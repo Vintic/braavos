@@ -36,10 +36,7 @@ component
 	// For an external auth method, this might include LDAP/Remote stuff
 	boolean function authenticate() {
 		// Find the local user account
-		local.user = model("Contact").findOne(
-			where = "email = '#this.email#'",
-			parameterize = 1
-		);
+		local.user = model("Contact").findOne(where = "email = '#this.email#'", parameterize = 1);
 		if (!IsObject(local.user)) {
 			this.addError(property = "email", message = "Sorry, we couldn't log you in");
 			return false;

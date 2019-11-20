@@ -11,7 +11,7 @@ component extends="wheels.Controller" {
 	 * [category: Filters]
 	 */
 	private function setBrand() {
-		
+
 		switch (cgi.server_name){
 			case "business.braavos.dv": case "businessview.com.au":
 					request.brand = 'bus'

@@ -12,17 +12,12 @@ component extends="app.controllers.user.Controller" {
 	private struct function fields() {
 		states = model("State").findAll(select = "id,state,code", cache = true);
 		if (Val(user.suburbId)) {
-			suburbs = model("Suburb").findAll(
-				select = "id,suburbNameAndPostcode,state",
-				where = "id = #user.suburbId#"
-			);
+			suburbs = model("Suburb").findAll(select = "id,suburbNameAndPostcode,state", where = "id = #user.suburbId#");
 			params.state = suburbs.state;
 		} else {
 			suburbs = QueryNew("id,suburbName")
 		}
-		contactSituations = model("ContactSituation").findAll(
-			select = "id,situationName"
-		);
+		contactSituations = model("ContactSituation").findAll(select = "id,situationName");
 		return {};
 	}
 
@@ -35,10 +30,7 @@ component extends="app.controllers.user.Controller" {
 		local.addressStruct.addressLine1 = user.addressLine1;
 		local.addressStruct.addressLine2 = user.addressLine2;
 		if (Val(user.suburbId)) {
-			local.suburbs = model("Suburb").findAll(
-				select = "id,suburbName,state,postcode",
-				where = "id = #user.suburbId#"
-			);
+			local.suburbs = model("Suburb").findAll(select = "id,suburbName,state,postcode", where = "id = #user.suburbId#");
 			local.addressStruct.suburbName = local.suburbs.suburbName;
 			local.addressStruct.state = local.suburbs.state;
 			local.addressStruct.postcode = local.suburbs.postcode;
@@ -81,7 +73,6 @@ component extends="app.controllers.user.Controller" {
 	 */
 	function updatePassword() {
 		// Check old password
-
 		if (!user.checkPassword(params.user.oldpassword)) {
 			flashInsert(message = "Your old password was incorrect.", messageType = "error");
 			redirectTo(back = true);

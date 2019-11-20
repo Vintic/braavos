@@ -65,5 +65,4 @@ component extends="app.controllers.user.Controller" {
 		}
 	}
 
-
 }

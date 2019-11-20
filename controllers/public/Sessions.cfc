@@ -12,7 +12,7 @@ component extends="Controller" {
 	 *
 	 */
 	function new() {
-		auth = model("auth.User").new();
+		auth = model("auth.Contact").new();
 	}
 
 	/**
@@ -21,7 +21,7 @@ component extends="Controller" {
 	 *
 	 */
 	function create() {
-		auth = model("auth.User").new(params.auth);
+		auth = model("auth.Contact").new(params.auth);
 		if (!auth.hasErrors() && auth.login()) {
 			createAuditEvent(
 				type = "auth",
