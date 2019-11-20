@@ -16,7 +16,12 @@ component extends="wheels.Controller" {
 			case "business.braavos.dv": case "businessview.com.au":
 					request.brand = 'bus'
 				break;
-				// add more options here
+			case "rural.braavos.dv": case "ruralview.com.au":
+					request.brand = 'rur'
+				break;
+			case "holiday.braavos.dv": case "holidayview.com.au":
+					request.brand = 'hol'
+				break;
 			default:
 					request.brand = 'res'
 				break;
