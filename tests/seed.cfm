@@ -250,4 +250,6 @@ INSERT INTO importoffices (id,importProviderId,officeId,providerOfficeCode,impor
 INSERT INTO contacts (id,firstName,lastName,email,mobile,createdAt,passwordHash) VALUES
 (1,'Night','King','night.king@whitewalkers.com','0444666666','2019-10-09 13:00:00','$2a$12$sXvAkslD0z0crOwTzRy5S.BflSn69he9wcLoO6dVKliUVFWmKvRhy')
 ;
+INSERT INTO criteria (id,contactId,saleMethod,listingCategory,state,priceFrom,priceTo,bedrooms,bathrooms,carSpaces,sendFrequency,createdAt) VALUES
+(1,1,'Sale','Residential','VIC',800000,1500000,4,2,2,'Weekly','2019-11-19 14:00:00')
 </cfquery>
