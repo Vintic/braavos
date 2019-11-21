@@ -28,6 +28,24 @@
 	box-shadow: @h @v @br @sr rgba(102,102,102,1);
 }
 
+.border-bottom-with-spacing(@pb: @spacing-med, @mb: @spacing-med){
+	padding-bottom: @pb;
+	margin-bottom: @mb;
+	.global-border-bottom();
+}
+
+.hover-hide(){
+	position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    .global-transition();
+}
+
+.hover-show(){
+    opacity: 1;
+    visibility: visible;
+}
+
 /* ------------------------- */
 /*  RESPONSIVE VIDEO EMBEDS  */
 /* ------------------------- */

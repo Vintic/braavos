@@ -15,38 +15,40 @@
 		<div id="breadcrumbs">
 			<div class="container">
 				<ul>
-					<li class="first"><a href="/">Home</a></li>
-					<li class="first"><a href="##">Buy</a></li>
-					<li class="first"><a href="##">VIC</a></li>
-					<li class="first"><a href="##">#listing.fullAddress#</a></li>
+					<li><a href="/">Home</a></li>
+					<li><a href="##">Buy</a></li>
+					<li><a href="##">VIC</a></li>
+					<li><a href="##">#titleise(listing.fullAddress)#</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="page-content">
 			<div class="page-top-content">
 				<div class="container">
-					<div class="row _align-start">
+					<div class="row row-top">
 						<div class="col-1-1 col-tablet-1-2 col-desktop-2-3">
-							<h1 class="page-title">#listing.fullAddress#</h1>
-							<div class="property-bbc">
-								<cfif getBrand() != 'bus'>
-									<cfif Val(listing.bedrooms)><div class="bedrooms"><span>#listing.bedrooms# </span>beds</div></cfif>
-									<cfif Val(listing.bathrooms)><div class="bathrooms"><span>#listing.bathrooms# </span>baths</div></cfif>
-								</cfif>
-								<cfif Val(listing.totalCarSpaces)><div class="carparks"><span>#listing.totalCarSpaces# </span>cars</div></cfif>
-							</div>
-							<cfif Len(listing.landsize)>
-								<div class="property-land-size">
-									<span>#listing.landsize# </span> sqm
+							<h1 class="page-title">#titleise(listing.fullAddress)#</h1>
+							<div class="property-attributes">
+								<div class="property-attribute property-attribute__bbc">
+									<cfif getBrand() != 'bus'>
+										<cfif Val(listing.bedrooms)><span class="bedrooms"><span>#listing.bedrooms# </span>beds</span></cfif>
+										<cfif Val(listing.bathrooms)><span class="bathrooms"><span>#listing.bathrooms# </span>baths</span></cfif>
+									</cfif>
+									<cfif Val(listing.totalCarSpaces)><span class="carparks"><span>#listing.totalCarSpaces# </span>cars</span></cfif>
 								</div>
-							</cfif>
+								<cfif Len(listing.landsize)>
+									<div class="property-attribute property-attribute__size">
+										<span>#listing.landsize# </span> sqm
+									</div>
+								</cfif>
 
-							<div class="property-type">
-								<span>#listing.name#</span>
-								<span>for #listing.saleMethod#</span>
+								<div class="property-attribute property-attribute__method">
+									<span>#listing.name#</span>
+									<span>for #listing.saleMethod#</span>
+								</div>
 							</div>
 						</div>
-						<div class="col-1-1 col-tablet-1-2 col-desktop-1-3">
+						<div class="col-1-1 col-tablet-1-2 col-desktop-1-3 ">
 							<h2 class="property-price">
 								#!isTrue(listing.isPriceHidden) ? listing.priceText : "Contact Agent"#
 							</h2>
@@ -54,9 +56,10 @@
 						</div>
 					</div>  <!--  .page-top-content 1st row end     -->
 
-					<div class="row">
+					<div class="row row-bottom">
 						<div class="col-1-1 col-tablet-1-2 col-desktop-2-3">
-							#listing.auctionAt#
+							<span><strong>Auction </strong>Saturday, November 16, 2019, 12:30 PM</span>
+							<button class="btn auction-btn" data-hook="save-auction"><span>Add to Calendar </span></button>
 						</div>
 						<div class="col-1-1 col-tablet-1-2 col-desktop-1-3">
 							<div class="property-share-buttons">
@@ -64,10 +67,10 @@
 									<button class="btn btn-favorite" data-hook="toggle-shortlist" data-id="#listing.id#">Save</button>
 								</div>
 								<div class="property-share-button">
-									<button class="btn btn-prite" data-hook="btn-print">Print</button>
+									<button class="btn btn-print" data-hook="btn-print">Print</button>
 								</div>
 								<div class="property-share-button">
-									<button class="btn btn-prite" data-hook="btn-share" data-toggle="popup">Share</button>
+									<button class="btn btn-share" data-hook="btn-share" data-toggle="popup">Share</button>
 									<div class="share-popup">
 										<span>Share Via ...</span>
 										<ul>
@@ -118,16 +121,171 @@
 								</li>	
 							</ul>
 						</div>		
-						<div class="agency-logo">
-							<img src="#getImageURL(listing.fileName, 160)#"  />
-						</div>
+
+					
 					</div>
 				</div>
 
 			</div>	<!--  .property-media end     -->
+			<div class="property-details">
+				<div class="container">	
+					<div class="row">
+						<div class="col-1-1 col-tablet-1-2 col-desktop-2-3">
+							<div class="property-info property-intro">
+								<h2 class="title property-info">
+									<span>#listing.heading#</span>
+								</h2>
+								<div class="brief property-saletype">
+									<span>#addressFormat(local.addressStruct)#</span> for <span>#listing.saleMethod#</span>
+								</div>
+								<div class="description property-description">
+									#htmlify(listing.description)#							
+								</div>
+							</div>   <!--  .property-intro end     -->
+			
 
-		
+							<div class="property-info property-map">
+								<div class="static-map">
+									<img class="static-map-image" title="Bill Chung" alt="Static Map" src="../assets/images/map.png">
+								</div>
+								<div class="brief property-magigraph">
+									<p>5 Calembeena Avenue, Hughesdale is for sale through an agent from Woodards Carnegie. It has 3 bedrooms, 2 bathrooms and 1 parking spots. Don't forget to favourite it by clicking the heart icon at the top of the page contact the agent via phone or email form.</p>
+								</div>
+							</div> <!--  .property-map end     -->
+
+							<cfif getBrand() == 'res'>
+								<div class="property-info property-inspection">
+									<h2 class="title">Inspection Times</h2>
+									<ul>
+										<li itemprop="events" itemscope="" itemtype="https://schema.org/Event">
+					                        <meta itemprop="startDate" content="2019-11-23T10:00:00+00:00">
+					                        <meta itemprop="endDate" content="2019-11-23T10:30:00+00:00">
+					                        <meta itemprop="location" content="2/21 Heather Grove, Cheltenham VIC 3192">
+					                        <meta itemprop="name" content="Inspection">
+					                        <h3>Saturday</h3>
+					                        <span>23 November</span>
+					                        <span>10:00 AM - 10:30 AM</span>
+											<button data-hook="save-inspection" data-inspection-number="0"><span>Add to Calendar</span></button>
+					                    </li>
+					                    <li itemprop="events" itemscope="" itemtype="https://schema.org/Event">
+					                        <meta itemprop="startDate" content="2019-11-23T10:00:00+00:00">
+					                        <meta itemprop="endDate" content="2019-11-23T10:30:00+00:00">
+					                        <meta itemprop="location" content="2/21 Heather Grove, Cheltenham VIC 3192">
+					                        <meta itemprop="name" content="Inspection">
+					                        <h3>Saturday</h3>
+					                        <span>23 November</span>
+					                        <span>10:00 AM - 10:30 AM</span>
+											<button data-hook="save-inspection" data-inspection-number="0"><span>Add to Calendar</span></button>
+					                    </li>
+					                    <li itemprop="events" itemscope="" itemtype="https://schema.org/Event">
+					                        <meta itemprop="startDate" content="2019-11-23T10:00:00+00:00">
+					                        <meta itemprop="endDate" content="2019-11-23T10:30:00+00:00">
+					                        <meta itemprop="location" content="2/21 Heather Grove, Cheltenham VIC 3192">
+					                        <meta itemprop="name" content="Inspection">
+					                        <h3>Saturday</h3>
+					                        <span>23 November</span>
+					                        <span>10:00 AM - 10:30 AM</span>
+											<button data-hook="save-inspection" data-inspection-number="0"><span>Add to Calendar</span></button>
+					                    </li>
+					                    <li itemprop="events" itemscope="" itemtype="https://schema.org/Event">
+					                        <meta itemprop="startDate" content="2019-11-23T10:00:00+00:00">
+					                        <meta itemprop="endDate" content="2019-11-23T10:30:00+00:00">
+					                        <meta itemprop="location" content="2/21 Heather Grove, Cheltenham VIC 3192">
+					                        <meta itemprop="name" content="Inspection">
+					                        <h3>Saturday</h3>
+					                        <span>23 November</span>
+					                        <span class="auction-time">Auction - 12:30PM</span>
+											<button data-hook="save-inspection" data-inspection-number="0"><span>Add to Calendar</span></button>
+					                    </li>
+									</ul>
+
+									<div class="web-inspection-cta">
+										<span>Times don't suit? </span><a href="##" data-hook="contact-inspection-email">Email Agent</a><span> to make an appointment</span>
+									</div>
+								</div> <!--  .property-inspection end     -->
+							</cfif>
+
+							<cfif getBrand() == 'res'>
+								<div class="property-info property-schools">
+									#includePartial("property/_schools")#
+								</div> <!--  .property-schools end     -->
+							</cfif>
+
+							<div class="property-info property-recent-sales">
+								#includePartial("property/_recents")#
+							</div> <!--  .property-recent-sales end     -->
+
+							<div class="property-info property-meet-neighbours">
+								#includePartial("property/_neighboures")#
+							</div> <!--  .property-recent-sales end     -->
+
+							<div class="property-info property-weekly-income">
+								#includePartial("property/_weekly")#
+							</div> <!--  .property-weekly-income end     -->
+
+							<div class="property-info property-occupations-interests">
+								#includePartial("property/_occuint")#
+							</div> <!--  .property-occupations-interests end     -->
+
+							<div class="property-info property-trends">
+								#includePartial("property/_trends")#
+							</div> <!--  .property-trends end     -->
+						</div>
+
+						<div class="col-1-1 col-tablet-1-2 col-desktop-1-3">
+							<div class="agency-logo">
+								<img src="#getImageURL(listing.fileName, 160)#"  />
+							</div>
+						</div>
+					</div>	<!--  .property-details row 1 end     -->
+
+					<!--  .property-more-property start    -->
+					#includePartial("property/_moreproperties")#
+					<!--  .property-more-propert end     -->
+
+					<section class="home-content-section homepage-partner-links">
+						<h2>View Network</h2>
+						<div class="row">
+						    <article class="partner-business col-tablet-1-3">
+						    	<a class="logo" href="/?brand=bus">
+						        	<img class="image" src="../assets/images/realestateview_logo_hero_rgb.svg">
+						      	</a>
+						        <h3><a href="/?brand=bus">Businesses For Sale</a></h3>
+						        <p>Retail, industrial, construction &amp; more businesses.</p>
+						    </article>
+						    <article class="partner-holiday col-tablet-1-3">
+						    	<a class="logo" href="/?brand=hol">
+						        	<img class="image" src="../assets/images/realestateview_logo_hero_rgb.svg">
+						      	</a>
+						        <h3><a href="/?brand=hol">Holiday Rentals</a></h3>
+						        <p>Holiday rental accommodation to suit your needs.</p>
+						    </article>
+						    <article class="partner-rural col-tablet-1-3">
+						    	<a class="logo" href="/?brand=rur">
+						        	<img class="image" src="../assets/images/realestateview_logo_hero_rgb.svg">
+						      	</a>
+						        <h3><a href="/?brand=rur">Rural Properties for Sale</a></h3>
+						        <p>Farmland, rural land and lifestyle properties.</p>
+						    </article>
+						</div>
+					</section>
+					
+				</div> <!--  .property-details container end     -->
+			</div> <!--  .property-details end     -->
+
 		</div> <!--  .page-content end     -->
-	</div>
-<cfdump var="#listing#"/>
+
+		<cfif getBrand() == 'res1'>
+			<div class="map-modal-popup">
+				<div class="modal-overlay"></div>
+				<div class="modal-wrapper">
+					<div class="modal-close"></div>
+					<div class="modal-inner-wrapper">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d50432.36385702506!2d144.9629285353186!3d-37.8129363164936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s1%20Bourke%20Street%2C%20Melbourne%20University%2C%20VIC%203052!5e0!3m2!1sen!2sau!4v1574292145486!5m2!1sen!2sau" width="800" height="600" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+					</div>
+				</div>
+			</div>
+		</cfif>
+
+	</div> <!--  .property-page end     -->
 </cfoutput>

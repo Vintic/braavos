@@ -1,0 +1,89 @@
+.property-page{
+    font-size: 1.6rem;
+
+    h2.property-price{
+        font-size: 2.6rem;
+        font-weight: 700;
+        margin-bottom: 1em;
+        @media(min-width: @_tablet-break-point){
+            text-align: right;
+        }
+    }
+
+    .property-attributes{
+        .property-attribute{
+            display: inline-block;
+            color: @content-color;
+            margin-right: @spacing-med;
+            &__bbc{
+                > span{
+                    display: inline-block;
+                    margin-right: @spacing-med;
+                  
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    span{
+                        color: @body-color;
+                         font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    a.property-quote-link{
+        display: block;
+        text-transform: uppercase;
+        color: @brand;
+        font-weight: 700;
+        @media(min-width: @_tablet-break-point){
+            text-align: right;
+        }
+    }
+
+    .page-top-content{
+        .row{
+            &-top{
+                .border-bottom-with-spacing();
+            }
+            &-bottom{
+                padding-bottom: @spacing-med;
+            }
+        }
+    }
+
+    .auction-btn{
+        margin-left: @spacing-med;
+    }
+
+    .property-share-buttons{
+
+        .flex(stretch, flex-end);
+        .property-share-button{
+            position: relative;
+            display: inline-block;
+            margin-left: @spacing-lg;
+            .share-popup{
+                .hover-hide();
+            }
+            &:hover{
+                .share-popup{
+                    .hover-show();
+                }
+            }
+
+
+       
+        }
+    }
+
+}
+
+
+
+
+
+.tag-cloud{
+    position: relative;
+}
