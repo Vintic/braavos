@@ -13,6 +13,9 @@
 					Car: #viewedListings.totalCarSpaces#<br>
 					Price: #viewedListings.priceText#<br>
 					Is shortlist? #local.shortListQry.recordCount ? 'Yes' : 'No'#<br>
+					<cfif Len(viewedListings.fileName)>
+						<img src="#getImageURL(viewedListings.fileName, 300)#"><br>
+					</cfif>
 					<cfif local.shortListQry.recordCount>
 						<!--- option to remove --->
 						#postButton(

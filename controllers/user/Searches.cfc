@@ -9,11 +9,11 @@ component extends="app.controllers.user.Controller" {
 	/**
 	 * FILTERS
 	 */
-
 	private any function getCriteria() {
-		criteria = model("Criteria").findByKey(params.key);
+		criteria = model("Criteria").findOne(where = "id = #params.key# AND contactId = #currentUser.id#");
 		if (!IsObject(criteria)) {
-			redirectTo(route = "searches", error = "That record wasn't found");
+			flashInsert(message = "That record wasn't found", messageType = "error");
+			redirectTo(route = "searches");
 		}
 	}
 
@@ -39,7 +39,8 @@ component extends="app.controllers.user.Controller" {
 				id,contactId,saleMethod,listingCategory,state,priceFrom,priceTo,bedrooms,bathrooms,carSpaces,sendFrequency,createdAt
 			",
 			where = whereify(local.where),
-			order = "saleMethod DESC, listingCategory DESC, id DESC"
+			order = "saleMethod DESC, listingCategory DESC, id DESC",
+			parametized = 1
 		);.
 		if (criteria.recordCount) {
 			local.criteriaIdList = listEnsure(sanitiseList(ListRemoveDuplicates(ValueList(criteria.id))));

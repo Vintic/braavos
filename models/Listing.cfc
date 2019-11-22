@@ -20,8 +20,9 @@ component extends="Model" output="false" {
 		hasMany(name = "ListingAgents", shortcut = "Agents", joinType = "outer");
 		hasMany(name = "ListingPropertyTypes", shortcut = "PropertyTypes", joinType = "outer");
 		// hasMany(name = "ListingRanks", shortcut = "Ranks", joinType = "outer");
-		hasMany(name = "images", modelName = "ListingImage");
-		hasMany(name = "floorplans", modelName = "ListingFloorplan");
+		hasMany(name = "Images", modelName = "ListingImage");
+		hasOne(name="Image", modelName = "ListingImage", joinKey="heroImageId", foreignKey="id");
+		hasMany(name = "Floorplans", modelName = "ListingFloorplan");
 		hasMany(name = "ListingFeatures", shortcut = "Features");
 		// hasOne(name = "ListingBusiness", joinType = "outer");
 		// nestedProperties(associations = "ListingFeatures,ListingBusiness", allowDelete = true);

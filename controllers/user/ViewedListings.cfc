@@ -11,13 +11,14 @@ component extends="app.controllers.user.Controller" {
 	public void function index() {
 		local.where = ["contactid = #currentUser.id#"];
 		viewedListings = model("ContactViewedListing").findAll(
-			select = "id,contactId,listingId,createdAt,fullAddress,priceText,bedrooms,bathrooms,totalCarSpaces",
-			include = "Listing",
+			select = "id,contactId,listingId,createdAt,fullAddress,priceText,bedrooms,bathrooms,totalCarSpaces,fileName",
+			include = "Listing(Image)",
 			where = whereify(local.where),
 			handle = "query",
 			perPage = 50,
 			page = params.page,
-			order = "id DESC"
+			order = "id DESC",
+			parametized = 1
 		);
 
 		local.viewedListingsIds = listEnsure(sanitiseList(ListRemoveDuplicates(ValueList(viewedListings.listingId))));

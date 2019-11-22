@@ -30,7 +30,11 @@ component extends="app.controllers.user.Controller" {
 		local.addressStruct.addressLine1 = user.addressLine1;
 		local.addressStruct.addressLine2 = user.addressLine2;
 		if (Val(user.suburbId)) {
-			local.suburbs = model("Suburb").findAll(select = "id,suburbName,state,postcode", where = "id = #user.suburbId#");
+			local.suburbs = model("Suburb").findAll(
+				select = "id,suburbName,state,postcode",
+				where = "id = #user.suburbId#",
+				parametized = 1
+			);
 			local.addressStruct.suburbName = local.suburbs.suburbName;
 			local.addressStruct.state = local.suburbs.state;
 			local.addressStruct.postcode = local.suburbs.postcode;

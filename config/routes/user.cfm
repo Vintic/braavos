@@ -7,7 +7,7 @@ mapper(mapFormat = false)
 		.resources(name = "shortLists", only = "index,create,delete")
 		.resources(name = "viewedListings", only = "index,update")
 		.resources(name = "searches", only = "index,new,create,edit,update,delete")
-		.resources(name = "auctionAlerts", only = "index,update,delete")
+		.resources(name = "auctionAlerts", only = "index,create,delete")
 	.end()
 .end()
 </cfscript>

@@ -11,9 +11,10 @@ component extends="app.controllers.user.Controller" {
 	 */
 
 	private any function getShortList() {
-		shortList = model("ContactShortListListing").findByKey(params.key);
+		shortList = model("ContactShortListListing").findOne(where = "id = #params.key# AND contactId = #currentUser.id#");
 		if (!IsObject(shortList)) {
-			redirectTo(route = "shortLists", error = "That record wasn't found");
+			flashInsert(message = "That record wasn't found", messageType = "error");
+			redirectTo(route = "shortLists");
 		}
 	}
 
@@ -25,13 +26,14 @@ component extends="app.controllers.user.Controller" {
 	public void function index() {
 		local.where = ["contactid = #currentUser.id#"];
 		shortLists = model("ContactShortListListing").findAll(
-			select = "id,contactId,listingId,createdAt,fullAddress,priceText,bedrooms,bathrooms,totalCarSpaces",
-			include = "Listing",
+			select = "id,contactId,listingId,createdAt,fullAddress,priceText,bedrooms,bathrooms,totalCarSpaces,fileName",
+			include = "Listing(Image)",
 			where = whereify(local.where),
 			handle = "query",
 			perPage = 50,
 			page = params.page,
-			order = "id DESC"
+			order = "id DESC",
+			parametized = 1
 		);
 	}
 
