@@ -1,6 +1,62 @@
 .property-page{
     font-size: 1.6rem;
 
+    h2{
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+
+    .brief{
+        color: @mid-content-color;
+        margin-bottom: 1.5em;
+        p{
+            color: inherit;
+            line-height: 1.6;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        &.property-saletype{
+            color: @content-color;
+            font-weight: 500;
+        }
+        &.property-magigraph{
+            margin-bottom: 0;
+        }
+    }
+
+    .description{
+        line-height: 2;
+        &.property-description{
+            article{
+                height: auto;
+                max-height: 160px;
+                overflow: hidden;
+                .global-transition(.5s);
+
+                &.expended{
+                    max-height: 1500px;
+                }
+            }
+            a#description-toggle{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                color: @brand;
+                background: rgb(255,255,255);
+                background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 100%);
+                font-weight: 500;
+                text-transform: uppercase;
+                padding: @spacing-med 0 @spacing-sml;
+                .global-transition();
+                &:hover{
+                    color: darken(@brand, 20%);
+                }
+            }
+        }
+    }
+
     h2.property-price{
         font-size: 2.6rem;
         font-weight: 700;
@@ -58,7 +114,6 @@
     }
 
     .property-share-buttons{
-
         .flex(stretch, flex-end);
         .property-share-button{
             position: relative;
@@ -97,7 +152,8 @@
                     display: inline-block;
                     margin-right: @spacing-sml;
                     a{
-                        display: block;                        background-color: #ffffff;
+                        display: block;                        
+                        background-color: #ffffff;
                         padding: @spacing-sml;
                         .global-border-radius();
                         .global-transition();
@@ -124,12 +180,100 @@
         }
     }
 
+    .static-map{
+        margin-bottom: @spacing-lrg;
+    }
+
+    .property-info{
+        position: relative;
+        .border-bottom-with-spacing(40px, 40px);
+        &.property-intro{
+            padding-bottom: 60px;
+        }
+    }
+
+    .property-inspection{
+        ul{
+            margin: @spacing-lg 0;
+            li{
+                .border-bottom-with-spacing();
+                .flex(stretch, space-between);
+                &:last-child{
+                    border-bottom: 0;
+                }
+                h3{
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    margin-bottom: 0;
+                }
+                button{
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    &:hover{
+                        color: @brand;
+                    }
+                }
+                .auction-time{
+                    color: @brand;
+                    font-weight: 700;
+                }
+    
+            }
+        }
+    }
+
+    .school-list-header{
+        width: 100%;
+        .flex(stretch, space-between);
+        .border-bottom-with-spacing(0, @spacing-lg);
+        ul{
+            li{
+                display: inline-flex;
+                a{           
+                    position: relative;         
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    padding: @spacing-lg;
+                    overflow: hidden;
+                    &:after{
+                        content:'';
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        bottom: -3px;
+                        left: 0;
+                        background-color: @brand;
+                        .global-transition();
+                    }
+                    &:hover{
+                        &:after{
+                            bottom: 0;
+                        }
+                    }
+                }
+                &.active{
+                    a{
+                        color: @brand;
+                        &:after{
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+        span.powered-by{
+            display: flex;
+            align-items: center;
+            a{
+                padding:  0 5px;
+            }
+        }
+    }
 
 }
-
-
-
-
 
 .tag-cloud{
     position: relative;

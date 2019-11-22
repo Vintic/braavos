@@ -4,10 +4,10 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2>Schools Nearby</h2>
-            <div class="panel-sub-heading">Find out more about the schools in the area</div>
+            <div class="brief panel-sub-heading">Find out more about the schools in the area</div>
         </div>
     
-        <div class="panel-body-wrap collapse in" id="collapseschools">
+        <div class="panel-body-wrap" id="collapseschools">
             <div class="panel-body">
                 <div class="school-list-header">
                     <ul class="toggle-school-type">
@@ -21,7 +21,7 @@
                             <a href="##3a" data-toggle="tab">Secondary</a>
                         </li>
                     </ul>
-                    <span>Powered by <a href="https://goodschools.com.au/" target="_blank" rel="nofollow">The Good Schools Guide</a></span>
+                    <span class="powered-by">Powered by <a href="https://goodschools.com.au/" target="_blank" rel="nofollow">The Good Schools Guide</a></span>
                 </div>
                 <div class="tab-content clearfix">
                     <div class="tab-pane active" id="1a">

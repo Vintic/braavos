@@ -138,7 +138,8 @@
 									<span>#addressFormat(local.addressStruct)#</span> for <span>#listing.saleMethod#</span>
 								</div>
 								<div class="description property-description">
-									#htmlify(listing.description)#							
+									<article>#htmlify(listing.description)#</article>	
+									<a href="##" id ="description-toggle"><span>READ MORE</span></a>
 								</div>
 							</div>   <!--  .property-intro end     -->
 			
