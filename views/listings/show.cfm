@@ -99,33 +99,32 @@
 						<img src="#getImageURL(images.fileName, 800)#" border="0" />
 					</cfloop>
 				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<ul class="property-actions">
-								<cfif images.RecordCount GT 0>
-									<li data-hook="open-full-photo-viewer">
-										<a href="##">
-											<span>#images.RecordCount#</span> photos							
-										</a>
+				<div class="property-actions">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<ul>
+									<cfif images.RecordCount GT 0>
+										<li data-hook="open-full-photo-viewer">
+											<a href="##">
+												<span>#images.RecordCount#</span> Photos							
+											</a>
+										</li>	
+									</cfif>
+									<li data-hook="open-full-photo-viewer-to-floorplans">
+										<a href="##"><span>1</span>Floorplans</a>
+									</li>
+									<li>
+										<a href="##" data-hook="open-virtual-tour">3D Tour</a>
+									</li>
+									<li class="statement-information">
+										<a href="##" target="_blank">Statement of Information</a>
 									</li>	
-								</cfif>
-								<li data-hook="open-full-photo-viewer-to-floorplans">
-									<a href="##"><span>1</span>Floorplans</a>
-								</li>
-								<li>
-									<li><a href="##" data-hook="open-virtual-tour">3D Tour</a></li>
-								</li>
-								<li class="statement-information">
-									<a href="##" target="_blank">Statement of Information</a>
-								</li>	
-							</ul>
-						</div>		
-
-					
+								</ul>
+							</div>		
+						</div>
 					</div>
 				</div>
-
 			</div>	<!--  .property-media end     -->
 			<div class="property-details">
 				<div class="container">	

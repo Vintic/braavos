@@ -72,11 +72,58 @@
                     .hover-show();
                 }
             }
-
-
-       
         }
     }
+
+    .property-media{
+        position: relative;
+        max-width: 1440px;
+        margin: 0 auto @spacing-lg;
+        overflow: hidden;
+        .property-hero-image{
+            .image-object-fit-wrap(@padding : 33%);          
+            img{
+                .image-fit();
+                width: 100%;
+                height: auto;
+            }
+        }
+        .property-actions{
+            width: 100%;;
+            position: absolute;
+            bottom: @spacing-lg;
+            ul{
+                li{
+                    display: inline-block;
+                    margin-right: @spacing-sml;
+                    a{
+                        display: block;                        background-color: #ffffff;
+                        padding: @spacing-sml;
+                        .global-border-radius();
+                        .global-transition();
+                        span{
+                            background-color: @brand;
+                            padding: @spacing-sml*.6 @spacing-sml;
+                            color: #ffffff;
+                            font-size: 1.2rem;
+                            margin-right: @spacing-sml/2;
+                            .global-border-radius();
+                        }
+
+                        &:hover{
+                            background-color: @brand;
+                            color: #ffffff;
+                            span{
+                                background-color: #ffffff;
+                                color: @brand;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
 }
 
