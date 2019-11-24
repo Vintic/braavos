@@ -10,7 +10,7 @@ component extends="Controller" output=false {
 
 		listing = model("Listing").findByKey(
 			key=params.key,
-			include="Suburb,ListingPropertyTypes(PropertyType),Office(Suburb,OfficeImage)",
+			include="Suburb,ListingPropertyTypes(PropertyType),Office(Suburb,OfficeImages)",
 			returnAs='Query'
 		);
 		images = model("ListingImage").findAll(
@@ -20,7 +20,7 @@ component extends="Controller" output=false {
 		);
 
 
-		
+
 	}
 
 }

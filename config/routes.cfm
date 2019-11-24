@@ -7,6 +7,7 @@
 		.get(name="listingShow", pattern="listing-show/[key]", to="listings##show")
 		// .wildcard()
 		.root(to="home##index", method="get")
+		.resources(name = "findAnAgent", only = "index,show")
 	.end();
 
 </cfscript>

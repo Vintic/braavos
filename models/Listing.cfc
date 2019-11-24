@@ -74,15 +74,20 @@ component extends="Model" output="false" {
 	// }
 
 	public query function search() {
+		local.where = [
+			"category = 'residential'",
+			"imageType = 'logo'"
+		];
 
 		return model("Listing").findAll(
 			// select="Todo",
-			where="category = 'residential'",
-			include="Images,Suburb,ListingPropertyTypes(PropertyType),ListingAgents,Office(Suburb,OfficeImage)", //features
+			where=whereify(local.where),
+			include="Images,Suburb,ListingPropertyTypes(PropertyType),ListingAgents,Office(Suburb,OfficeImages)", //features
 			handle="listingsQuery",
 			page=arguments.page ?: 1,
 			perPage=6,
 			order="rank,suburbName",
+			parametized = 2,
 			argumentCollection = arguments
 		);
 

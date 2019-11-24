@@ -23,11 +23,12 @@ component extends="Model" output="false" {
 		// associations
 		belongsTo(name = "Suburb");
 		hasMany(name = "AgentOffices", joinType = "inner", shortcut = "agents");
+		hasMany(name = "OfficeRelatedSuburbs", joinType = "outer");
 		// hasMany("GroupOffices");
 		// hasMany("Roles");
 		// hasMany("OfficeListingTypes");
 		// hasMany("OfficeSpecialtyPropertyTypes");
-		hasMany(name = "OfficeImage");
+		hasMany(name = "OfficeImages");
 		// hasMany(name = "OfficeProducts", joinType = "outer");
 		// nestedProperties(associations = "OfficeListingTypes", allowDelete = true);
 		// nestedProperties(associations = "OfficeSpecialtyPropertyTypes", allowDelete = true);
