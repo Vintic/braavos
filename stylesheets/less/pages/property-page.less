@@ -423,42 +423,112 @@
         }
     }
 
-    .property-meet-neighbours{
-        .map{
-            margin-bottom: @inner-section-space;
-        }
+    .pocket-insights{
+        .pocket-insight{
+            &__map{
+                margin-bottom: @inner-section-space;
+            }
+
+            &__median{
+                .border-bottom-with-spacing(@spacing-lg, @spacing-lg);
+                .big-number-wrapper{
+                    span{
+                        display: block;
+                        font-weight: 700;
         
-        .median{
-            .border-bottom-with-spacing(@spacing-lrg, @spacing-lg);
-            .big-number-wrapper{
-                span{
+                        &.big-number{
+                            color: @brand;
+                            @media(min-width: @_tablet-break-point){
+                                font-size: 3.8rem;
+                                line-height: 1.4;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__wages{
+                .border-bottom-with-spacing(@spacing-lg, @spacing-lg);
+            }
+
+            &__charts{
+                .border-bottom-with-spacing(@spacing-lg, @spacing-lg);
+                .col-chart{
+                    margin-bottom: @spacing-lg;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &__occupations-interests{
+                .col-occupations{
+                    li{
+                        .border-bottom-with-spacing(@spacing-med, @spacing-med);
+                        &:last-child{
+                            border-bottom: 0;
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .property-more{
+        &__title{
+            .flex(stretch, space-between);
+            width: 100%;
+            > a{
+                color: @brand;
+                text-transform: uppercase;
+            }
+        }
+
+        .property-more{
+            &-wrapper{
+                display: block;
+                .global-border();
+                &__image{
                     display: block;
+                    overflow: hidden;
+                    .image-object-fit-wrap(66.6%);
+                    img.image{
+                        .image-fit();
+                    }
+                }
+                &__detail{
                     font-weight: 700;
-    
-                    &.big-number{
-                        color: @brand;
-                        @media(min-width: @_tablet-break-point){
-                            font-size: 3.8rem;
-                            line-height: 1.4;
+                    padding: @spacing-med;
+                    span[class ^= "property-more-wrapper__detail-"]{
+                        display: block;
+                        margin-bottom: @spacing-med;
+                        &:last-child{
+                            margin-bottom: 0;;
                         }
                     }
                 }
             }
         }
-
-        .charts{
-            .col-chart{
-                margin-bottom: @spacing-lg;
-                &:last-child{
-                    margin-bottom: 0;
-                }
-            }
-        }
-
     }
 
 }
 
+.tag-cloud-logo{
+    .clear-fix();
+    a{
+        float: right;
+    }
+}
 .tag-cloud{
     position: relative;
+    height: 280px;
+    font-size: 1rem;
+    line-height: 1.2;
+    .w-loop(10);
+    .w10{
+        color: @brand;
+        font-weight: 500;
+    }
 }

@@ -405,3 +405,19 @@
 	.global-transition(.5s);
 
 }
+
+.clear-fix(){
+	&:after{
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+.w-loop (@n, @i: 10) when (@i > 0){
+	.w@{i}{
+		font-size: @i * 50% + 50%;
+		color: lighten(#222222,  (9 - @i) * 5%)
+	}
+	.w-loop(@n, (@i - 1));
+}
