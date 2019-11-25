@@ -15,7 +15,11 @@ component extends="tests.Test" {
 
 	function test_user_controller_shortlists_index() {
 		transaction {
-			shortList = model("ContactShortlistListing").create(contactId = request.currentUser.key(),listingId = 1, createdAt = Now());
+			shortList = model("ContactShortlistListing").create(
+				contactId = request.currentUser.key(),
+				listingId = 1,
+				createdAt = Now()
+			);
 			actual = processRequest(
 				params = {route = "shortLists", controller = "user.shortLists", action = "index"},
 				returnAs = "struct"

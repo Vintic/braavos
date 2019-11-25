@@ -15,11 +15,26 @@ component extends="tests.Test" {
 	function test_public_controller_findAnAgent_show() {
 		transaction {
 			office = mocker.getOffice();
-			officeImage = model("OfficeImage").create(officeId = office.id, fileName = "abc.jpg", imageType = "logo", createdAt = Now(), sequence = 1);
-			officeRelatedSuburb = model("OfficeRelatedSuburb").create(officeId = office.id, suburbId = 1, type = 'findAnAgent');
+			officeImage = model("OfficeImage").create(
+				officeId = office.id,
+				fileName = "abc.jpg",
+				imageType = "logo",
+				createdAt = Now(),
+				sequence = 1
+			);
+			officeRelatedSuburb = model("OfficeRelatedSuburb").create(
+				officeId = office.id,
+				suburbId = 1,
+				type = "findAnAgent"
+			);
 
 			actual = processRequest(
-				params = {route = "findAnAgent", controller = "findAnAgent", action = "show", key="1"},
+				params = {
+					route = "findAnAgent",
+					controller = "findAnAgent",
+					action = "show",
+					key = "1"
+				},
 				returnAs = "struct"
 			);
 			transaction action="rollback";

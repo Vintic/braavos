@@ -43,22 +43,17 @@ component extends="app.controllers.user.Controller" {
 	}
 
 	public any function create() {
-		auctionAlert = model("ContactAuctionAlert").findOne(
-			where = "contactid = #currentUser.id#"
-		);
+		auctionAlert = model("ContactAuctionAlert").findOne(where = "contactid = #currentUser.id#");
 		if (!IsObject(auctionAlert)) {
-			auctionAlert = model("ContactAuctionAlert").new(
-				contactId = currentUser.id
-			);
+			auctionAlert = model("ContactAuctionAlert").new(contactId = currentUser.id);
 			auctionAlert.save();
 		}
 		// delete all suburbs before inserting
-		model("ContactAuctionAlertSuburb").deleteAll(where="contactAuctionAlertId = #auctionAlert.key()#");
+		model("ContactAuctionAlertSuburb").deleteAll(where = "contactAuctionAlertId = #auctionAlert.key()#");
 		for (local.suburbId in params.suburbIdList) {
-			auctionAlertSuburb = model("ContactAuctionAlertSuburb").new(
-				contactAuctionAlertId = auctionAlert.key(),
-				suburbId = local.suburbId
-			).save();
+			auctionAlertSuburb = model("ContactAuctionAlertSuburb")
+				.new(contactAuctionAlertId = auctionAlert.key(), suburbId = local.suburbId)
+				.save();
 		}
 		flashInsert(message = "The Auction Alert has been saved successfully.", messageType = "success");
 		return redirectTo(route = "auctionAlerts");

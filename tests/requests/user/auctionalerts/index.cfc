@@ -29,7 +29,7 @@ component extends="tests.Test" {
 
 	function test_user_controller_auctionAlerts_index_with_record() {
 		transaction {
-			auctionAlert = model("ContactAuctionAlert").create(contactId = request.currentUser.key(),createdAt = Now());
+			auctionAlert = model("ContactAuctionAlert").create(contactId = request.currentUser.key(), createdAt = Now());
 			auctionAlertSuburb = model("ContactAuctionAlertSuburb").create(
 				contactAuctionAlertId = auctionAlert.key(),
 				suburbId = 1

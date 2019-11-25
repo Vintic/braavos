@@ -15,7 +15,12 @@ component extends="tests.Test" {
 
 	function test_user_controller_searches_delete() {
 		transaction {
-			criteria = model("Criteria").create(contactId = request.currentUser.key(),saleMethod = 'Lease',listingCategory = 'Business', createdAt = Now());
+			criteria = model("Criteria").create(
+				contactId = request.currentUser.key(),
+				saleMethod = "Lease",
+				listingCategory = "Business",
+				createdAt = Now()
+			);
 			actual = processRequest(
 				params = {
 					route = "search",

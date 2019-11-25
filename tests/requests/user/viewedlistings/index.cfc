@@ -15,7 +15,11 @@ component extends="tests.Test" {
 
 	function test_user_controller_viewedListings_index() {
 		transaction {
-			viewedListing = model("ContactViewedListing").create(contactId = request.currentUser.key(),listingId = 1, createdAt = Now());
+			viewedListing = model("ContactViewedListing").create(
+				contactId = request.currentUser.key(),
+				listingId = 1,
+				createdAt = Now()
+			);
 			actual = processRequest(
 				params = {route = "viewedListings", controller = "user.viewedListings", action = "index"},
 				returnAs = "struct"

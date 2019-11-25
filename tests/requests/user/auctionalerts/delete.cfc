@@ -15,7 +15,7 @@ component extends="tests.Test" {
 
 	function test_user_controller_auctionalerts_delete() {
 		transaction {
-			auctionAlert = model("ContactAuctionAlert").create(contactId = request.currentUser.key(),createdAt = Now());
+			auctionAlert = model("ContactAuctionAlert").create(contactId = request.currentUser.key(), createdAt = Now());
 			auctionAlertSuburb = model("ContactAuctionAlertSuburb").create(
 				contactAuctionAlertId = auctionAlert.key(),
 				suburbId = 1

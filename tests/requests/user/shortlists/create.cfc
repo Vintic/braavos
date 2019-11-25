@@ -25,7 +25,10 @@ component extends="tests.Test" {
 				},
 				returnAs = "struct"
 			);
-			shortList = model("ContactShortlistListing").findOne(where = "contactId = #request.currentUser.key()#", reload = true);
+			shortList = model("ContactShortlistListing").findOne(
+				where = "contactId = #request.currentUser.key()#",
+				reload = true
+			);
 			transaction action="rollback";
 		}
 

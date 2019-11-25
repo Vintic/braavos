@@ -7,11 +7,7 @@ component extends="Controller" output=false {
 	public void function index() {
 		suburbs = [];
 		if (Len(getParam("suburbIdList")) || Len(getParam("agentKeyword"))) {
-			local.where = [
-			 	"isDraft = 0",
-				"imageType = 'logo'",
-				"type = 'findAnAgent'"
-			];
+			local.where = ["isDraft = 0", "imageType = 'logo'", "type = 'findAnAgent'"];
 			local.numberOfParameters = 3;
 			if (Len(getParam("suburbIdList"))) {
 				suburbs = model("Suburb").findAll(
@@ -21,13 +17,13 @@ component extends="Controller" output=false {
 				local.whereOr = [];
 				for (local.suburbId in params.suburbIdList) {
 					local.whereOr.Append("officeRelatedSuburbs.suburbId = #local.suburbId#");
-					local.numberOfParameters ++;
+					local.numberOfParameters++;
 				}
 				local.where.Append(whereify(local.whereOr, "or"));
 			}
 			if (Len(getParam("agentKeyword"))) {
 				local.where.Append("findAnAgentName like '#params.agentKeyword#%'")
-				local.numberOfParameters ++;
+				local.numberOfParameters++;
 			}
 
 			offices = model("Office").findAll(
@@ -39,7 +35,6 @@ component extends="Controller" output=false {
 			);
 			// TODO count of properties for each office
 		}
-
 	}
 
 	public void function show() {
@@ -74,10 +69,7 @@ component extends="Controller" output=false {
 			order = "listingCategory DESC, id",
 			parametized = 1
 		);
-		local.agentWhere = [
-			"isWebHidden = 0",
-			"officeId = #params.key#"
-		];
+		local.agentWhere = ["isWebHidden = 0", "officeId = #params.key#"];
 		agents = model("Agent").findAll(
 			select = "id,agentName,position,fileName",
 			where = whereify(local.agentWhere),

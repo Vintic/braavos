@@ -21,7 +21,12 @@ component extends="Model" output="false" {
 		hasMany(name = "ListingPropertyTypes", shortcut = "PropertyTypes", joinType = "outer");
 		// hasMany(name = "ListingRanks", shortcut = "Ranks", joinType = "outer");
 		hasMany(name = "Images", modelName = "ListingImage");
-		hasOne(name="Image", modelName = "ListingImage", joinKey="heroImageId", foreignKey="id");
+		hasOne(
+			name = "Image",
+			modelName = "ListingImage",
+			joinKey = "heroImageId",
+			foreignKey = "id"
+		);
 		hasMany(name = "Floorplans", modelName = "ListingFloorplan");
 		hasMany(name = "ListingFeatures", shortcut = "Features");
 		// hasOne(name = "ListingBusiness", joinType = "outer");
@@ -74,23 +79,19 @@ component extends="Model" output="false" {
 	// }
 
 	public query function search() {
-		local.where = [
-			"category = 'residential'",
-			"imageType = 'logo'"
-		];
+		local.where = ["category = 'residential'", "imageType = 'logo'"];
 
 		return model("Listing").findAll(
 			// select="Todo",
-			where=whereify(local.where),
-			include="Images,Suburb,ListingPropertyTypes(PropertyType),ListingAgents,Office(Suburb,OfficeImages)", //features
-			handle="listingsQuery",
-			page=arguments.page ?: 1,
-			perPage=6,
-			order="rank,suburbName",
+			where = whereify(local.where),
+			include = "Images,Suburb,ListingPropertyTypes(PropertyType),ListingAgents,Office(Suburb,OfficeImages)", // features
+			handle = "listingsQuery",
+			page = arguments.page ?: 1,
+			perPage = 6,
+			order = "rank,suburbName",
 			parametized = 2,
 			argumentCollection = arguments
 		);
-
 	}
 
 }

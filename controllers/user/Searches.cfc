@@ -23,7 +23,6 @@ component extends="app.controllers.user.Controller" {
 	 */
 
 	private struct function fields() {
-
 		return {};
 	}
 
@@ -41,7 +40,7 @@ component extends="app.controllers.user.Controller" {
 			where = whereify(local.where),
 			order = "saleMethod DESC, listingCategory DESC, id DESC",
 			parametized = 1
-		);.
+		);
 		if (criteria.recordCount) {
 			local.criteriaIdList = listEnsure(sanitiseList(ListRemoveDuplicates(ValueList(criteria.id))));
 			local.criteriaPropertyTypes = model("CriteriaPropertyType").findAll(

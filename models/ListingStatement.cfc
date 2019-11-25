@@ -10,6 +10,5 @@ component extends="Model" output="false" {
 		// hasMany(name = "ListingStatementComparisons", dependent = "deleteAll")
 	}
 
-
 }
 

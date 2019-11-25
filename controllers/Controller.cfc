@@ -1,7 +1,7 @@
 component extends="wheels.Controller" {
 
 	function config() {
-		filters(through="setBrand")
+		filters(through = "setBrand")
 	}
 
 	/**
@@ -11,22 +11,23 @@ component extends="wheels.Controller" {
 	 * [category: Filters]
 	 */
 	private function setBrand() {
-
-		switch (cgi.server_name){
-			case "business.braavos.dv": case "businessview.com.au":
-					request.brand = 'bus'
+		switch (cgi.server_name) {
+			case "business.braavos.dv":
+			case "businessview.com.au":
+				request.brand = "bus"
 				break;
-			case "rural.braavos.dv": case "ruralview.com.au":
-					request.brand = 'rur'
+			case "rural.braavos.dv":
+			case "ruralview.com.au":
+				request.brand = "rur"
 				break;
-			case "holiday.braavos.dv": case "holidayview.com.au":
-					request.brand = 'hol'
+			case "holiday.braavos.dv":
+			case "holidayview.com.au":
+				request.brand = "hol"
 				break;
 			default:
-					request.brand = 'res'
+				request.brand = "res"
 				break;
 		}
-
 	}
 
 	/**
