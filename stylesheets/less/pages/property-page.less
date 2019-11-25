@@ -7,6 +7,12 @@
         line-height: 1.6;
     }
 
+    h3{
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+
     .brief{
         color: @mid-content-color;
         margin-bottom: 1.5em;
@@ -93,9 +99,13 @@
         text-transform: uppercase;
         color: @brand;
         font-weight: 700;
+        &:hover{
+            color: darken(@brand, 20%);
+        }
         @media(min-width: @_tablet-break-point){
             text-align: right;
         }
+
     }
 
     .page-top-content{
@@ -222,6 +232,28 @@
         }
     }
 
+    .schools{
+        .see-more-schools{
+            color: @brand;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-top: @spacing-lg;
+            font-weight: 700;
+            &:hover{
+                color: darken(@brand, 20%);
+            }
+        }
+
+        .tab-pane{
+            display: none;
+            &.active{
+                display: block;
+            }
+    
+        }
+    
+    }
+
     .school-list-header{
         width: 100%;
         .flex(stretch, space-between);
@@ -271,6 +303,158 @@
                 padding:  0 5px;
             }
         }
+    }
+
+    .school-table{
+        width: 100%;
+        @media(min-width: @_tablet-break-point){
+            display: table;
+        }
+        .school-table-row-header{
+            @media(min-width: @_tablet-break-point){
+                display: table-row;
+            }
+            .school-table-item{
+                text-transform: uppercase;
+                color: @mid-content-color;
+                border-bottom: 0;
+            }
+          
+        }
+
+        .school-table-row{
+            @media(min-width: @_tablet-break-point){
+                display: table-row;
+                &:last-child{
+                    .school-table-item{
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .school-table-item{
+            @media(min-width: @_tablet-break-point){
+                display: table-cell;
+                padding: @spacing-med 0;
+                .global-border-bottom();
+        
+            }
+        }
+    }
+
+    
+    .property-recent-sales{
+        ul{
+            .card{
+                .border-bottom-with-spacing(@spacing-med, @spacing-med);
+                &:last-child{
+                    margin-bottom: 0;
+                    border-bottom: 0;
+                }
+                &-wrapper{
+                    .flex(stretch, space-between);
+                    
+                }
+                &-photos{
+                    width: 100%;
+                    max-width: 120px;
+                    a.item{
+                        .image-object-fit-wrap(66%);
+                        img.image{
+                            .image-fit();
+                        }
+                    }
+
+                    button.slick-arrow{
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: #ffffff;
+                        opacity: 0;
+                        visibility: hidden;
+                        z-index: 9;
+                        .global-transition();
+
+                        &:before{
+                            font-size: 20px;
+                        }
+                   
+                        &.slick-prev{
+                            left: @spacing-sml;
+                        }
+                        &.slick-next{
+                            right: @spacing-sml;
+                        }
+                    }
+
+                    &:hover{
+                        button.slick-arrow{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+                &-info{
+                    width: calc(~"100% - 150px");
+                    .flex(center, space-between, wrap, row-reverse);
+                    &__price{
+                        .flex(stretch, flex-start, wrap, column);
+                        &-text{
+                            font-weight: 700;
+                            text-align: right;
+                            margin-bottom: @spacing-sml;
+                        }
+                    }
+                    &__detail{
+                        .flex(stretch, flex-start, wrap, column);
+                        &-address{
+                            font-weight: 700;
+                            margin-bottom: @spacing-sml;
+                        }
+                        &-bbc{
+                            .card__number{
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .property-meet-neighbours{
+        .map{
+            margin-bottom: @inner-section-space;
+        }
+        
+        .median{
+            .border-bottom-with-spacing(@spacing-lrg, @spacing-lg);
+            .big-number-wrapper{
+                span{
+                    display: block;
+                    font-weight: 700;
+    
+                    &.big-number{
+                        color: @brand;
+                        @media(min-width: @_tablet-break-point){
+                            font-size: 3.8rem;
+                            line-height: 1.4;
+                        }
+                    }
+                }
+            }
+        }
+
+        .charts{
+            .col-chart{
+                margin-bottom: @spacing-lg;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
     }
 
 }

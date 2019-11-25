@@ -12,7 +12,7 @@
                 <div class="school-list-header">
                     <ul class="toggle-school-type">
                         <li class="active">
-                            <a href="##1a" data-toggle="tab">All</a>
+                            <a href="##1a" class="active" data-toggle="tab">All</a>
                         </li>
                         <li>
                             <a href="##2a" data-toggle="tab">Primary</a>
@@ -33,41 +33,41 @@
                                 <div class="school-table-item">Sector</div>
                                 <div class="school-table-item">Gender</div>
                             </div>
-                                    <div class="school-table-row">
-                                        <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-cheltenham-vic/cheltenham-primary-school" target="_blank" rel="nofollow">Cheltenham Primary School</a></div>
-                                        <div class="school-table-item"><span>0.97km</span></div>
-                                        <div class="school-table-item"><span>Primary</span></div>
-                                        <div class="school-table-item"><span>Government</span></div>
-                                        <div class="school-table-item"><span>Coeducational</span></div>
-                                    </div>
-                                    <div class="school-table-row">
-                                        <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-cheltenham-vic/our-lady-of-the-assumption-school" target="_blank" rel="nofollow">Our Lady of the Assumption School</a></div>
-                                        <div class="school-table-item"><span>1.28km</span></div>
-                                        <div class="school-table-item"><span>Primary</span></div>
-                                        <div class="school-table-item"><span>Catholic</span></div>
-                                        <div class="school-table-item"><span>Coeducational</span></div>
-                                    </div>
-                                    <div class="school-table-row">
-                                        <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-beaumaris-vic/beaumaris-north-primary-school" target="_blank" rel="nofollow">Beaumaris North Primary School</a></div>
-                                        <div class="school-table-item"><span>1.33km</span></div>
-                                        <div class="school-table-item"><span>Primary</span></div>
-                                        <div class="school-table-item"><span>Government</span></div>
-                                        <div class="school-table-item"><span>Coeducational</span></div>
-                                    </div>
-                                    <div class="school-table-row">
-                                        <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-cheltenham-vic/cheltenham-east-primary-school" target="_blank" rel="nofollow">Cheltenham East Primary School</a></div>
-                                        <div class="school-table-item"><span>1.72km</span></div>
-                                        <div class="school-table-item"><span>Primary</span></div>
-                                        <div class="school-table-item"><span>Government</span></div>
-                                        <div class="school-table-item"><span>Coeducational</span></div>
-                                    </div>
-                                    <div class="school-table-row">
-                                        <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-cheltenham-vic/le-page-primary-school" target="_blank" rel="nofollow">Le Page Primary School</a></div>
-                                        <div class="school-table-item"><span>1.72km</span></div>
-                                        <div class="school-table-item"><span>Primary</span></div>
-                                        <div class="school-table-item"><span>Government</span></div>
-                                        <div class="school-table-item"><span>Coeducational</span></div>
-                                    </div>
+                            <div class="school-table-row">
+                                <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-cheltenham-vic/cheltenham-primary-school" target="_blank" rel="nofollow">Cheltenham Primary School</a></div>
+                                <div class="school-table-item"><span>0.97km</span></div>
+                                <div class="school-table-item"><span>Primary</span></div>
+                                <div class="school-table-item"><span>Government</span></div>
+                                <div class="school-table-item"><span>Coeducational</span></div>
+                            </div>
+                            <div class="school-table-row">
+                                <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-cheltenham-vic/our-lady-of-the-assumption-school" target="_blank" rel="nofollow">Our Lady of the Assumption School</a></div>
+                                <div class="school-table-item"><span>1.28km</span></div>
+                                <div class="school-table-item"><span>Primary</span></div>
+                                <div class="school-table-item"><span>Catholic</span></div>
+                                <div class="school-table-item"><span>Coeducational</span></div>
+                            </div>
+                            <div class="school-table-row">
+                                <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-beaumaris-vic/beaumaris-north-primary-school" target="_blank" rel="nofollow">Beaumaris North Primary School</a></div>
+                                <div class="school-table-item"><span>1.33km</span></div>
+                                <div class="school-table-item"><span>Primary</span></div>
+                                <div class="school-table-item"><span>Government</span></div>
+                                <div class="school-table-item"><span>Coeducational</span></div>
+                            </div>
+                            <div class="school-table-row">
+                                <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-cheltenham-vic/cheltenham-east-primary-school" target="_blank" rel="nofollow">Cheltenham East Primary School</a></div>
+                                <div class="school-table-item"><span>1.72km</span></div>
+                                <div class="school-table-item"><span>Primary</span></div>
+                                <div class="school-table-item"><span>Government</span></div>
+                                <div class="school-table-item"><span>Coeducational</span></div>
+                            </div>
+                            <div class="school-table-row">
+                                <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-cheltenham-vic/le-page-primary-school" target="_blank" rel="nofollow">Le Page Primary School</a></div>
+                                <div class="school-table-item"><span>1.72km</span></div>
+                                <div class="school-table-item"><span>Primary</span></div>
+                                <div class="school-table-item"><span>Government</span></div>
+                                <div class="school-table-item"><span>Coeducational</span></div>
+                            </div>
 
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                             </div>
                                     <div class="school-table-row">
                                         <div class="school-table-item"><a href="https://goodschools.com.au/compare-schools/in-cheltenham-vic/cheltenham-primary-school" target="_blank" rel="nofollow">Cheltenham Primary School</a></div>
-                                        <div class="school-table-item"><span>0.97km</span></div>
+                                        <div class="school-table-item"><span>1.97km</span></div>
                                         <div class="school-table-item"><span>Primary</span></div>
                                         <div class="school-table-item"><span>Government</span></div>
                                         <div class="school-table-item"><span>Coeducational</span></div>
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="https://goodschools.com.au/" target="_blank" class="see-more-schools" rel="nofollow">See More on the good schools guide<i class="material-icons">open_in_new</i></a>
+                <a href="https://goodschools.com.au/" target="_blank" class="see-more-schools" rel="nofollow">See More on the good schools guide</a>
             </div>
         </div>
     </div>

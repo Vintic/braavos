@@ -215,17 +215,9 @@
 								#includePartial("property/_recents")#
 							</div> <!--  .property-recent-sales end     -->
 
-							<div class="property-info property-meet-neighbours">
+							<div class="property-info pocket-insights">
 								#includePartial("property/_neighboures")#
 							</div> <!--  .property-recent-sales end     -->
-
-							<div class="property-info property-weekly-income">
-								#includePartial("property/_weekly")#
-							</div> <!--  .property-weekly-income end     -->
-
-							<div class="property-info property-occupations-interests">
-								#includePartial("property/_occuint")#
-							</div> <!--  .property-occupations-interests end     -->
 
 							<div class="property-info property-trends">
 								#includePartial("property/_trends")#

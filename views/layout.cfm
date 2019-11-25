@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="initial-scale=1.0, width=device-width">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<link rel="shortcut icon" type="image/ico" href="assets/images/favicon-rev.ico">
+		<link rel="shortcut icon" type="image/ico" href="../assets/images/favicon-rev.ico">
 
 		<title>Houses, Apartments &amp; Property for Sale in Australia</title>
 

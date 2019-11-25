@@ -149,6 +149,13 @@ $(document).ready(function() {
     //autoplaySpeed: 3000
   });
 
+  $('.property-recent-sales .image-large').slick({
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    autoplay: false
+  })
+
 // JOESL REV DROPDOWN SOLUTION
   $(".rev__dropdown")
     .on('click', function() {
@@ -199,6 +206,7 @@ $(document).ready(function() {
 
     });
 
+    
     $('a#description-toggle').on('click', function(e){
       e.preventDefault();
       $('.property-description article').toggleClass('expended');
@@ -208,6 +216,18 @@ $(document).ready(function() {
       }else{
         $(this).text('Read More');
       }
+    });
+
+    $('.toggle-school-type li a').on('click', function(e){
+      e.preventDefault();
+      thisLi = $(this).parent('li');
+      thisLi.siblings().removeClass('active');
+      thisLi.addClass('active');
+      thisHref = $(this).attr('href');
+
+      $('.tab-pane'+thisHref).siblings().removeClass('active')
+      $('.tab-pane'+thisHref).addClass('active');
+
     });
 
 });
