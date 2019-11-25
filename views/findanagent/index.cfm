@@ -1,6 +1,7 @@
 <cfoutput>
 <!--- 	<cfsilent>
 		<cf_head> --->
+		<!--- TODO temp calling these css and js --->
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 			#stylesheetLinkTag("rev")#
 			<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -51,7 +52,7 @@
 								<cfif Len(offices.fileName)>
 									<img src="#getImageURL(offices.fileName, 300)#">
 								</cfif>
-								#offices.findAnAgentName#<br>
+								#linkTo(route="findAnAgent", key=offices.id, text=offices.findAnAgentName)#<br>
 								#offices.suburbName#<br>
 								<cfset local.addressStruct = {}>
 								<cfset local.addressStruct.addressLine1 = offices.addressLine1>
