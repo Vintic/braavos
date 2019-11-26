@@ -209,7 +209,7 @@ $(document).ready(function() {
     
     $('a#description-toggle').on('click', function(e){
       e.preventDefault();
-      $('.property-description article').toggleClass('expended');
+      $('.property-intro__description article').toggleClass('expended');
       $(this).toggleClass('less');
       if($(this).hasClass('less')){
         $(this).text('Show Less')

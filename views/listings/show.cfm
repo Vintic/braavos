@@ -62,30 +62,29 @@
 							<button class="btn auction-btn" data-hook="save-auction"><span>Add to Calendar </span></button>
 						</div>
 						<div class="col-1-1 col-tablet-1-2 col-desktop-1-3">
-							<div class="property-share-buttons">
-								<div class="property-share-button">
+							<div class="property-share-actions">
+								<div class="property-share-action">
 									<button class="btn btn-favorite" data-hook="toggle-shortlist" data-id="#listing.id#">Save</button>
 								</div>
-								<div class="property-share-button">
+								<div class="property-share-action">
 									<button class="btn btn-print" data-hook="btn-print">Print</button>
 								</div>
-								<div class="property-share-button">
+								<div class="property-share-action">
 									<button class="btn btn-share" data-hook="btn-share" data-toggle="popup">Share</button>
 									<div class="share-popup">
 										<span>Share Via ...</span>
 										<ul>
 											<li class="share-fb" data-hook="share-fb">
-												<i class="fab fa-facebook-f"></i>
+												<a href="##" target="_blank"><i class="fab fa-facebook-f"></i></a>
 											</li>
 											<li class="share-tw" data-hook="share-tw">
-												<i class="fab fa-twitter"></i>
+												<a href="##" target="_blank"><i class="fab fa-twitter"></i></a>
 											</li>
 											<li class="share-friend" data-hook="share-friend">
-												<i class="fas fa-envelope"></i>
+												<a href="##" target="_blank"><i class="fas fa-envelope"></i></a>
 											</li>
 										</ul>
 									</div>
-								
 								</div>
 							</div>
 						</div>
@@ -131,13 +130,13 @@
 					<div class="row">
 						<div class="col-1-1 col-tablet-1-2 col-desktop-2-3">
 							<div class="property-info property-intro">
-								<h2 class="title">
+								<h2 class="property-intro__title">
 									<span>#listing.heading#</span>
 								</h2>
-								<div class="brief property-saletype">
+								<div class="brief property-intro__saletype">
 									<span>#addressFormat(local.addressStruct)#</span> for <span>#listing.saleMethod#</span>
 								</div>
-								<div class="description property-description">
+								<div class="description property-intro__description">
 									<article>#htmlify(listing.description)#</article>	
 									<a href="##" id ="description-toggle"><span>READ MORE</span></a>
 								</div>
@@ -146,7 +145,7 @@
 
 							<div class="property-info property-map">
 								<div class="static-map">
-									<img class="static-map-image" title="Bill Chung" alt="Static Map" src="../assets/images/map.png">
+									<img class="image" title="Bill Chung" alt="Static Map" src="../assets/images/map.png">
 								</div>
 								<div class="brief property-magigraph">
 									<p>5 Calembeena Avenue, Hughesdale is for sale through an agent from Woodards Carnegie. It has 3 bedrooms, 2 bathrooms and 1 parking spots. Don't forget to favourite it by clicking the heart icon at the top of the page contact the agent via phone or email form.</p>

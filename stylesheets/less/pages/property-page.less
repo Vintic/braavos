@@ -23,10 +23,6 @@
                 margin-bottom: 0;
             }
         }
-        &.property-saletype{
-            color: @content-color;
-            font-weight: 500;
-        }
         &.property-magigraph{
             margin-bottom: 0;
         }
@@ -34,7 +30,14 @@
 
     .description{
         line-height: 2;
-        &.property-description{
+    }
+
+    .property-intro{
+        &__saletype{
+            color: @content-color;
+            font-weight: 500;
+        }
+        &__description{
             article{
                 height: auto;
                 max-height: 160px;
@@ -123,14 +126,43 @@
         margin-left: @spacing-med;
     }
 
-    .property-share-buttons{
+    .property-share-actions{
         .flex(stretch, flex-end);
-        .property-share-button{
+        .property-share-action{
             position: relative;
             display: inline-block;
             margin-left: @spacing-lg;
             .share-popup{
+                right: 0;
+                min-width: 220px;
+                .flex(center, space-between);
+                padding: @spacing-med;
+                background-color: #ffffff;
+                z-index: 3;
                 .hover-hide();
+                ul{
+                    li{
+                        display: inline-block;
+                        margin-left: @spacing-med;
+                        &.share{ 
+                            &-fb{
+                                a{
+                                    color: #3B5998;
+                                }
+                            }
+                            &-tw{
+                                a{
+                                    color: #00ACED;
+                                }
+                            }
+                            &-friend{
+                                a{
+                                    color: @brand;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             &:hover{
                 .share-popup{
@@ -614,7 +646,7 @@
     }
     .sidebar-footer{
         text-align: center;
-        padding: @spacing-med 0;
+        padding: @spacing-med;
     }
 
 }
