@@ -50,7 +50,7 @@
 						<cfloop query="offices">
 							<div class="col-1-1 col-tablet-1-2 col-desktop-1-3">
 								<cfif Len(offices.fileName)>
-									<img src="#getImageURL(offices.fileName, 300)#">
+									<img src="#getImageURL(offices.fileName, 150)#"><br>
 								</cfif>
 								#linkTo(route="findAnAgent", key=offices.id, text=offices.findAnAgentName)#<br>
 								#offices.suburbName#<br>
@@ -58,7 +58,7 @@
 								<cfset local.addressStruct.addressLine1 = offices.addressLine1>
 								<cfset local.addressStruct.addressLine2 = offices.addressLine2>
 								#lineAddressFormat(local.addressStruct)#<br>
-								Number of properties: TODO<br>
+								Number of properties: #offices.onMarketListingsCount#<br>
 							</div>
 						</cfloop>
 					</div>

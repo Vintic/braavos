@@ -27,11 +27,13 @@
 					<cfset local.addressStruct.addressLine2 = office.addressLine2>
 					Address: #lineAddressFormat(local.addressStruct)#<br>
 					Phone: #office.phone#<br>
-					WWW: #office.website#<br>
+					www: #office.website#<br>
 					Facebook: #office.facebook#<br>
-					For Sale count: TODO<br>
-					For Rent count: TODO<br>
-					Sold count: TODO<br>
+					Twitter: #office.twitter#<br>
+					LinkedIn: #office.linkedin#<br>
+					For Sale count: #onmarketSale#<br>
+					For Rent count: #onmarketLease#<br>
+					Sold count: #onmarketSold#<br>
 				</div>
 			</div>
 			<br>

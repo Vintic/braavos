@@ -33,13 +33,34 @@ component extends="Controller" output=false {
 				distinct = true,
 				parametized = local.numberOfParameters
 			);
-			// TODO count of properties for each office
+			// count number of on market properties for each office
+			local.officeIdList = listEnsure(sanitiseList(ListRemoveDuplicates(ValueList(offices.id))));
+
+			local.onmarketWhere = [
+				"status = 'On Market'",
+				splitQueryParamList(column = "officeId", list = local.officeIdList)
+			];
+			local.onmarketListings = model("Listing").count(
+				where = whereify(local.onmarketWhere),
+				group = "officeId"
+			);
+	    local.numberOfPropertiesArray = [];
+			for (local.office in offices) {
+				local.numberOfProps = local.onmarketListings.filter(function(i) {
+					return arguments.i.officeId == office.id
+				});
+				local.numberOfPropertiesArray.append(Val(local.numberOfProps.count));
+			}
+			QueryAddColumn(offices, "onMarketListingsCount", numberOfPropertiesArray)
 		}
 	}
 
 	public void function show() {
 		office = model("Office").findOne(
-			select = "id,officeName,findAnAgentName,addressLine1,addressLine2,suburbId,suburbName,postcode,state,phone,profile,website,facebook",
+			select = "
+				id,officeName,findAnAgentName,addressLine1,addressLine2,suburbId,suburbName,postcode,state,phone,profile,
+				website,facebook,twitter,linkedin
+			",
 			where = "id = #params.key#",
 			include = "Suburb",
 			parametized = 1
@@ -76,6 +97,15 @@ component extends="Controller" output=false {
 			include = "AgentOffices,Images",
 			parametized = 2
 		)
+		onmarketSale = model("Listing").count(
+			where = "officeId = #params.key# AND status = 'On Market' AND saleMethod != 'lease'"
+		);
+		onmarketLease = model("Listing").count(
+			where = "officeId = #params.key# AND status = 'On Market' AND saleMethod = 'lease'"
+		);
+		onmarketSold = model("Listing").count(
+			where = "officeId = #params.key# AND status = 'Sold'"
+		);
 	}
 
 }
