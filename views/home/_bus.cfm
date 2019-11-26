@@ -27,7 +27,7 @@
 								<input id="location" class="form-control placeholder-loading" placeholder="Category or Keyword" name="category" type="text">
 							</span>
 
-							<button type="button" class="btn-submit"> Search <span data-hook="btn-submit-total-results"></span> Properties </button>
+							<button type="button" class="button btn-submit"> Search <span data-hook="btn-submit-total-results"></span> Properties </button>
 
 						</div>
 					</div>
@@ -251,7 +251,7 @@
 		  		</div>
 			</section>
 
-			<section class="home-content-section homepage-partner-links">
+			<section class="home-content-section partner-links">
 				<h2>View Network</h2>
 				<div class="row">
 				    <article class="partner-holiday col-tablet-1-3">

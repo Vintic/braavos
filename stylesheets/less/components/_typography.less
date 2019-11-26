@@ -40,7 +40,7 @@ h1,h2,h3,h4,h5,h6 {
 	margin-bottom: @spacing-sml;
 }
 
-h1,h2,h3 {
+h1, h2, h3, h4 {
 	margin-top: 0;
 	margin-bottom: 1em;
 }
@@ -57,12 +57,11 @@ h2 {
 	}
 }
 h3 {
-	font-size: 1.5em;
+	font-size: 1.6rem;
 }
 h4 {
 	font-size: 1.4rem;
-	margin-bottom: 1em;
-	flex-wrap: 700;
+	flex-wrap: 500;
 }
 h5 {
 	font-size: 1.125em;
@@ -82,6 +81,9 @@ p {
 	display: block;
 	color:@body-color;
 	margin: 0 0 @font-line-height;
+	&:last-child{
+		margin-bottom: 0;
+	}
 	a{
 		font-weight: 500;
 		color: inherit;
@@ -93,14 +95,34 @@ a {
 	text-decoration: none;
 }
 
-.text {
-	&-left {
-		text-align: left;
+fieldset{
+	margin-bottom: @spacing-med;
+}
+
+input{
+	&.input-field{
+		width: 100%;
+		line-height: 45px;
+		padding: 0 10px;
+		color: @mid-content-color;
+		.global-border();
+		border-bottom: 0;
 	}
-	&-right {
-		text-align: right;
+}
+
+textarea{
+	&.input-field{
+		font-family: @font-primary;
+		width: 100%;
+		padding: 10px;
+		color: @mid-content-color;
+		min-height: 100px;
+		.global-border();
 	}
-	&-center {
-		text-align: center;
-	}
+}
+
+button.button{
+	width: 100%;
+	text-transform: uppercase;
+	.rolloverButton(@white, @brand, @spacing-med, @spacing-med);
 }

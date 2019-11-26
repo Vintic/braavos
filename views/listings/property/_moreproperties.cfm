@@ -1,6 +1,6 @@
 <cfoutput>
-<div class="property-more">
-	<div class="property-more__title">
+<div class="property-mores">
+	<div class="property-mores__title">
 		<h2><span>More properties from </span><a href="##">#titleise(listing.findAnAgentName)#</a></h2>
 		<a href="##"><span>See all</span></a>
 	</div>

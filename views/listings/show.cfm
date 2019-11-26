@@ -131,7 +131,7 @@
 					<div class="row">
 						<div class="col-1-1 col-tablet-1-2 col-desktop-2-3">
 							<div class="property-info property-intro">
-								<h2 class="title property-info">
+								<h2 class="title">
 									<span>#listing.heading#</span>
 								</h2>
 								<div class="brief property-saletype">
@@ -222,20 +222,97 @@
 							<div class="property-info property-trends">
 								#includePartial("property/_trends")#
 							</div> <!--  .property-trends end     -->
-						</div>
+						</div>  <!--  .col-desktop-2-3 end     -->
 
 						<div class="col-1-1 col-tablet-1-2 col-desktop-1-3">
-							<div class="agency-logo">
-								<img src="#getImageURL(listing.fileName, 160)#"  />
+							<div class="sidebar property-sidebar">
+								<div class="agency-logo" style="background-color: ##272727">
+									<img src="#getImageURL(listing.fileName, 30)#" />
+								</div>   <!--  .agentcy-logo end     -->
+								<div class="sidebar-wrapper">	
+									<div class="sidebar-content agency-wrapper">
+										<div class="agency-contact">
+											<div class="agents">
+												<div class="agent">
+													<div class="agent-photo">
+														<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="../assets/images/agent02.jpg">
+													</div>									
+													<div class="agent-detail">
+														<span class="agent-detail__name">Clare Adams</span>
+														<a class="agent-detail__profile" href="##">View Profile</a>
+													</div>
+													<div class="agent-phone">
+														<a href="tel:0412345678">0432 640 789</a>
+													</div>
+												</div>
+
+												<div class="agent">
+													<div class="agent-photo">
+														<img class="image" title="Bill Chung" alt="Profile photo of Bill Chung" src="../assets/images/agent02.jpg">
+													</div>									
+													<div class="agent-detail">
+														<span class="agent-detail__name">Clare Adams</span>
+														<a class="agent-detail__profile" href="##">View Profile</a>
+													</div>
+													<div class="agent-phone">
+														<a href="tel:0412345678">0432 640 789</a>
+													</div>
+												</div>
+											</div>
+										</div>  <!--  .agentcy-contact end     -->
+										<div class="agency-enquiry-form">
+											<form action="##" id="agency-enquiry-form" class="form enquiry-form">
+												<input type="hidden" name="property" id="property" value=""  />
+												<h4>Your Detail</h4>
+												<fieldset>
+													<div class="field">
+														<input type="text" name="name" class="input-field" id="name" placeholder="Name" value="" required />
+													</div>
+													<div class="field">
+														<input type="tel" name="phone" class="input-field" id="phone" placeholder="Phone" value="" required />
+													</div>
+													<div class="field">
+														<input type="email" name="email" class="input-field" id="email" placeholder="Email" value="" required />
+													</div>
+													<div class="field">
+														<textarea name="message" class="input-field" id="message" placeholder="Message (optional)" value=""></textarea>	
+													</div>
+												</fieldset>	
+												<button type="submit" class="button btn-submit"><span>Email Agent</span></button>
+											</form>
+										</div>  <!--  .agentcy-enquiry-form end     -->
+										<ul class="property-share-buttons">
+											<li class="share-button">
+												<button class="btn btn-favorte" data-hook="toggle-shortlist" data-id="12345678">
+													<span>Save</span>
+												</button>
+											
+											</li>
+											<li class="share-button">
+												<button class="btn btn-favorte" data-hook="btn-print" data-id="12345678">
+													<span>Print</span>
+												</button>
+											</li>
+											<li>
+												<button class="btn btn-favorte" data-hook="btn-share" data-id="12345678">
+													<span>Share</span>
+												</button>
+											</li>
+										</ul>	
+									</div> <!--  .sidebar-content end     -->
+									<div class="sidebar-footer">
+										<p>By submitting your details, you acknowledge that you accept our Privacy Collection Statement</p>
+									</div>
+								</div>
 							</div>
-						</div>
+						</div>  <!--  .col-desktop-1-3 end     -->
 					</div>	<!--  .property-details row 1 end     -->
 
 					<!--  .property-more-property start    -->
 					#includePartial("property/_moreproperties")#
 					<!--  .property-more-propert end     -->
-
-					<section class="home-content-section homepage-partner-links">
+					
+					<section class="property-parter-links partner-links">
 						<h2>View Network</h2>
 						<div class="row">
 						    <article class="partner-business col-tablet-1-3">
