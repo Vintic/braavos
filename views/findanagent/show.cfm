@@ -38,7 +38,7 @@
 			<div class="row">
 				<div class="col-1-1">
 					About our agency:<br>
-					#office.profile#
+					#htmlify(office.profile)#
 				</div>
 			</div>
 			<br>
@@ -69,7 +69,7 @@
 							<br><img src="#getImageURL(agents.fileName, 300)#">
 						</cfif>
 						<br>
-						#agents.agentName#<br>
+						#linkTo(route="agent", key=agents.id, text=agents.agentName, params="officeId=#params.key#")#<br>
 						#agents.position#<br>
 						<br>
 					</cfloop>
