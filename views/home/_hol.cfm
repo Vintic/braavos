@@ -20,7 +20,7 @@
 							<span class="mobile-hide"><i class="fas fa-search"></i></span>
 							<span class="location-wrap"><input id="location" class="form-control placeholder-loading" placeholder="Search by suburb, postcode or area" name="location" type="text"></span>
 							<span class="mobile-hide">
-								<button type="button" class="btn-submit" data-hook="btn-submit-search-filters"> Search <span>0</span> Properties </button>
+								<button type="button" class="button btn-submit" data-hook="btn-submit-search-filters"> Search <span>0</span> Properties </button>
 							</span>
 						</div>
 						<div class="toggle-search-options padding-sml-vert flex _align-center _justify-space-between">
@@ -348,7 +348,7 @@
 		  		</div>
 			</section>
 
-			<section class="home-content-section homepage-partner-links ">
+			<section class="home-content-section partner-links ">
 				<h2>View Network</h2>
 				<div class="row">
 			    <article class="partner-holiday col-tablet-1-3">

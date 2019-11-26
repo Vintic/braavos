@@ -47,12 +47,21 @@
 		
 		<script type="text/javascript" src="/assets/js/jquery-3.4.1.min.js"></script>
 		<script type="text/javascript" src="/assets/js/slick.min.js"></script>
+		<script type="text/javascript" src="/assets/js/jquery.fancybox.min.js"></script>
 		<script type="text/javascript" src="/assets/js/_global.js"></script>
 
 
 	</head>
 
-	<body class="#getBrand()#">
+<!--- 	<cfdump var="#CGI#"><cfabort/> --->
+
+	<cfif #CGI.path_info# == '/'>
+		<cfset route = "home">
+	<cfelse>
+		<cfset route = slugify(CGI.path_info)>
+	</cfif>
+	
+	<body class="#getBrand()# page-#route#">
 		<div class="page-wrapper">
 			<div id="mobile-menu">
 				<div class="nav-top flex _align-center _justify-space-between">

@@ -74,7 +74,7 @@ section{
 }
 
 .btn{
-	font-weight: 700;
+	font-weight: 400;
 }
 
 .mobile-hide{
@@ -108,5 +108,18 @@ section{
 	display: none;
 	@media(min-width: @_desktop-break-point){
 		display: inline-block;
+	}
+}
+
+.partner-links{
+	[class ^= "partner-"] {
+		a.logo{
+			max-width: 80px;
+			margin-bottom: @spacing-med;
+		}
+		h3{
+			font-size: 1.4rem;
+			margin-bottom: @spacing-sml;
+		}
 	}
 }
