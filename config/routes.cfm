@@ -8,6 +8,7 @@
 		// .wildcard()
 		.root(to="home##index", method="get")
 		.resources(name = "findAnAgent", only = "index,show")
+		.resources(name = "agent", only = "show")
 	.end();
 
 </cfscript>
