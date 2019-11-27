@@ -1,0 +1,88 @@
+.modal-popup{
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    .modal-overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .8);
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+    .modal-close{
+        position: absolute;
+        top: @spacing-lg;
+        right: -@spacing-lg*2;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        .close-btn();
+        
+    }
+    .modal-wrapper{
+        position: relative;
+        max-width: 990px;
+        z-index: 2;
+        .modal-inner-wrapper{
+            padding: @spacing-lg;
+            &__top{
+                color: #ffffff;
+                margin-bottom: @spacing-lg;
+            }
+            &__contact{
+                display: inline-block;
+                font-size: 1.4rem;
+                padding: @spacing-sml/2 @spacing-med;
+                max-width: 150px;;
+            }
+        }
+        .col-slider{
+            &-address, &-pager{
+                .flex(center, space-between);
+            }
+        }
+        .photo-slider, .floorplan-slider{
+            margin-bottom: @spacing-lg;
+            .slick-arrow{
+                color: #ffffff;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                .global-transition();
+                &:hover{
+                    color: @xlight-content-color; 
+                }
+                &:before{
+                    font-size: 4rem;
+                    font-weight: 300;
+                }
+                &.slick-prev{
+                    left: -60px;
+                    &:hover{
+                        left: -65px;
+                    }
+                }
+                &.slick-next{
+                    right: -60px;
+                    &:hover{
+                        right: -65px;
+                    }
+                }
+            }
+        }
+        .photo-slider-thumbnails, .floorplan-slider-thumbnails{
+            img{
+                margin: 0 @spacing-sml;
+            }
+        }
+        .slick-slide{
+            height: auto;
+        }
+    }
+}

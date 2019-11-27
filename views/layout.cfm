@@ -60,7 +60,7 @@
 	<cfelse>
 		<cfset route = slugify(CGI.path_info)>
 	</cfif>
-	
+
 	<body class="#getBrand()# page-#route#">
 		<div class="page-wrapper">
 			<div id="mobile-menu">
@@ -119,7 +119,7 @@
 				</ul>
 				<ul class="botom-links">
 					<li><a href="/sales-and-auction-results/victoria/">Victorian Sales &amp; Auction Results</a></li>
-					<li><a href="/find-agent/">Find an agent</a></li>
+					<li><a href="/find-an-agent/">Find an agent</a></li>
 					<li><a href="/auction-alerts/">Auction result alerts</a></li>
 					<li><a href="/home-loans/">Home Loans</a></li>
 					<li><a href="/blog/">News</a></li>
@@ -149,11 +149,11 @@
 					<!------------ NAV LINKS ------------>
 					<ul class="navigation-links flex">
 						<li><a class="level0" href="/property-360/">Price Estimate</a></li>
-						<li><a class="level0" href="/">Buy</a></li>
-						<li><a class="level0" href="/rental-properties/">Rent</a></li>
-						<li><a class="level0" href="/sold-properties/">Sold</a></li>
-						<li class="mobile-hide"><a class="level0" href="https://www.ruralview.com.au/" target="_blank" rel="nofollow">Rural</a></li>
-						<li class="mobile-hide tablet-hide"><a class="level0" target="_blank" href="https://www.businessesview.com.au/" rel="nofollow">Businesses</a></li>
+						<li><a class="level0" href="/listings">Buy</a></li>
+						<li><a class="level0" href="/listings">Rent</a></li>
+						<li><a class="level0" href="/listings">Sold</a></li>
+						<li class="mobile-hide"><a class="level0" href="http://rural.braavo.dv" target="_blank" rel="nofollow">Rural</a></li>
+						<li class="mobile-hide tablet-hide"><a class="level0" target="_blank" href="http://business.braavo.dv" rel="nofollow">Businesses</a></li>
 						<li class="mobile-hide tablet-hide"><a class="level0" href="/blog/">News</a></li>
 						<li class="mobile-hide tablet-hide"><a class="level0" href="/home-loans/">Home Loans</a></li>
 						<li class="parent mobile-hide">
@@ -165,7 +165,7 @@
 								<li><a class="level2" href="/home-loans/" class="hidden-md hidden-lg">Home Loans</a></li>
 								<li><a class="level2" href="/mobile/">Mobile Apps</a></li>
 								<li><a class="level2" href="/advice/">Advice Centre</a></li>
-								<li class="mobile-hide"><a class="level2" href="/find-agent/">Find an Agent</a></li>
+								<li class="mobile-hide"><a class="level2" href="/find-an-agent/">Find an Agent</a></li>
 								<li class="mobile-hide"><a class="level2" target="_blank" href="https://www.holidayview.com.au/" rel="nofollow">Holiday Rental</a></li>
 							</ol>
 						</li>

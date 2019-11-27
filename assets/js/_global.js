@@ -139,6 +139,7 @@ $(document).ready(function() {
     autoplay: false
   });
 
+  // SEARCH RESULTS PAGE - sidebar property slider
   $("#search-results-page .side-otions .side-listings").slick({
     infinite: true,
     speed: 300,
@@ -149,12 +150,6 @@ $(document).ready(function() {
     //autoplaySpeed: 3000
   });
 
-  $('.property-recent-sales .image-large').slick({
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    autoplay: false
-  })
 
 // JOESL REV DROPDOWN SOLUTION
   $(".rev__dropdown")
@@ -207,28 +202,127 @@ $(document).ready(function() {
     });
 
     
-    $('a#description-toggle').on('click', function(e){
+  // Modal Control
+  $('.modal-overlay, .modal-close').on('click', function(){
+    $('.modal-popup').fadeOut();
+  });
+
+
+  // Listing page  
+
+  //  Recent Sales Property Image Slider
+  $('.property-recent-sales .image-large').slick({
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    autoplay: false
+  });
+
+  //  Property Image Slider
+
+    // Trigger Property Slider
+  $('[data-hook=open-full-photo-viewer]').on('click', function(e){
+    e.preventDefault();
+    $('.modal-popup-photos').fadeIn();
+    $('.photo-slider').get(0).slick.setPosition();
+    $('.photo-slider-thumbnails').get(0).slick.setPosition();
+  });
+
+    // Main Image Slider
+  $('.photo-slider').slick({
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: false,
+    asNavFor: '.photo-slider-thumbnails',
+    
+  });
+
+    // Thumbnails Image Slider
+  $('.photo-slider-thumbnails').slick({
+    infinite: true,
+    speed: 300,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: '.photo-slider',
+    dots: true,
+    focusOnSelect: true
+  });
+
+    // Pager Updates
+  $('.photo-slider').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+    var i = (currentSlide ? currentSlide : 0) + 1;
+    $('#count').text(i);
+  });
+
+    //  Floorplan Image Slider
+
+    // Trigger Floorplan Slider
+    $('[data-hook=open-full-photo-viewer-to-floorplans]').on('click', function(e){
       e.preventDefault();
-      $('.property-intro__description article').toggleClass('expended');
-      $(this).toggleClass('less');
-      if($(this).hasClass('less')){
-        $(this).text('Show Less')
-      }else{
-        $(this).text('Read More');
-      }
+      $('.modal-popup-floorplan').fadeIn();
+      $('.floorplan-slider').get(0).slick.setPosition();
+      $('.floorplan-slider-thumbnails').get(0).slick.setPosition();
+    });
+  
+      // Main Image Slider
+    $('.floorplan-slider').slick({
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      fade: false,
+      asNavFor: '.floorplan-slider-thumbnails',
+      
+    });
+  
+      // Thumbnails Image Slider
+    $('.floorplan-slider-thumbnails').slick({
+      infinite: true,
+      speed: 300,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      asNavFor: '.floorplan-slider',
+      dots: true,
+      focusOnSelect: true
+    });
+      // Pager Updates
+    $('.floorplan-slider').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+      //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+      var i = (currentSlide ? currentSlide : 0) + 1;
+      $('#count-floorplan').text(i);
     });
 
-    $('.toggle-school-type li a').on('click', function(e){
-      e.preventDefault();
-      thisLi = $(this).parent('li');
-      thisLi.siblings().removeClass('active');
-      thisLi.addClass('active');
-      thisHref = $(this).attr('href');
 
-      $('.tab-pane'+thisHref).siblings().removeClass('active')
-      $('.tab-pane'+thisHref).addClass('active');
+  // Description Toggle
+  $('a#description-toggle').on('click', function(e){
+    e.preventDefault();
+    $('.property-intro__description article').toggleClass('expended');
+    $(this).toggleClass('less');
+    if($(this).hasClass('less')){
+      $(this).text('Show Less')
+    }else{
+      $(this).text('Read More');
+    }
+  });
 
-    });
+  // School Type Tabs
+  $('.toggle-school-type li a').on('click', function(e){
+    e.preventDefault();
+    thisLi = $(this).parent('li');
+    thisLi.siblings().removeClass('active');
+    thisLi.addClass('active');
+    thisHref = $(this).attr('href');
+
+    $('.tab-pane'+thisHref).siblings().removeClass('active')
+    $('.tab-pane'+thisHref).addClass('active');
+
+  });
+
 
 });
 

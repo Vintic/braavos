@@ -104,14 +104,14 @@
 							<div class="col">
 								<ul>
 									<cfif images.RecordCount GT 0>
-										<li data-hook="open-full-photo-viewer">
-											<a href="##">
+										<li>
+											<a href="##" data-hook="open-full-photo-viewer">
 												<span>#images.RecordCount#</span> Photos							
 											</a>
 										</li>	
 									</cfif>
-									<li data-hook="open-full-photo-viewer-to-floorplans">
-										<a href="##"><span>1</span>Floorplans</a>
+									<li>
+										<a href="##" data-hook="open-full-photo-viewer-to-floorplans"><span>1</span>Floorplans</a>
 									</li>
 									<li>
 										<a href="##" data-hook="open-virtual-tour">3D Tour</a>
@@ -344,7 +344,7 @@
 		</div> <!--  .page-content end     -->
 
 		<cfif getBrand() == 'res1'>
-			<div class="map-modal-popup">
+			<div class="modal-popup map-modal-popup">
 				<div class="modal-overlay"></div>
 				<div class="modal-wrapper">
 					<div class="modal-close"></div>
@@ -355,5 +355,9 @@
 			</div>
 		</cfif>
 
+		#includePartial("property/photomodal")#
+		#includePartial("property/floorplanmodal")#
+
 	</div> <!--  .property-page end     -->
 </cfoutput>
+

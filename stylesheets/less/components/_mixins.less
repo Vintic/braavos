@@ -419,6 +419,27 @@
 	}
 }
 
+.close-btn(@height: 2px){
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: @height;
+		background-color: @border-color;
+		transform: rotate(45deg);
+	}
+	&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: @height;
+		background-color: @border-color;
+		transform: rotate(-45deg);
+	}
+}
+
 .w-loop (@n, @i: 10) when (@i > 0){
 	.w@{i}{
 		font-size: @i * 50% + 50%;
