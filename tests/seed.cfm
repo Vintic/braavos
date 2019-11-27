@@ -28,8 +28,14 @@ INSERT INTO regionsuburbs (regionId,suburbId) VALUES
 (1,1)
 ,(1,2)
 ;
-INSERT INTO seodescriptions (state,regionId,saleMethod,propertyType,description,createdAt) VALUES
-('VIC',1,'Buy',NULL,'My Seo Description','2019-06-05 11:24:50.000')
+INSERT INTO seodescriptions (state,regionId,suburbId,saleMethod,propertyType,description,createdAt) VALUES
+('VIC',NULL,NULL,NULL,NULL,'VIC Seo Description','2019-06-05 11:24:50.000')
+,(NULL,NULL,1,'Buy',NULL,'My Seo Description','2019-06-05 11:24:50.000')
+,(NULL,NULL,1,'Buy','House','My House Seo Description','2019-06-05 11:24:50.000')
+,(NULL,NULL,1,'Buy','Apartment','My Apartment Seo Description','2019-06-05 11:24:50.000')
+,(NULL,NULL,1,'Rent',NULL,'My Rent Seo Description','2019-06-05 11:24:50.000')
+,(NULL,NULL,1,'Sold',NULL,'My Sold Seo Description','2019-06-05 11:24:50.000')
+,(NULL,1,NULL,'Buy',NULL,'My Region Seo Description','2019-06-05 11:24:50.000')
 ;
 -- TODO: lots of inserts
 INSERT INTO administrators (firstname,lastname,email,mobile,passwordHash,passwordResetToken,rememberToken,isPasswordChangeRequired,passwordResetTokenAt,passwordResetAt,loggedInAt,multiFactorAuthKey,sessionData,createdAt,updatedAt,deletedAt,dutyid) VALUES
